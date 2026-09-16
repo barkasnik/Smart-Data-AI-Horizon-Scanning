@@ -10,7 +10,7 @@ from .dedupe import dedupe_articles, dedupe_candidates
 from .digest import write_outputs
 from .discover import discover_index_sources, discover_search
 from .extract import RobotsCache, extract_candidate
-from .llm import analyse_article, analyse_digest
+from .llm import analyse_article, analyse_digest, fallback_analysis
 from .models import AnalysedArticle
 from .prioritise import final_rank_score, normalise_hashtags, priority_score
 from .score import heuristic_score
@@ -20,13 +20,21 @@ from .utils import utcnow
 app = typer.Typer(add_completion=False, help="Smart Data & AI news intelligence radar")
 
 
+def _weekly_minimum() -> int:
+    return max(1, int(os.getenv("RADAR_MIN_WEEKLY_ITEMS", "7")))
+
+
+def _fallback_floor() -> float:
+    return float(os.getenv("RADAR_FALLBACK_SCORE", "20"))
+
+
 @app.command()
 def run(
     mode: str = typer.Option("weekly", help="Weekly or monthly intelligence mode"),
     days: int | None = typer.Option(None, help="Override recency window; defaults to 7 weekly / 30 monthly"),
-    candidate_limit: int = typer.Option(int(os.getenv("RADAR_CANDIDATE_LIMIT", "50"))),
-    analyse_limit: int | None = typer.Option(None, help="Override LLM analysis limit; defaults to 10 weekly / 16 monthly"),
-    min_score: float = typer.Option(float(os.getenv("RADAR_MIN_SCORE", "35")), help="Minimum heuristic score before LLM analysis"),
+    candidate_limit: int = typer.Option(int(os.getenv("RADAR_CANDIDATE_LIMIT", "80"))),
+    analyse_limit: int | None = typer.Option(None, help="Override LLM analysis limit; defaults to 10 weekly / 14 monthly"),
+    min_score: float = typer.Option(float(os.getenv("RADAR_MIN_SCORE", "35")), help="Normal heuristic relevance threshold"),
     backend: str = typer.Option(os.getenv("SEARCH_BACKEND", "google_news")),
     db: Path = typer.Option(Path("radar.db")),
     out_dir: Path = typer.Option(Path("output")),
@@ -35,17 +43,32 @@ def run(
 ) -> None:
     if mode not in {"weekly", "monthly"}:
         raise typer.BadParameter("--mode must be weekly or monthly")
+
     profile, sources = load_default_config()
     days = days if days is not None else (7 if mode == "weekly" else 30)
+    min_items = _weekly_minimum() if mode == "weekly" else 1
+
     if analyse_limit is None:
         env_limit = os.getenv("RADAR_ANALYSE_LIMIT")
-        analyse_limit = int(env_limit) if env_limit else (8 if mode == "weekly" else 12)
+        analyse_limit = int(env_limit) if env_limit else (10 if mode == "weekly" else 14)
+    analyse_limit = max(analyse_limit, min_items)
 
-    typer.echo(f"Mode: {mode} · window: {days} days · discovery backend: {backend}")
+    discovery_per_query = max(8, int(os.getenv("RADAR_RESULTS_PER_QUERY", "10")))
+    typer.echo(
+        f"Mode: {mode} · window: {days} days · discovery backend: {backend} · "
+        f"weekly minimum: {min_items if mode == 'weekly' else 'n/a'}"
+    )
 
     candidates = []
     try:
-        candidates.extend(discover_search(profile, backend=backend, days=days))
+        candidates.extend(
+            discover_search(
+                profile,
+                backend=backend,
+                per_query=discovery_per_query,
+                days=days,
+            )
+        )
     except Exception as exc:
         typer.echo(f"Search discovery warning: {exc}")
     candidates.extend(discover_index_sources(sources))
@@ -53,27 +76,56 @@ def run(
     typer.echo(f"Discovered {len(candidates)} unique candidates")
 
     robots = RobotsCache()
-    articles = []
+    scored_articles = []
     cutoff = utcnow() - timedelta(days=days)
+
     for candidate in candidates:
         try:
             article = extract_candidate(candidate, robots)
         except Exception:
             continue
+
+        # Keep the weekly/monthly period honest. Direct-source index monitoring is
+        # useful for discovery, but a known old publication date must not bypass
+        # the requested time window.
         if article.published_at:
             pub = article.published_at
             if pub.tzinfo is None:
                 pub = pub.replace(tzinfo=timezone.utc)
-            if pub < cutoff and "index:" not in article.discovery_method:
+            if pub < cutoff:
                 continue
+
         score, matched = heuristic_score(article, profile, sources)
         article.heuristic_score = score
         article.matched_terms = matched
-        if score >= min_score:
-            articles.append(article)
+        if score >= _fallback_floor():
+            scored_articles.append(article)
 
-    articles = dedupe_articles(articles)[:candidate_limit]
-    typer.echo(f"{len(articles)} candidates passed heuristic relevance")
+    scored_articles = dedupe_articles(scored_articles)[:candidate_limit]
+    articles = [a for a in scored_articles if a.heuristic_score >= min_score]
+
+    # Weekly briefings should not collapse to one or two items simply because the
+    # normal threshold is conservative. Backfill only with the highest-scoring
+    # fresh Smart Data candidates from the same seven-day period.
+    if mode == "weekly" and len(articles) < min_items:
+        already = {a.canonical_url for a in articles}
+        for article in scored_articles:
+            if article.canonical_url in already:
+                continue
+            articles.append(article)
+            already.add(article.canonical_url)
+            if len(articles) >= min_items:
+                break
+        if len(articles) < min_items:
+            typer.echo(
+                f"Warning: only {len(articles)} fresh candidates were available after "
+                "deduplication; the radar will not pad the briefing with old news."
+            )
+
+    typer.echo(
+        f"{len(articles)} candidates selected for policy analysis "
+        f"({sum(a.heuristic_score >= min_score for a in articles)} at normal threshold)"
+    )
 
     store = Store(db)
     for article in articles:
@@ -85,13 +137,18 @@ def run(
         return
 
     analysed: list[AnalysedArticle] = []
-    for article in articles[:analyse_limit]:
+    target = min(len(articles), analyse_limit)
+
+    for article in articles[:target]:
+        used_fallback = False
         try:
             analysis = analyse_article(article, profile, mode=mode)
-            analysis.hashtags = normalise_hashtags(analysis, article.matched_terms)
         except Exception as exc:
-            typer.echo(f"LLM skip: {article.title[:70]} ({exc})")
-            continue
+            used_fallback = True
+            typer.echo(f"LLM fallback: {article.title[:70]} ({exc})")
+            analysis = fallback_analysis(article, mode=mode)
+
+        analysis.hashtags = normalise_hashtags(analysis, article.matched_terms)
         pscore = priority_score(analysis, mode)
         final = final_rank_score(
             heuristic=article.heuristic_score,
@@ -107,8 +164,17 @@ def run(
         )
         analysed.append(item)
         store.save_analysis(item)
+        if used_fallback:
+            typer.echo(f"Retained with fallback analysis: {article.title[:70]}")
 
     analysed.sort(key=lambda x: x.final_score, reverse=True)
+
+    # If enough fresh relevant items existed, weekly mode should now always retain
+    # at least the requested minimum, even when the local LLM times out.
+    if mode == "weekly" and len(analysed) < min_items and len(articles) >= min_items:
+        typer.echo(
+            f"Warning: expected at least {min_items} analysed items but retained {len(analysed)}."
+        )
 
     synthesis = None
     if analysed and not no_synthesis:
@@ -129,7 +195,7 @@ def run(
 
     store.close()
     md, js, ht = write_outputs(analysed, out_dir, synthesis, mode=mode)
-    typer.echo(f"Wrote {md}, {js} and {ht}")
+    typer.echo(f"Wrote {md}, {js} and {ht} with {len(analysed)} ranked items")
 
 
 @app.command("show-profile")
@@ -143,4 +209,3 @@ def show_profile() -> None:
 
 if __name__ == "__main__":
     app()
-
