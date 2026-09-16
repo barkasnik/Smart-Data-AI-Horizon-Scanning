@@ -1,0 +1,178 @@
+name: Smart Data AI Radar
+
+on:
+  # The first commit that adds this workflow will bootstrap the repo automatically.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Intelligence mode
+        required: true
+        default: weekly
+        type: choice
+        options:
+          - weekly
+          - monthly
+  schedule:
+    - cron: '10 7 * * 1'   # weekly: Monday 07:10 UTC
+    - cron: '30 7 1 * *'   # monthly: first day, 07:30 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: smart-data-ai-radar-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Select weekly or monthly mode
+        id: cadence
+        shell: bash
+        env:
+          MANUAL_MODE: ${{ inputs.mode }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ -n "$MANUAL_MODE" ]; then
+            MODE="$MANUAL_MODE"
+          elif [ "$SCHEDULE" = "30 7 1 * *" ]; then
+            MODE="monthly"
+          else
+            MODE="weekly"
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "Selected mode: $MODE"
+
+      - name: Repair flattened repository layout
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/smart_data_radar config tests output
+
+          # The earlier browser upload flattened these files into the repo root.
+          # Copy them back into the package locations expected by pyproject.toml.
+          for f in __init__.py cli.py config.py dedupe.py digest.py discover.py extract.py llm.py models.py prioritise.py score.py storage.py utils.py; do
+            if [ -f "$f" ] && [ ! -f "src/smart_data_radar/$f" ]; then
+              cp "$f" "src/smart_data_radar/$f"
+            fi
+          done
+
+          if [ -f interest_profile.yml ] && [ ! -f config/interest_profile.yml ]; then
+            cp interest_profile.yml config/interest_profile.yml
+          fi
+          if [ -f sources.yml ] && [ ! -f config/sources.yml ]; then
+            cp sources.yml config/sources.yml
+          fi
+
+          for f in test_dashboard.py test_dedupe.py test_digest.py test_llm.py test_prioritise.py test_score.py; do
+            if [ -f "$f" ] && [ ! -f "tests/$f" ]; then
+              cp "$f" "tests/$f"
+            fi
+          done
+
+          if [ -f env.example ] && [ ! -f .env.example ]; then
+            cp env.example .env.example
+          fi
+
+          touch output/.gitkeep
+
+          # Stop immediately with a useful error if a browser upload omitted anything essential.
+          required=(
+            pyproject.toml index.html
+            src/smart_data_radar/__init__.py
+            src/smart_data_radar/cli.py
+            src/smart_data_radar/config.py
+            src/smart_data_radar/dedupe.py
+            src/smart_data_radar/digest.py
+            src/smart_data_radar/discover.py
+            src/smart_data_radar/extract.py
+            src/smart_data_radar/llm.py
+            src/smart_data_radar/models.py
+            src/smart_data_radar/prioritise.py
+            src/smart_data_radar/score.py
+            src/smart_data_radar/storage.py
+            src/smart_data_radar/utils.py
+            config/interest_profile.yml
+            config/sources.yml
+          )
+          for f in "${required[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "ERROR: required file is missing: $f"
+              exit 1
+            fi
+          done
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install scanner
+        run: pip install -e '.[dev]'
+
+      - name: Run scanner tests
+        run: pytest -q tests
+
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+
+      - name: Cache Ollama model
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-qwen2.5-1.5b-instruct-v1
+
+      - name: Start Ollama and load free local model
+        shell: bash
+        env:
+          OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'qwen2.5:1.5b-instruct' }}
+        run: |
+          set -euo pipefail
+          ollama serve > /tmp/ollama.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:11434/api/tags >/dev/null; then
+              break
+            fi
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:11434/api/tags >/dev/null
+          ollama pull "$OLLAMA_MODEL"
+
+      - name: Run horizon scanner
+        env:
+          SEARCH_BACKEND: google_news
+          LLM_BACKEND: ollama
+          OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'qwen2.5:1.5b-instruct' }}
+        run: smart-data-radar run --mode "${{ steps.cadence.outputs.mode }}" --out-dir output
+
+      - name: Clean old flattened duplicates
+        shell: bash
+        run: |
+          # Only clean after install/tests/scanning have succeeded.
+          rm -f \
+            __init__.py cli.py config.py dedupe.py digest.py discover.py extract.py \
+            llm.py models.py prioritise.py score.py storage.py utils.py \
+            interest_profile.yml sources.yml \
+            test_dashboard.py test_dedupe.py test_digest.py test_llm.py test_prioritise.py test_score.py \
+            radar.yml 'download' 'download (1)' 'download (2)' 'download (3)'
+
+      - name: Commit repaired project and briefing
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'smart-data-ai-radar[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet || git commit -m "fix: repair self-contained radar and update ${{ steps.cadence.outputs.mode }} briefing"
+          git push
