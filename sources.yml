@@ -1,0 +1,49 @@
+source_boosts:
+  gov.uk: 12
+  fca.org.uk: 11
+  bankofengland.co.uk: 9
+  cma.gov.uk: 10
+  ico.org.uk: 10
+  openbanking.org.uk: 8
+  cfit.org.uk: 8
+  raidiam.com: 7
+  openfinance.org.uk: 7
+
+person_boosts:
+  "marie walker": 10
+
+index_sources:
+  - name: UK Smart Data collection
+    url: https://www.gov.uk/government/collections/creating-a-smart-data-economy
+    kind: official_collection
+    allowed_domains: [gov.uk]
+    link_contains: [/government/]
+    max_links: 80
+  - name: Raidiam insights
+    url: https://www.raidiam.com/insights
+    kind: industry_index
+    allowed_domains: [raidiam.com]
+    link_contains: [/insights/]
+    max_links: 100
+  - name: Raidiam news and insights
+    url: https://www.raidiam.com/resources/news-insights
+    kind: industry_index
+    allowed_domains: [raidiam.com]
+    link_contains: [/insights/]
+    max_links: 100
+
+priority_domains:
+  - gov.uk
+  - fca.org.uk
+  - cma.gov.uk
+  - ico.org.uk
+  - bankofengland.co.uk
+  - cfit.org.uk
+  - openbanking.org.uk
+  - raidiam.com
+  - europa.eu
+  - ec.europa.eu
+  - treasury.gov.au
+  - cdr.gov.au
+  - gov.br
+

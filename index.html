@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="UK Smart Data & AI horizon-scanning dashboard: weekly and monthly policy intelligence, PESTLE/SWOT, rankings, source links and monitoring signals." />
+  <title>Smart Data & AI Horizon Scanner</title>
+  <style>
+    :root {
+      --bg:#07111f; --panel:#0d1b2b; --panel2:#11243a; --line:#203a56;
+      --text:#edf5ff; --muted:#9fb3c8; --accent:#67d4ff; --accent2:#a3f7bf;
+      --warn:#ffd166; --danger:#ff7a90; --violet:#c7a8ff; --white:#fff;
+      --shadow:0 16px 45px rgba(0,0,0,.26); --r:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,#06101d 0%,#081421 36%,#0a1726 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit}.shell{max-width:1320px;margin:0 auto;padding:28px 22px 70px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,.7fr);gap:18px;align-items:stretch;margin-bottom:20px}
+    .hero-main,.hero-side,.panel,.metric,.story,.framework-box,.signal-card{background:rgba(13,27,43,.93);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .hero-main{padding:30px;border-radius:26px;position:relative;overflow:hidden}
+    .hero-main:after{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-120px;top:-170px;background:radial-gradient(circle,rgba(103,212,255,.28),rgba(103,212,255,0) 70%)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:800;font-size:.78rem}
+    h1{font-size:clamp(2rem,4vw,3.65rem);line-height:1.02;margin:10px 0 12px;max-width:850px}
+    .subtitle{font-size:1.05rem;color:var(--muted);max-width:880px;margin:0}
+    .hero-side{border-radius:26px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+    .status-line{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.93rem}.dot{width:10px;height:10px;border-radius:50%;background:var(--warn);box-shadow:0 0 16px var(--warn)}
+    .source-note{font-size:.88rem;color:var(--muted)}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:#0a1828;color:var(--text);padding:11px 18px;border-radius:999px;font-weight:800;cursor:pointer}.tab.active{background:var(--accent);color:#032035;border-color:var(--accent)}
+    .metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin:18px 0}.metric{border-radius:16px;padding:16px}.metric .value{font-weight:900;font-size:1.7rem}.metric .label{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+    .panel{border-radius:var(--r);padding:22px;margin:16px 0}.panel-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px}.panel-title h2{margin:0;font-size:1.25rem}.muted{color:var(--muted)}
+    .synthesis-headline{font-size:1.55rem;font-weight:900;margin:5px 0 8px}.synthesis-summary{color:#d9e8f7;max-width:1050px}
+    .insight-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:18px}.insight{background:#0a1726;border:1px solid var(--line);border-radius:14px;padding:14px}.insight h3{font-size:.86rem;margin:0 0 8px;color:var(--accent2);text-transform:uppercase;letter-spacing:.05em}.insight ul{padding-left:17px;margin:0;color:#d9e8f7;font-size:.88rem}.insight li+li{margin-top:6px}
+    .toolbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px}.toolbar input,.toolbar select{width:100%;background:#081522;color:var(--text);border:1px solid var(--line);padding:11px 12px;border-radius:12px;outline:none}.toolbar input:focus,.toolbar select:focus{border-color:var(--accent)}.clear{background:#17314c;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:700}
+    .stories{display:grid;gap:16px}.story{border-radius:20px;padding:20px;position:relative}.story.must_read{border-color:#6edaff}.story.high{border-color:#7ee0a4}.story.medium{border-color:#5a7591}.rank{position:absolute;right:18px;top:16px;color:#6d89a5;font-size:2.4rem;font-weight:950;line-height:1}.story h2{margin:0 80px 8px 0;font-size:1.35rem;line-height:1.25}.story h2 a{text-decoration:none}.story h2 a:hover{color:var(--accent)}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.84rem}.pill{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;border:1px solid var(--line);background:#10243a;font-weight:700}.pill.hot{border-color:#5fcaef;color:#9ae6ff}.pill.priority{border-color:#6fd99a;color:#a5f6c4}.pill.warn{border-color:#c6a644;color:#ffe184}
+    .bottom-line{margin:15px 0 10px;background:linear-gradient(90deg,rgba(103,212,255,.12),rgba(103,212,255,.03));border-left:4px solid var(--accent);padding:14px 16px;border-radius:0 12px 12px 0;font-size:1.02rem}.gov-view{color:#dcecff;margin:10px 0}.section-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:900;margin-top:15px}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{background:#152b43;border:1px solid #294866;padding:5px 9px;border-radius:999px;font-size:.77rem;color:#cae6ff;cursor:pointer}.tag.policygap{border-color:#d29a58;color:#ffd09b}.tag.threat{border-color:#9d5060;color:#ff9faf}.tag.opportunity{border-color:#4c9b6b;color:#a7f4bf}.tag.monitor{border-color:#7864aa;color:#d6c5ff}
+    .score-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:14px 0}.signal-card{box-shadow:none;border-radius:12px;padding:10px;background:#0a1726}.sig-name{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.sig-row{display:flex;align-items:center;gap:8px;margin-top:5px}.sig-num{font-weight:900;min-width:18px}.bar{height:7px;background:#1a334c;border-radius:999px;overflow:hidden;flex:1}.fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}
+    details{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;font-weight:850;color:#dcecff}.framework{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.framework-box{box-shadow:none;border-radius:12px;padding:13px;background:#0a1726}.framework-box h4{margin:0 0 7px;color:var(--accent2)}.framework-box ul{margin:0;padding-left:18px;color:#d6e5f4;font-size:.88rem}.framework-box li+li{margin-top:5px}.source-btn{display:inline-flex;text-decoration:none;align-items:center;gap:6px;background:var(--accent);color:#032035;font-weight:900;padding:9px 13px;border-radius:10px;margin-top:13px}.source-btn:hover{filter:brightness(1.07)}
+    .empty{padding:48px 24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:18px;background:#091624}.empty strong{display:block;color:var(--text);font-size:1.2rem;margin-bottom:7px}.error{color:#ffd9df}.footer{color:#7890a7;text-align:center;margin-top:28px;font-size:.82rem}
+    @media(max-width:1050px){.metrics{grid-template-columns:repeat(3,1fr)}.insight-grid{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.score-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.shell{padding:16px 12px 50px}.hero-main,.hero-side{padding:20px}.metrics{grid-template-columns:repeat(2,1fr)}.insight-grid,.toolbar,.framework,.score-grid{grid-template-columns:1fr}.rank{font-size:1.6rem}.story h2{margin-right:45px}.metric .value{font-size:1.35rem}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <section class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">UK Smart Data policy intelligence</div>
+      <h1>Smart Data &amp; AI Horizon Scanner</h1>
+      <p class="subtitle">A weekly and monthly radar for developments at the intersection of Smart Data and AI, with wider Smart Data monitoring. Every item is ranked, linked to its source, and assessed through a UK Government / Smart Data PESTLE + SWOT lens.</p>
+    </div>
+    <aside class="hero-side">
+      <div>
+        <div class="tabs" role="tablist" aria-label="Briefing cadence">
+          <button class="tab active" data-mode="weekly">Weekly</button>
+          <button class="tab" data-mode="monthly">Monthly</button>
+        </div>
+      </div>
+      <div class="status-line"><span class="dot" id="statusDot"></span><span id="statusText">Loading weekly briefing…</span></div>
+      <div class="source-note">Sources are monitored for insight, not endorsement. Government and regulator primary sources are weighted highly; specialist industry perspectives such as Raidiam are analysed neutrally.</div>
+    </aside>
+  </section>
+
+  <section class="metrics" aria-label="Briefing metrics">
+    <div class="metric"><div class="value" id="mStories">—</div><div class="label">Stories analysed</div></div>
+    <div class="metric"><div class="value" id="mPriority">—</div><div class="label">Avg policy priority</div></div>
+    <div class="metric"><div class="value" id="mMust">—</div><div class="label">Must read / high</div></div>
+    <div class="metric"><div class="value" id="mGaps">—</div><div class="label">Policy gaps</div></div>
+    <div class="metric"><div class="value" id="mMonitor">—</div><div class="label">Monitor signals</div></div>
+    <div class="metric"><div class="value" id="mAI">—</div><div class="label">AI × Smart Data</div></div>
+  </section>
+
+  <section class="panel" id="synthesisPanel" hidden>
+    <div class="panel-title"><div><div class="eyebrow">Period synthesis</div><h2>What matters in this period</h2></div><div class="muted" id="generatedAt"></div></div>
+    <div class="synthesis-headline" id="synHeadline"></div>
+    <div class="synthesis-summary" id="synSummary"></div>
+    <div class="insight-grid" id="synGrid"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title"><div><div class="eyebrow">Explore the radar</div><h2>Ranked intelligence</h2></div><div class="muted" id="resultCount"></div></div>
+    <div class="toolbar">
+      <input id="searchBox" type="search" placeholder="Search title, source, analysis or hashtag…" />
+      <select id="tagFilter"><option value="">All hashtags</option></select>
+      <select id="tierFilter"><option value="">All relevance tiers</option><option value="must_read">Must read</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+      <select id="sortBy"><option value="final">Overall rank</option><option value="priority">Policy priority</option><option value="relevance">Relevance</option><option value="date">Newest</option></select>
+      <button class="clear" id="clearFilters">Clear</button>
+    </div>
+  </section>
+
+  <main class="stories" id="stories"></main>
+  <div class="footer">Smart Data &amp; AI Horizon Scanner · public-safe output · original article text is not republished.</div>
+</div>
+<script>
+(() => {
+  const state={mode:'weekly',payload:null,articles:[]};
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const safeUrl=u=>/^https?:\/\//i.test(String(u||''))?u:'#';
+  const arr=v=>Array.isArray(v)?v:[];
+  const pretty=k=>String(k||'').replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
+  const fmtDate=d=>{if(!d)return'Date unknown';const x=new Date(d);return Number.isNaN(x.getTime())?esc(d):x.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});};
+  const tagClass=t=>{const s=t.toLowerCase();return s.includes('policygap')?'policygap':s.includes('threat')?'threat':s.includes('opportunity')?'opportunity':s.includes('monitor')?'monitor':''};
+  const framework=(title,obj)=>{const entries=Object.entries(obj||{}).filter(([,v])=>arr(v).length);if(!entries.length)return'';return `<details><summary>${esc(title)}</summary><div class="framework">${entries.map(([k,v])=>`<div class="framework-box"><h4>${esc(pretty(k))}</h4><ul>${arr(v).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div></details>`};
+  const list=(title,values)=>arr(values).length?`<details><summary>${esc(title)}</summary><div class="framework"><div class="framework-box" style="grid-column:1/-1"><ul>${arr(values).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></details>`:'';
+  const signals=x=>{const p=x?.priority||{};const keys=['urgency','impact','consequences','policy_advancement','opportunity','monitoring_need','strategic_significance','implementation_risk','novelty','evidence_strength'];return `<div class="score-grid">${keys.map(k=>{const n=Math.max(0,Math.min(5,Number(p[k]||0)));return `<div class="signal-card"><div class="sig-name">${esc(pretty(k))}</div><div class="sig-row"><span class="sig-num">${n}</span><div class="bar"><div class="fill" style="width:${n*20}%"></div></div></div></div>`}).join('')}</div>`};
+  function renderStory(item,idx){const a=item.article||{},x=item.analysis||{},tier=x.relevance_tier||'medium',tags=arr(x.hashtags);return `<article class="story ${esc(tier)}">
+    <div class="rank">#${idx}</div>
+    <h2><a href="${esc(safeUrl(a.canonical_url||a.url))}" target="_blank" rel="noopener noreferrer">${esc(a.title||'Untitled')}</a></h2>
+    <div class="meta"><span>${esc(a.source_name||'Unknown source')}</span><span>·</span><span>${fmtDate(a.published_at)}</span><span class="pill hot">Overall ${Number(item.final_score||0).toFixed(1)}</span><span class="pill priority">Policy ${Number(item.priority_score||0).toFixed(1)}</span><span class="pill">Relevance ${Number(x.relevance_score||0)}</span></div>
+    <div class="bottom-line"><strong>Bottom line:</strong> ${esc(x.bottom_line||x.summary||'No analysis available.')}</div>
+    <div class="section-label">Why it matters for Government Smart Data</div><div class="gov-view">${esc(x.government_smart_data_perspective||x.why_it_matters||'')}</div>
+    ${x.smart_data_ai_link?`<div class="section-label">AI / Smart Data connection</div><div class="gov-view">${esc(x.smart_data_ai_link)}</div>`:''}
+    <div class="tags">${tags.map(t=>`<button class="tag ${tagClass(t)}" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+    <div class="section-label">Priority signals</div>${signals(x)}
+    ${x.priority?.rationale?`<div class="gov-view"><strong>Priority rationale:</strong> ${esc(x.priority.rationale)}</div>`:''}
+    ${framework('PESTLE — Government / Smart Data perspective',x.pestle)}
+    ${framework('SWOT — UK Smart Data programme',x.swot)}
+    ${list('Policy / market implications',x.policy_or_market_implications)}
+    ${list('Tensions / trade-offs',x.tensions_or_tradeoffs)}
+    ${list('Questions to pursue',x.follow_up_questions)}
+    ${x.source_perspective?`<details><summary>Source perspective</summary><div class="gov-view">${esc(x.source_perspective)}</div></details>`:''}
+    <a class="source-btn" href="${esc(safeUrl(a.canonical_url||a.url))}" target="_blank" rel="noopener noreferrer">Open original article ↗</a>
+  </article>`}
+  function fillMetrics(arts){const tags=arts.flatMap(i=>arr(i.analysis?.hashtags));const avg=arts.length?arts.reduce((s,i)=>s+Number(i.priority_score||0),0)/arts.length:0;$('mStories').textContent=arts.length;$('mPriority').textContent=arts.length?avg.toFixed(0):'—';$('mMust').textContent=arts.filter(i=>['must_read','high'].includes(i.analysis?.relevance_tier)).length;$('mGaps').textContent=tags.filter(t=>t==='#PolicyGap').length;$('mMonitor').textContent=tags.filter(t=>t==='#Monitor').length;$('mAI').textContent=tags.filter(t=>t==='#AIxSmartData').length;}
+  function fillSynthesis(s){if(!s){$('synthesisPanel').hidden=true;return}$('synthesisPanel').hidden=false;$('synHeadline').textContent=s.headline||'';$('synSummary').textContent=s.executive_summary||'';const secs=[['Ranked priorities',s.ranked_priorities],['Policy gaps',s.policy_gaps],['Opportunities',s.opportunities],['Threats',s.threats],['Monitoring list',s.monitoring_list]];$('synGrid').innerHTML=secs.filter(([,v])=>arr(v).length).map(([h,v])=>`<div class="insight"><h3>${esc(h)}</h3><ul>${arr(v).slice(0,6).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');}
+  function populateTags(arts){const cur=$('tagFilter').value;const tags=[...new Set(arts.flatMap(i=>arr(i.analysis?.hashtags)))].sort();$('tagFilter').innerHTML='<option value="">All hashtags</option>'+tags.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join('');if(tags.includes(cur))$('tagFilter').value=cur;}
+  function applyFilters(){let a=[...state.articles];const q=$('searchBox').value.trim().toLowerCase(),tag=$('tagFilter').value,tier=$('tierFilter').value,sort=$('sortBy').value;if(q)a=a.filter(i=>JSON.stringify(i).toLowerCase().includes(q));if(tag)a=a.filter(i=>arr(i.analysis?.hashtags).includes(tag));if(tier)a=a.filter(i=>i.analysis?.relevance_tier===tier);const by={final:(x,y)=>Number(y.final_score||0)-Number(x.final_score||0),priority:(x,y)=>Number(y.priority_score||0)-Number(x.priority_score||0),relevance:(x,y)=>Number(y.analysis?.relevance_score||0)-Number(x.analysis?.relevance_score||0),date:(x,y)=>new Date(y.article?.published_at||0)-new Date(x.article?.published_at||0)};a.sort(by[sort]||by.final);$('resultCount').textContent=`${a.length} of ${state.articles.length} items`;$('stories').innerHTML=a.length?a.map((x,i)=>renderStory(x,i+1)).join(''):`<div class="empty"><strong>No items match these filters.</strong>Clear the filters or choose another briefing mode.</div>`;document.querySelectorAll('[data-tag]').forEach(b=>b.onclick=()=>{$('tagFilter').value=b.dataset.tag;applyFilters();window.scrollTo({top:$('stories').offsetTop-20,behavior:'smooth'});});}
+  async function load(mode){state.mode=mode;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));$('statusText').textContent=`Loading ${mode} briefing…`;$('statusDot').style.background='var(--warn)';$('stories').innerHTML='<div class="empty"><strong>Loading intelligence…</strong>Reading the latest public-safe briefing data.</div>';try{const r=await fetch(`output/${mode}-latest.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`${r.status} ${r.statusText}`);const p=await r.json();state.payload=p;state.articles=arr(p.articles);$('generatedAt').textContent=p.generated_at?`Generated ${new Date(p.generated_at).toLocaleString('en-GB')}`:'';fillMetrics(state.articles);fillSynthesis(p.synthesis);populateTags(state.articles);applyFilters();$('statusText').textContent=`${pretty(mode)} briefing loaded · ${state.articles.length} analysed items`;$('statusDot').style.background='var(--accent2)';}catch(e){state.payload=null;state.articles=[];fillMetrics([]);fillSynthesis(null);populateTags([]);$('resultCount').textContent='';$('statusText').textContent=`No ${mode} briefing published yet`;$('statusDot').style.background='var(--danger)';$('stories').innerHTML=`<div class="empty error"><strong>No ${esc(mode)} data file found yet.</strong>The dashboard is installed correctly, but the ${esc(mode)} radar workflow still needs to complete once. In GitHub open <b>Actions → Smart Data AI Radar → Run workflow</b> and choose <b>${esc(mode)}</b>. The dashboard will populate automatically when <code>output/${esc(mode)}-latest.json</code> is created.</div>`;}}
+  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>load(b.dataset.mode));['searchBox','tagFilter','tierFilter','sortBy'].forEach(id=>$(id).addEventListener(id==='searchBox'?'input':'change',applyFilters));$('clearFilters').onclick=()=>{$('searchBox').value='';$('tagFilter').value='';$('tierFilter').value='';$('sortBy').value='final';applyFilters();};load('weekly');
+})();
+</script>
+</body>
+</html>
+

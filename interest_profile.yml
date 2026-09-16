@@ -1,0 +1,149 @@
+name: Smart Data & AI Radar
+mission: >
+  Track developments that matter to UK Smart Data policy and implementation,
+  with primary emphasis on the intersection between Smart Data and AI and a
+  secondary emphasis on Smart Data more broadly. Sources are monitored for
+  insight, not endorsement.
+
+primary:
+  description: AI + Smart Data intersection
+  weight: 1.0
+  phrases:
+    - smart data artificial intelligence
+    - smart data AI
+    - agentic AI consent
+    - AI delegation identity
+    - AI governance data sharing
+    - AI trusted data
+    - AI data portability
+    - AI interoperability APIs
+    - AI trust framework
+    - AI authorised third party
+    - AI authorized third party
+    - LLM smart data
+    - AI open finance
+    - AI open data ecosystem
+  concepts:
+    smart_data: 24
+    artificial_intelligence: 22
+    intersection_bonus: 28
+    agentic_delegation: 14
+    trust_identity_consent: 12
+    interoperability_apis: 10
+    governance_accountability: 10
+
+secondary:
+  description: Smart Data policy, markets and implementation
+  weight: 0.7
+  phrases:
+    - smart data UK
+    - smart data economy
+    - open finance smart data
+    - open property smart data
+    - open energy smart data
+    - transport smart data
+    - retail smart data
+    - trade smart data
+    - agri-food smart data
+    - smart data standards governance
+    - smart data interoperability
+    - Data Use and Access Act smart data
+    - consumer data right open data
+  concepts:
+    smart_data: 28
+    sector_implementation: 10
+    regulation_policy: 10
+    governance_standards: 10
+    international_models: 7
+
+watch_terms:
+  ai:
+    - artificial intelligence
+    - agentic ai
+    - ai agent
+    - ai agents
+    - llm
+    - large language model
+    - generative ai
+    - algorithmic
+    - automated decision
+  smart_data:
+    - smart data
+    - open banking
+    - open finance
+    - open data
+    - consumer data right
+    - data portability
+    - data sharing
+  trust_identity:
+    - consent
+    - delegated authority
+    - delegation
+    - digital identity
+    - digital verification
+    - trust framework
+    - authorised third party
+    - authorized third party
+    - accreditation
+    - authentication
+  interoperability:
+    - api
+    - apis
+    - interoperability
+    - interoperable
+    - standards
+    - data standards
+    - federation
+    - oauth
+    - openid
+  governance:
+    - governance
+    - accountability
+    - algorithmic impact assessment
+    - human review
+    - privacy by design
+    - human review
+    - data scraping
+    - model training data
+    - market concentration
+    - data protection
+    - duaa
+    - data use and access act
+  sectors:
+    - finance
+    - banking
+    - property
+    - homebuying
+    - energy
+    - transport
+    - retail
+    - trade
+    - customs
+    - agri-food
+    - telecoms
+    - communications
+    - critical minerals
+  wider_government:
+    - national data library
+    - economic security
+    - growth
+    - competition
+    - consumer protection
+    - digital markets
+    - fraud
+    - app fraud
+    - economic crime
+    - challenge prize
+    - sandbox
+    - supply chain provenance
+    - trusted data
+
+editorial_principles:
+  - Separate reported facts from source claims and source opinion.
+  - Do not treat commercial thought leadership as neutral evidence by default.
+  - Do not align with or oppose Raidiam; analyse its material as one perspective.
+  - Prioritise material that changes policy, regulation, infrastructure, governance or real-world use cases.
+  - Prefer primary sources for legal, regulatory and government developments.
+  - Explain why an item matters to Smart Data and AI rather than merely summarising it.
+  - Surface tensions: innovation vs safeguards, interoperability vs control, delegation vs consent, scale vs competition, AI capability vs accountability.
+
