@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 import xml.etree.ElementTree as ET
 from datetime import datetime
-from urllib.parse import quote_plus, urljoin
+from urllib.parse import quote_plus, urljoin, urlsplit
 
 import httpx
 from bs4 import BeautifulSoup
@@ -28,6 +28,26 @@ def _plain_html(value: str | None) -> str:
     if not value:
         return ""
     return clean_space(BeautifulSoup(value, "html.parser").get_text(" ", strip=True))
+
+
+def _publisher_link_from_google_description(value: str | None) -> str | None:
+    """Prefer the publisher URL embedded in a Google News RSS description.
+
+    Google News RSS item links are often redirect URLs that are poor inputs for
+    article extraction. The description frequently contains a direct publisher
+    anchor; use it when it is a normal http(s) URL outside news.google.com.
+    """
+    if not value:
+        return None
+    soup = BeautifulSoup(value, "html.parser")
+    for anchor in soup.find_all("a", href=True):
+        href = clean_space(anchor.get("href", ""))
+        if not href.startswith(("http://", "https://")):
+            continue
+        host = urlsplit(href).netloc.lower()
+        if host and "news.google.com" not in host:
+            return canonicalise_url(href)
+    return None
 
 
 def search_queries(profile: dict) -> list[str]:
@@ -94,8 +114,9 @@ def discover_google_cse(queries: list[str], per_query: int = 10) -> list[Candida
 def discover_google_news(queries: list[str], per_query: int = 10, days: int | None = None) -> list[Candidate]:
     """Credential-free discovery using Google News RSS.
 
-    The RSS title, publisher, date and snippet are kept as evidence even if Google News
-    or the publisher blocks server-side extraction later.
+    Prefer a publisher URL embedded in the RSS description. Keep the RSS title,
+    publisher, date and snippet as evidence even if the publisher later blocks
+    server-side extraction.
     """
     out: list[Candidate] = []
     headers = {"User-Agent": USER_AGENT}
@@ -111,8 +132,11 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
             root = ET.fromstring(response.text)
             for item in root.findall("./channel/item")[:per_query]:
                 title = clean_space(item.findtext("title", default=""))
-                link = clean_space(item.findtext("link", default=""))
-                description = _plain_html(item.findtext("description", default=""))
+                google_link = clean_space(item.findtext("link", default=""))
+                raw_description = item.findtext("description", default="")
+                direct_link = _publisher_link_from_google_description(raw_description)
+                link = direct_link or google_link
+                description = _plain_html(raw_description)
                 pub = _parse_date(item.findtext("pubDate"))
                 source = item.find("source")
                 source_name = clean_space(source.text if source is not None and source.text else "Google News")
@@ -123,7 +147,7 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
 
                 if title and link:
                     out.append(Candidate(
-                        url=link,
+                        url=canonicalise_url(link),
                         title=title,
                         snippet=description,
                         source_name=source_name,
