@@ -7,6 +7,7 @@ on:
       - '.github/workflows/radar.yml'
       - 'src/**'
       - 'config/**'
+      - 'tests/**'
       - 'pyproject.toml'
   workflow_dispatch:
     inputs:
