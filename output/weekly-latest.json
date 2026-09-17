@@ -1,6 +1,6 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-17T04:24:09.797158+00:00",
+  "generated_at": "2026-09-17T04:33:03.985101+00:00",
   "synthesis": null,
   "articles": [
     {
@@ -11,9 +11,9 @@
         "source_name": "Amazon Web Services (AWS)",
         "author": "",
         "published_at": "2026-09-14T20:35:45Z",
-        "discovered_at": "2026-09-17T04:20:40.357589Z",
+        "discovered_at": "2026-09-17T04:29:58.158287Z",
         "discovery_method": "google_news:agentic AI consent",
-        "heuristic_score": 61.11,
+        "heuristic_score": 61.1,
         "matched_terms": [
           "AI",
           "trust_identity",
@@ -46,14 +46,14 @@
         },
         "priority": {
           "urgency": 3,
-          "impact": 3,
-          "consequences": 3,
+          "impact": 2,
+          "consequences": 1,
           "policy_advancement": 2,
-          "opportunity": 3,
-          "monitoring_need": 5,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 2,
+          "opportunity": 1,
+          "monitoring_need": 4,
+          "strategic_significance": 2,
+          "implementation_risk": 1,
+          "novelty": 3,
           "evidence_strength": 2,
           "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
         },
@@ -74,8 +74,8 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 45.9,
-      "priority_score": 56.21,
+      "final_score": 36.0,
+      "priority_score": 40.98,
       "mode": "weekly"
     },
     {
@@ -86,9 +86,9 @@
         "source_name": "The Straits Times",
         "author": "",
         "published_at": "2026-09-10T04:40:00Z",
-        "discovered_at": "2026-09-17T04:20:40.363779Z",
+        "discovered_at": "2026-09-17T04:29:58.165389Z",
         "discovery_method": "google_news:AI trust framework",
-        "heuristic_score": 49.51,
+        "heuristic_score": 49.5,
         "matched_terms": [
           "AI",
           "trust_identity",
@@ -121,8 +121,8 @@
         "priority": {
           "urgency": 3,
           "impact": 2,
-          "consequences": 2,
-          "policy_advancement": 1,
+          "consequences": 1,
+          "policy_advancement": 2,
           "opportunity": 1,
           "monitoring_need": 4,
           "strategic_significance": 3,
@@ -147,8 +147,8 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 33.46,
-      "priority_score": 43.43,
+      "final_score": 33.08,
+      "priority_score": 42.86,
       "mode": "weekly"
     }
   ]
