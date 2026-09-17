@@ -58,7 +58,6 @@ def priority_score(analysis: ArticleAnalysis, mode: str) -> float:
     weights = MONTHLY_WEIGHTS if mode == "monthly" else WEEKLY_WEIGHTS
     signals = analysis.priority
     raw = sum((getattr(signals, key) / 5.0) * weight for key, weight in weights.items()) * 100
-    # Evidence strength tempers, but does not dominate, the priority calculation.
     evidence_factor = 0.90 + (signals.evidence_strength / 5.0) * 0.10
     return round(raw * evidence_factor, 2)
 
@@ -67,14 +66,45 @@ def final_rank_score(*, heuristic: float, relevance: int, priority: float) -> fl
     return round((0.15 * heuristic) + (0.20 * relevance) + (0.65 * priority), 2)
 
 
+def _signal_tags(matched_terms: list[str]) -> list[str]:
+    """Neutral topical labels for low-evidence monitoring signals.
+
+    Do not attach evaluative labels such as #Urgent, #Strategic, #Threat,
+    #Opportunity or #PolicyGap when evidence strength is only 1-2.
+    """
+    joined = " ".join(matched_terms).lower()
+    tags = ["#Monitor"]
+    if "ai + smart data" in joined:
+        tags.append("#AIxSmartData")
+    if "trust_identity" in joined or "trust identity" in joined:
+        tags.append("#TrustFramework")
+    if "interoperability" in joined:
+        tags.append("#Interoperability")
+    if "open_finance" in joined or "open finance" in joined:
+        tags.append("#OpenFinance")
+    if "open_property" in joined or "open property" in joined:
+        tags.append("#OpenProperty")
+    if "energy" in joined:
+        tags.append("#Energy")
+    if "transport" in joined:
+        tags.append("#Transport")
+    if "trade" in joined:
+        tags.append("#Trade")
+    return tags[:8]
+
+
 def normalise_hashtags(analysis: ArticleAnalysis, matched_terms: list[str]) -> list[str]:
+    # Evidence-poor items are signals only. Never let model-generated priority
+    # language promote them into a policy judgement through hashtags.
+    if analysis.priority.evidence_strength <= 2 or analysis.confidence == "low":
+        return _signal_tags(matched_terms)
+
     tags: list[str] = []
 
     for raw in analysis.hashtags:
         tag = raw.strip().replace(" ", "")
         if not tag.startswith("#"):
             tag = "#" + tag
-        # case-insensitive matching onto canonical forms
         canonical = next((x for x in CONTROLLED_HASHTAGS if x.lower() == tag.lower()), None)
         if canonical and canonical not in tags:
             tags.append(canonical)
@@ -100,4 +130,3 @@ def normalise_hashtags(analysis: ArticleAnalysis, matched_terms: list[str]) -> l
             tags.append("#PolicyGap")
 
     return tags[:8]
-
