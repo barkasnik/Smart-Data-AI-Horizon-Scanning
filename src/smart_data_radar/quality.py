@@ -6,7 +6,6 @@ from urllib.parse import urlsplit
 from .models import Article
 from .utils import domain_of
 
-# Navigation and organisational landing pages are discovery aids, never intelligence items.
 BAD_PATHS = (
     "/government/organisations/",
     "/government/collections/",
@@ -36,42 +35,54 @@ def is_hub(article: Article) -> bool:
     return any(part in path for part in BAD_PATHS)
 
 
+def evidence_level(article: Article) -> str:
+    text_len = len(article.text or "")
+    snippet_len = len(article.snippet or "")
+    if text_len >= 700:
+        return "strong"
+    if text_len >= 250:
+        return "partial"
+    if snippet_len >= 80:
+        return "signal"
+    return "thin"
+
+
 def content_quality(article: Article) -> float:
     """Estimate how much usable evidence an item contains.
 
-    A recent Google News item with a real title, publisher, date and substantive RSS
-    snippet is valid discovery evidence even when the publisher page cannot be scraped.
-    Full article text improves confidence but is not a prerequisite for selection.
+    Metadata-only news is allowed as a horizon-scanning signal, but full or partial
+    source text is deliberately scored higher so the briefing prefers evidence-bearing
+    items over headlines when both are available.
     """
     if is_hub(article):
         return 0.0
 
-    score = 10.0
+    score = 8.0
     if article.published_at:
-        score += 24
+        score += 20
     if 18 <= len(article.title or "") <= 220:
-        score += 14
+        score += 12
 
     text_len = len(article.text or "")
     snippet_len = len(article.snippet or "")
     if text_len >= 1200:
-        score += 34
-    elif text_len >= 600:
-        score += 28
+        score += 44
+    elif text_len >= 700:
+        score += 38
     elif text_len >= 250:
-        score += 18
+        score += 25
     elif text_len >= 120:
-        score += 10
+        score += 14
 
     if snippet_len >= 180:
-        score += 18
+        score += 12
     elif snippet_len >= 100:
-        score += 14
-    elif snippet_len >= 60:
         score += 9
+    elif snippet_len >= 60:
+        score += 6
 
     if article.discovery_method.startswith("google_news:"):
-        score += 8
+        score += 3
     if "/insights/" in (article.canonical_url or article.url or ""):
         score += 5
 
@@ -85,16 +96,18 @@ def select_diverse(
     max_govuk: int = 3,
     max_per_domain: int = 2,
 ) -> list[Article]:
-    """Choose the strongest evidence while preventing one source from dominating.
-
-    No source is guaranteed a slot. Raidiam, GOV.UK and every other source compete on
-    relevance, evidence quality and recency; source caps provide diversity.
-    """
+    """Choose relevant evidence with source diversity and an evidence-first bias."""
+    evidence_rank = {"strong": 3, "partial": 2, "signal": 1, "thin": 0}
     ranked = sorted(
         articles,
-        key=lambda a: (a.heuristic_score, content_quality(a)),
+        key=lambda a: (
+            evidence_rank[evidence_level(a)],
+            a.heuristic_score,
+            content_quality(a),
+        ),
         reverse=True,
     )
+
     chosen: list[Article] = []
     counts: Counter[str] = Counter()
     gov_count = 0
