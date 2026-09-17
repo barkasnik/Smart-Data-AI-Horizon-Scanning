@@ -1,12 +1,12 @@
 # Smart Data & AI Radar — Weekly Briefing
 
-Generated: **2026-09-17 04:16 UTC**
+Generated: **2026-09-17 04:24 UTC**
 
 > Analytical lens: UK Government / Smart Data programme. Sources are monitored for insight, not endorsement. Facts, source viewpoints and radar analysis are kept distinct.
 
 ## 1. [Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore | Artificial Intelligence](https://news.google.com/rss/articles/CBMivAFBVV95cUxQcnlMeXFDMUtkN1Eyb3RIOEFobXhmd0Y3aHVPYjRmTEJ6amg0aFNnTkVEQ0ZlaUo1NmoxaGoxYUd2RzRsUU9WLTBQUXVoS0xCdU5Oc0NLYWVLZXc4TFJQYnJMVXVHbC11MldxVk0wTEtxUTVxUlNTY2E4V3V1a2xtSDBfelV3M0hGQmpPV0hhd19oal9LWjV3LVpUbW01US1zTFBtZjU0ZHJIdGRGUEV2M1Rwbl82cXN0ODdWSw?oc=5)
 
-**Overall rank:** 48.8/100 · **Policy priority:** 60.7/100 · **Relevance:** 61/100 · **Tier:** high
+**Overall rank:** 45.9/100 · **Policy priority:** 56.2/100 · **Relevance:** 61/100 · **Tier:** high
 
 **Source:** Amazon Web Services (AWS) · **Published:** 2026-09-14
 
@@ -16,15 +16,15 @@ Generated: **2026-09-17 04:16 UTC**
 
 **Why it matters for Government Smart Data:** Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.
 
-**AI / Smart Data connection:** Amazon Bedrock AgentCore's OAuth consent feature aligns with the UK Smart Data programme's focus on AI governance and interoperability.
+**AI / Smart Data connection:** Potential relevance to AI-enabled services, consent, identity or trust, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.
 
-**Source perspective:** Amazon Web Services (AWS) is monitoring the development of OAuth consent management for AI agents to ensure the security and interoperability of AI applications.
+**Source perspective:** Monitoring signal from Amazon Web Services (AWS); the radar has not inferred the source's motives, position or UK applicability from metadata alone.
 
 **Priority rationale:** The headline is relevant to AI-enabled services, consent, identity or trust, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article.
 
 **Priority signals (1–5):**
 
-Urgency **3** · Impact **4** · Consequences **3** · Policy advancement **2** · Opportunity **3** · Monitoring **5** · Strategic significance **4** · Implementation risk **2** · Novelty **2** · Evidence **2**
+Urgency **3** · Impact **3** · Consequences **3** · Policy advancement **2** · Opportunity **3** · Monitoring **5** · Strategic significance **3** · Implementation risk **2** · Novelty **2** · Evidence **2**
 
 **Policy / market implications:**
 - Verify the original source before drawing any UK policy or market implication.
@@ -32,7 +32,7 @@ Urgency **3** · Impact **4** · Consequences **3** · Policy advancement **2** 
 **Questions to pursue:**
 - Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?
 
-**Hashtags:** #Monitor #Strategic
+**Hashtags:** #Monitor #TrustFramework #Interoperability
 
 **Confidence:** low
 
@@ -50,9 +50,9 @@ Urgency **3** · Impact **4** · Consequences **3** · Policy advancement **2** 
 
 **Why it matters for Government Smart Data:** Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.
 
-**AI / Smart Data connection:** The collaboration suggests a potential new approach to ensuring trust in AI-driven financial services, which could impact the UK's Smart Data and AI policy.
+**AI / Smart Data connection:** Potential relevance to AI-enabled services, consent, identity or trust, open finance and payments; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.
 
-**Source perspective:** The collaboration between Visa, Mastercard, and Ant International on an AI-based trust framework for payments is a significant development in the financial services sector, warranting monitoring and potential policy consideration.
+**Source perspective:** Monitoring signal from The Straits Times; the radar has not inferred the source's motives, position or UK applicability from metadata alone.
 
 **Priority rationale:** The headline is relevant to AI-enabled services, consent, identity or trust, open finance and payments, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article.
 
@@ -66,7 +66,7 @@ Urgency **3** · Impact **2** · Consequences **2** · Policy advancement **1** 
 **Questions to pursue:**
 - Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?
 
-**Hashtags:** #Monitor
+**Hashtags:** #Monitor #TrustFramework
 
 **Confidence:** low
 

@@ -1,6 +1,6 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-17T04:16:55.915954+00:00",
+  "generated_at": "2026-09-17T04:24:09.797158+00:00",
   "synthesis": null,
   "articles": [
     {
@@ -11,7 +11,7 @@
         "source_name": "Amazon Web Services (AWS)",
         "author": "",
         "published_at": "2026-09-14T20:35:45Z",
-        "discovered_at": "2026-09-17T04:13:20.198035Z",
+        "discovered_at": "2026-09-17T04:20:40.357589Z",
         "discovery_method": "google_news:agentic AI consent",
         "heuristic_score": 61.11,
         "matched_terms": [
@@ -29,7 +29,7 @@
         "summary": "Amazon Web Services (AWS) reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
         "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
         "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Amazon Bedrock AgentCore's OAuth consent feature aligns with the UK Smart Data programme's focus on AI governance and interoperability.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -46,12 +46,12 @@
         },
         "priority": {
           "urgency": 3,
-          "impact": 4,
+          "impact": 3,
           "consequences": 3,
           "policy_advancement": 2,
           "opportunity": 3,
           "monitoring_need": 5,
-          "strategic_significance": 4,
+          "strategic_significance": 3,
           "implementation_risk": 2,
           "novelty": 2,
           "evidence_strength": 2,
@@ -61,29 +61,21 @@
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "Amazon Web Services (AWS) is monitoring the development of OAuth consent management for AI agents to ensure the security and interoperability of AI applications.",
+        "source_perspective": "Monitoring signal from Amazon Web Services (AWS); the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
           "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
         ],
         "hashtags": [
           "#Monitor",
-          "#Strategic"
-        ],
-        "tags": [
-          "#AIxSmartData",
-          "#Consent",
-          "#Interoperability",
-          "#OAuth",
-          "#AIagents",
           "#TrustFramework",
-          "#Monitor",
-          "#Urgent"
+          "#Interoperability"
         ],
+        "tags": [],
         "confidence": "low"
       },
-      "final_score": 48.83,
-      "priority_score": 60.72,
+      "final_score": 45.9,
+      "priority_score": 56.21,
       "mode": "weekly"
     },
     {
@@ -94,7 +86,7 @@
         "source_name": "The Straits Times",
         "author": "",
         "published_at": "2026-09-10T04:40:00Z",
-        "discovered_at": "2026-09-17T04:13:20.204950Z",
+        "discovered_at": "2026-09-17T04:20:40.363779Z",
         "discovery_method": "google_news:AI trust framework",
         "heuristic_score": 49.51,
         "matched_terms": [
@@ -111,7 +103,7 @@
         "summary": "The Straits Times reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
         "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, open finance and payments, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
         "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "The collaboration suggests a potential new approach to ensuring trust in AI-driven financial services, which could impact the UK's Smart Data and AI policy.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust, open finance and payments; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -143,24 +135,16 @@
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "The collaboration between Visa, Mastercard, and Ant International on an AI-based trust framework for payments is a significant development in the financial services sector, warranting monitoring and potential policy consideration.",
+        "source_perspective": "Monitoring signal from The Straits Times; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
           "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
         ],
         "hashtags": [
-          "#Monitor"
-        ],
-        "tags": [
-          "#AIxSmartData",
           "#Monitor",
-          "#Urgent",
-          "#ImplementationRisk",
-          "#OpenFinance",
-          "#TrustFramework",
-          "#DataPortability",
-          "#Interoperability"
+          "#TrustFramework"
         ],
+        "tags": [],
         "confidence": "low"
       },
       "final_score": 33.46,
