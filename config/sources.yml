@@ -4,9 +4,9 @@ source_boosts:
   bankofengland.co.uk: 9
   cma.gov.uk: 10
   ico.org.uk: 10
-  ofgem.gov.uk: 10
+  ofgem.gov.uk: 12
   ofcom.org.uk: 8
-  openbanking.org.uk: 8
+  openbanking.org.uk: 9
   cfit.org.uk: 8
   raidiam.com: 9
   openfinance.org.uk: 7
@@ -29,6 +29,59 @@ index_sources:
     exclude_link_contains:
       - /government/organisations/
       - /government/collections/
+    max_links: 80
+
+  - name: Ofgem consultations
+    url: https://www.ofgem.gov.uk/consultations
+    kind: regulator
+    allowed_domains: [ofgem.gov.uk]
+    link_contains:
+      - /consultation/
+    max_links: 80
+
+  - name: Ofgem smart meters
+    url: https://www.ofgem.gov.uk/energy-regulation/domestic-and-non-domestic/metering/smart-meters
+    kind: regulator
+    allowed_domains: [ofgem.gov.uk]
+    link_contains:
+      - /consultation/
+      - /publication/
+      - /decision/
+      - /transparency-document/
+    max_links: 60
+
+  - name: FCA news
+    url: https://www.fca.org.uk/news
+    kind: regulator
+    allowed_domains: [fca.org.uk]
+    link_contains:
+      - /news/
+    max_links: 80
+
+  - name: FCA publications
+    url: https://www.fca.org.uk/publications
+    kind: regulator
+    allowed_domains: [fca.org.uk]
+    link_contains:
+      - /publications/
+    max_links: 80
+
+  - name: ICO news and blogs
+    url: https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/
+    kind: regulator
+    allowed_domains: [ico.org.uk]
+    link_contains:
+      - /about-the-ico/media-centre/news-and-blogs/
+    exclude_link_contains:
+      - /about-the-ico/media-centre/news-and-blogs/$
+    max_links: 80
+
+  - name: Open Banking news
+    url: https://www.openbanking.org.uk/news/
+    kind: ecosystem
+    allowed_domains: [openbanking.org.uk]
+    link_contains:
+      - /news/
     max_links: 80
 
   - name: Raidiam insights
