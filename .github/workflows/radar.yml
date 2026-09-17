@@ -91,12 +91,12 @@ jobs:
 
       - name: Run radar
         env:
-          SEARCH_BACKEND: google_news
+          SEARCH_BACKEND: multi
           LLM_BACKEND: ollama
           OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'qwen2.5:3b-instruct' }}
           RADAR_ANALYSE_LIMIT: ${{ steps.cadence.outputs.mode == 'weekly' && '8' || '12' }}
-          RADAR_ANALYSIS_ATTEMPTS: '18'
-          RADAR_CANDIDATE_LIMIT: '160'
+          RADAR_ANALYSIS_ATTEMPTS: '24'
+          RADAR_CANDIDATE_LIMIT: '200'
           RADAR_RESULTS_PER_QUERY: '10'
           RADAR_MIN_SCORE: '30'
           RADAR_CONTENT_QUALITY: '45'
