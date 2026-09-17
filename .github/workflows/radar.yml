@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/radar.yml'
+      - 'src/**'
+      - 'config/**'
+      - 'pyproject.toml'
   workflow_dispatch:
     inputs:
       mode:
@@ -32,7 +35,8 @@ jobs:
     timeout-minutes: 55
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
       - name: Select mode
         id: cadence
@@ -41,57 +45,41 @@ jobs:
           MANUAL_MODE: ${{ inputs.mode }}
           SCHEDULE: ${{ github.event.schedule }}
         run: |
-          if [ -n "$MANUAL_MODE" ]; then MODE="$MANUAL_MODE";
-          elif [ "$SCHEDULE" = "30 7 1 * *" ]; then MODE="monthly";
-          else MODE="weekly"; fi
+          if [ -n "$MANUAL_MODE" ]; then
+            MODE="$MANUAL_MODE"
+          elif [ "$SCHEDULE" = "30 7 1 * *" ]; then
+            MODE="monthly"
+          else
+            MODE="weekly"
+          fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "Selected mode: $MODE"
 
-      - name: Install v5.3 balanced-source engine
-        shell: bash
-        run: |
-          python - <<'PY'
-          import base64
-          from pathlib import Path
-          files = {
-            "src/smart_data_radar/quality.py": "ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgQ291bnRlcgpmcm9tIHVybGxpYi5wYXJzZSBpbXBvcnQgdXJsc3BsaXQKZnJvbSAubW9kZWxzIGltcG9ydCBBcnRpY2xlCmZyb20gLnV0aWxzIGltcG9ydCBkb21haW5fb2YKCkJBRF9QQVRIUyA9ICgKICAgICIvZ292ZXJubWVudC9vcmdhbmlzYXRpb25zLyIsCiAgICAiL2dvdmVybm1lbnQvY29sbGVjdGlvbnMvIiwKICAgICIvYWJvdXQvIiwKICAgICIvY29udGFjdCIsCiAgICAiL2NhcmVlcnMiLAogICAgIi9zZWFyY2giLAogICAgIi9zaXRlbWFwIiwKKQoKR0VORVJJQ19USVRMRVMgPSB7CiAgICAiZGVwYXJ0bWVudCBmb3IgYnVzaW5lc3MgYW5kIHRyYWRlIiwKICAgICJnb3Zlcm5tZW50IGRpZ2l0YWwgc2VydmljZSIsCiAgICAiZmluYW5jaWFsIGNvbmR1Y3QgYXV0aG9yaXR5IiwKICAgICJjcmVhdGluZyBhIHNtYXJ0IGRhdGEgZWNvbm9teSIsCiAgICAiZ292LnVrIiwKICAgICJyYWlkaWFtIiwKfQoKZGVmIGlzX2h1YihhcnRpY2xlOiBBcnRpY2xlKSAtPiBib29sOgogICAgdXJsID0gKGFydGljbGUuY2Fub25pY2FsX3VybCBvciBhcnRpY2xlLnVybCBvciAiIikubG93ZXIoKQogICAgdGl0bGUgPSAoYXJ0aWNsZS50aXRsZSBvciAiIikuc3RyaXAoKS5sb3dlcigpCiAgICBwYXRoID0gdXJsc3BsaXQodXJsKS5wYXRoLmxvd2VyKCkKICAgIGlmIHRpdGxlIGluIEdFTkVSSUNfVElUTEVTOgogICAgICAgIHJldHVybiBUcnVlCiAgICBpZiBhbnkocCBpbiBwYXRoIGZvciBwIGluIEJBRF9QQVRIUyk6CiAgICAgICAgcmV0dXJuIFRydWUKICAgIHJldHVybiBGYWxzZQoKZGVmIGNvbnRlbnRfcXVhbGl0eShhcnRpY2xlOiBBcnRpY2xlKSAtPiBmbG9hdDoKICAgIGlmIGlzX2h1YihhcnRpY2xlKToKICAgICAgICByZXR1cm4gMC4wCiAgICBzY29yZSA9IDIwLjAKICAgIGlmIGFydGljbGUucHVibGlzaGVkX2F0OgogICAgICAgIHNjb3JlICs9IDE4CiAgICBpZiAyMCA8PSBsZW4oYXJ0aWNsZS50aXRsZSBvciAiIikgPD0gMTkwOgogICAgICAgIHNjb3JlICs9IDEyCiAgICB0ZXh0X2xlbiA9IGxlbihhcnRpY2xlLnRleHQgb3IgIiIpCiAgICBzbmlwcGV0X2xlbiA9IGxlbihhcnRpY2xlLnNuaXBwZXQgb3IgIiIpCiAgICBpZiB0ZXh0X2xlbiA+PSAxMDAwOgogICAgICAgIHNjb3JlICs9IDI4CiAgICBlbGlmIHRleHRfbGVuID49IDUwMDoKICAgICAgICBzY29yZSArPSAyMAogICAgZWxpZiB0ZXh0X2xlbiA+PSAxODA6CiAgICAgICAgc2NvcmUgKz0gMTAKICAgIGlmIHNuaXBwZXRfbGVuID49IDgwOgogICAgICAgIHNjb3JlICs9IDgKICAgIGlmIGFydGljbGUuZGlzY292ZXJ5X21ldGhvZC5zdGFydHN3aXRoKCJnb29nbGVfbmV3czoiKToKICAgICAgICBzY29yZSArPSA4CiAgICBpZiAiL2luc2lnaHRzLyIgaW4gKGFydGljbGUuY2Fub25pY2FsX3VybCBvciBhcnRpY2xlLnVybCBvciAiIik6CiAgICAgICAgc2NvcmUgKz0gOAogICAgcmV0dXJuIG1heCgwLjAsIG1pbigxMDAuMCwgc2NvcmUpKQoKZGVmIGlzX3N0cmF0ZWdpY193YXRjaChhcnRpY2xlOiBBcnRpY2xlKSAtPiBib29sOgogICAgZG9tYWluID0gZG9tYWluX29mKGFydGljbGUuY2Fub25pY2FsX3VybCBvciBhcnRpY2xlLnVybCkKICAgIHRleHQgPSAiICIuam9pbihbCiAgICAgICAgYXJ0aWNsZS50aXRsZSBvciAiIiwKICAgICAgICBhcnRpY2xlLmF1dGhvciBvciAiIiwKICAgICAgICBhcnRpY2xlLnNuaXBwZXQgb3IgIiIsCiAgICAgICAgYXJ0aWNsZS50ZXh0WzoxNTAwXSBpZiBhcnRpY2xlLnRleHQgZWxzZSAiIiwKICAgIF0pLmxvd2VyKCkKICAgIGlmIGRvbWFpbiA9PSAicmFpZGlhbS5jb20iIGFuZCAoInNtYXJ0IGRhdGEiIGluIHRleHQgb3IgIm9wZW4gZmluYW5jZSIgaW4gdGV4dCBvciAibWFyaWUgd2Fsa2VyIiBpbiB0ZXh0KToKICAgICAgICByZXR1cm4gVHJ1ZQogICAgcmV0dXJuIEZhbHNlCgpkZWYgc2VsZWN0X2RpdmVyc2UoYXJ0aWNsZXM6IGxpc3RbQXJ0aWNsZV0sICosIGxpbWl0OiBpbnQsIG1heF9nb3Z1azogaW50ID0gMiwgbWF4X3Blcl9kb21haW46IGludCA9IDMpIC0+IGxpc3RbQXJ0aWNsZV06CiAgICByYW5rZWQgPSBzb3J0ZWQoYXJ0aWNsZXMsIGtleT1sYW1iZGEgYTogKGEuaGV1cmlzdGljX3Njb3JlLCBjb250ZW50X3F1YWxpdHkoYSkpLCByZXZlcnNlPVRydWUpCiAgICBjaG9zZW46IGxpc3RbQXJ0aWNsZV0gPSBbXQogICAgY291bnRzID0gQ291bnRlcigpCiAgICBnb3ZfY291bnQgPSAwCgogICAgcmFpZGlhbSA9IFsKICAgICAgICBhIGZvciBhIGluIHJhbmtlZAogICAgICAgIGlmIGRvbWFpbl9vZihhLmNhbm9uaWNhbF91cmwgb3IgYS51cmwpID09ICJyYWlkaWFtLmNvbSIKICAgICAgICBhbmQgY29udGVudF9xdWFsaXR5KGEpID49IDQ1CiAgICBdCiAgICBpZiByYWlkaWFtOgogICAgICAgIGNob3Nlbi5hcHBlbmQocmFpZGlhbVswXSkKICAgICAgICBjb3VudHNbInJhaWRpYW0uY29tIl0gKz0gMQoKICAgIGZvciBhIGluIHJhbmtlZDoKICAgICAgICBpZiBhIGluIGNob3NlbjoKICAgICAgICAgICAgY29udGludWUKICAgICAgICBkb21haW4gPSBkb21haW5fb2YoYS5jYW5vbmljYWxfdXJsIG9yIGEudXJsKQogICAgICAgIGlmIGNvdW50c1tkb21haW5dID49IG1heF9wZXJfZG9tYWluOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGlzX2dvdiA9IGRvbWFpbiA9PSAiZ292LnVrIiBvciBkb21haW4uZW5kc3dpdGgoIi5nb3YudWsiKQogICAgICAgIGlmIGlzX2dvdiBhbmQgZ292X2NvdW50ID49IG1heF9nb3Z1azoKICAgICAgICAgICAgY29udGludWUKICAgICAgICBjaG9zZW4uYXBwZW5kKGEpCiAgICAgICAgY291bnRzW2RvbWFpbl0gKz0gMQogICAgICAgIGlmIGlzX2dvdjoKICAgICAgICAgICAgZ292X2NvdW50ICs9IDEKICAgICAgICBpZiBsZW4oY2hvc2VuKSA+PSBsaW1pdDoKICAgICAgICAgICAgYnJlYWsKICAgIHJldHVybiBjaG9zZW5bOmxpbWl0XQo=",
-            "src/smart_data_radar/cli.py": "ZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IG9zCmZyb20gZGF0ZXRpbWUgaW1wb3J0IHRpbWVkZWx0YSwgdGltZXpvbmUKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCB0eXBlcgoKZnJvbSAuY29uZmlnIGltcG9ydCBsb2FkX2RlZmF1bHRfY29uZmlnCmZyb20gLmRlZHVwZSBpbXBvcnQgZGVkdXBlX2FydGljbGVzLCBkZWR1cGVfY2FuZGlkYXRlcwpmcm9tIC5kaWdlc3QgaW1wb3J0IHdyaXRlX291dHB1dHMKZnJvbSAuZGlzY292ZXIgaW1wb3J0IGRpc2NvdmVyX2luZGV4X3NvdXJjZXMsIGRpc2NvdmVyX3NlYXJjaApmcm9tIC5leHRyYWN0IGltcG9ydCBSb2JvdHNDYWNoZSwgZXh0cmFjdF9jYW5kaWRhdGUKZnJvbSAubGxtIGltcG9ydCBhbmFseXNlX2FydGljbGUsIGFuYWx5c2VfZGlnZXN0CmZyb20gLm1vZGVscyBpbXBvcnQgQW5hbHlzZWRBcnRpY2xlCmZyb20gLnByaW9yaXRpc2UgaW1wb3J0IGZpbmFsX3Jhbmtfc2NvcmUsIG5vcm1hbGlzZV9oYXNodGFncywgcHJpb3JpdHlfc2NvcmUKZnJvbSAucXVhbGl0eSBpbXBvcnQgY29udGVudF9xdWFsaXR5LCBpc19odWIsIGlzX3N0cmF0ZWdpY193YXRjaCwgc2VsZWN0X2RpdmVyc2UKZnJvbSAuc2NvcmUgaW1wb3J0IGhldXJpc3RpY19zY29yZQpmcm9tIC5zdG9yYWdlIGltcG9ydCBTdG9yZQpmcm9tIC51dGlscyBpbXBvcnQgdXRjbm93CgphcHAgPSB0eXBlci5UeXBlcihhZGRfY29tcGxldGlvbj1GYWxzZSwgaGVscD0iU21hcnQgRGF0YSAmIEFJIG5ld3MgaW50ZWxsaWdlbmNlIHJhZGFyIikKCmRlZiBzdWJzdGFudGl2ZShhbmFseXNpcykgLT4gYm9vbDoKICAgIHN3b3RfbiA9IHN1bShsZW4oZ2V0YXR0cihhbmFseXNpcy5zd290LCBrKSkgZm9yIGsgaW4gKCJzdHJlbmd0aHMiLCJ3ZWFrbmVzc2VzIiwib3Bwb3J0dW5pdGllcyIsInRocmVhdHMiKSkKICAgIHJldHVybiAoCiAgICAgICAgbGVuKChhbmFseXNpcy5ib3R0b21fbGluZSBvciAiIikuc3RyaXAoKSkgPj0gMzUKICAgICAgICBhbmQgbGVuKChhbmFseXNpcy5nb3Zlcm5tZW50X3NtYXJ0X2RhdGFfcGVyc3BlY3RpdmUgb3IgIiIpLnN0cmlwKCkpID49IDU1CiAgICAgICAgYW5kIHN3b3RfbiA+PSAxCiAgICAgICAgYW5kIGxlbihhbmFseXNpcy5wb2xpY3lfb3JfbWFya2V0X2ltcGxpY2F0aW9ucykgPj0gMQogICAgKQoKQGFwcC5jb21tYW5kKCkKZGVmIHJ1bigKICAgIG1vZGU6IHN0ciA9IHR5cGVyLk9wdGlvbigid2Vla2x5IiksCiAgICBkYXlzOiBpbnQgfCBOb25lID0gdHlwZXIuT3B0aW9uKE5vbmUpLAogICAgY2FuZGlkYXRlX2xpbWl0OiBpbnQgPSB0eXBlci5PcHRpb24oaW50KG9zLmdldGVudigiUkFEQVJfQ0FORElEQVRFX0xJTUlUIiwgIjE0MCIpKSksCiAgICBhbmFseXNlX2xpbWl0OiBpbnQgfCBOb25lID0gdHlwZXIuT3B0aW9uKE5vbmUpLAogICAgbWluX3Njb3JlOiBmbG9hdCA9IHR5cGVyLk9wdGlvbihmbG9hdChvcy5nZXRlbnYoIlJBREFSX01JTl9TQ09SRSIsICIyOCIpKSksCiAgICBiYWNrZW5kOiBzdHIgPSB0eXBlci5PcHRpb24ob3MuZ2V0ZW52KCJTRUFSQ0hfQkFDS0VORCIsICJnb29nbGVfbmV3cyIpKSwKICAgIGRiOiBQYXRoID0gdHlwZXIuT3B0aW9uKFBhdGgoInJhZGFyLmRiIikpLAogICAgb3V0X2RpcjogUGF0aCA9IHR5cGVyLk9wdGlvbihQYXRoKCJvdXRwdXQiKSksCiAgICBub19sbG06IGJvb2wgPSB0eXBlci5PcHRpb24oRmFsc2UpLAogICAgbm9fc3ludGhlc2lzOiBib29sID0gdHlwZXIuT3B0aW9uKEZhbHNlKSwKKSAtPiBOb25lOgogICAgaWYgbW9kZSBub3QgaW4geyJ3ZWVrbHkiLCAibW9udGhseSJ9OgogICAgICAgIHJhaXNlIHR5cGVyLkJhZFBhcmFtZXRlcigiLS1tb2RlIG11c3QgYmUgd2Vla2x5IG9yIG1vbnRobHkiKQoKICAgIHByb2ZpbGUsIHNvdXJjZXMgPSBsb2FkX2RlZmF1bHRfY29uZmlnKCkKICAgIGRheXMgPSBkYXlzIGlmIGRheXMgaXMgbm90IE5vbmUgZWxzZSAoNyBpZiBtb2RlID09ICJ3ZWVrbHkiIGVsc2UgMzApCiAgICB0YXJnZXQgPSBpbnQob3MuZ2V0ZW52KCJSQURBUl9NSU5fV0VFS0xZX0lURU1TIiwgIjciKSkgaWYgbW9kZSA9PSAid2Vla2x5IiBlbHNlIDEwCiAgICBkZXNpcmVkID0gaW50KG9zLmdldGVudigiUkFEQVJfQU5BTFlTRV9MSU1JVCIsICIxMCIpKSBpZiBhbmFseXNlX2xpbWl0IGlzIE5vbmUgZWxzZSBhbmFseXNlX2xpbWl0CiAgICBkZXNpcmVkID0gbWF4KHRhcmdldCwgZGVzaXJlZCkKICAgIGF0dGVtcHRzID0gbWF4KGRlc2lyZWQsIGludChvcy5nZXRlbnYoIlJBREFSX0FOQUxZU0lTX0FUVEVNUFRTIiwgIjI0IikpKQogICAgcGVyX3F1ZXJ5ID0gaW50KG9zLmdldGVudigiUkFEQVJfUkVTVUxUU19QRVJfUVVFUlkiLCAiMTIiKSkKCiAgICB0eXBlci5lY2hvKGYiTW9kZToge21vZGV9IMK3IHdpbmRvdzoge2RheXN9IGRheXMgwrcgdGFyZ2V0OiB7dGFyZ2V0fSIpCgogICAgY2FuZGlkYXRlcyA9IFtdCiAgICB0cnk6CiAgICAgICAgY2FuZGlkYXRlcy5leHRlbmQoZGlzY292ZXJfc2VhcmNoKHByb2ZpbGUsIGJhY2tlbmQ9YmFja2VuZCwgcGVyX3F1ZXJ5PXBlcl9xdWVyeSwgZGF5cz1kYXlzKSkKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOgogICAgICAgIHR5cGVyLmVjaG8oZiJTZWFyY2ggZGlzY292ZXJ5IHdhcm5pbmc6IHtleGN9IikKICAgIGNhbmRpZGF0ZXMuZXh0ZW5kKGRpc2NvdmVyX2luZGV4X3NvdXJjZXMoc291cmNlcykpCiAgICBjYW5kaWRhdGVzID0gZGVkdXBlX2NhbmRpZGF0ZXMoY2FuZGlkYXRlcykKICAgIHR5cGVyLmVjaG8oZiJEaXNjb3ZlcmVkIHtsZW4oY2FuZGlkYXRlcyl9IHVuaXF1ZSBjYW5kaWRhdGVzIikKCiAgICBjdXRvZmYgPSB1dGNub3coKSAtIHRpbWVkZWx0YShkYXlzPWRheXMpCiAgICByb2JvdHMgPSBSb2JvdHNDYWNoZSgpCiAgICByZWNlbnQ6IGxpc3QgPSBbXQogICAgc3RyYXRlZ2ljOiBsaXN0ID0gW10KCiAgICBmb3IgYyBpbiBjYW5kaWRhdGVzOgogICAgICAgIHRyeToKICAgICAgICAgICAgYSA9IGV4dHJhY3RfY2FuZGlkYXRlKGMsIHJvYm90cykKICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGlmIGlzX2h1YihhKToKICAgICAgICAgICAgY29udGludWUKICAgICAgICBxID0gY29udGVudF9xdWFsaXR5KGEpCiAgICAgICAgaWYgcSA8IDMyOgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHNjb3JlLCBtYXRjaGVkID0gaGV1cmlzdGljX3Njb3JlKGEsIHByb2ZpbGUsIHNvdXJjZXMpCiAgICAgICAgYS5oZXVyaXN0aWNfc2NvcmUgPSBzY29yZQogICAgICAgIGEubWF0Y2hlZF90ZXJtcyA9IG1hdGNoZWQKICAgICAgICBpZiBzY29yZSA8IG1pbl9zY29yZToKICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgcHViID0gYS5wdWJsaXNoZWRfYXQKICAgICAgICBpZiBwdWIgYW5kIHB1Yi50emluZm8gaXMgTm9uZToKICAgICAgICAgICAgcHViID0gcHViLnJlcGxhY2UodHppbmZvPXRpbWV6b25lLnV0YykKCiAgICAgICAgaWYgcHViIGFuZCBwdWIgPj0gY3V0b2ZmOgogICAgICAgICAgICByZWNlbnQuYXBwZW5kKGEpCiAgICAgICAgZWxpZiBpc19zdHJhdGVnaWNfd2F0Y2goYSkgYW5kIHNjb3JlID49IDQ1IGFuZCBxID49IDQ1OgogICAgICAgICAgICBzdHJhdGVnaWMuYXBwZW5kKGEpCgogICAgcmVjZW50ID0gZGVkdXBlX2FydGljbGVzKHJlY2VudClbOmNhbmRpZGF0ZV9saW1pdF0KICAgIHN0cmF0ZWdpYyA9IGRlZHVwZV9hcnRpY2xlcyhzdHJhdGVnaWMpWzoyMF0KCiAgICBwb29sID0gc2VsZWN0X2RpdmVyc2UocmVjZW50LCBsaW1pdD1tYXgoYXR0ZW1wdHMsIHRhcmdldCksIG1heF9nb3Z1az0yLCBtYXhfcGVyX2RvbWFpbj0zKQogICAgaWYgbW9kZSA9PSAid2Vla2x5IiBhbmQgc3RyYXRlZ2ljOgogICAgICAgIGFscmVhZHkgPSB7YS5jYW5vbmljYWxfdXJsIGZvciBhIGluIHBvb2x9CiAgICAgICAgZm9yIGEgaW4gc3RyYXRlZ2ljOgogICAgICAgICAgICBpZiBhLmNhbm9uaWNhbF91cmwgbm90IGluIGFscmVhZHk6CiAgICAgICAgICAgICAgICBhLm1hdGNoZWRfdGVybXMgPSBsaXN0KGRpY3QuZnJvbWtleXMoYS5tYXRjaGVkX3Rlcm1zICsgWyJzdHJhdGVnaWNfd2F0Y2hsaXN0Il0pKQogICAgICAgICAgICAgICAgcG9vbC5hcHBlbmQoYSkKICAgICAgICAgICAgICAgIGFscmVhZHkuYWRkKGEuY2Fub25pY2FsX3VybCkKICAgICAgICAgICAgaWYgc3VtKCJzdHJhdGVnaWNfd2F0Y2hsaXN0IiBpbiB4Lm1hdGNoZWRfdGVybXMgZm9yIHggaW4gcG9vbCkgPj0gMjoKICAgICAgICAgICAgICAgIGJyZWFrCgogICAgcG9vbCA9IHNlbGVjdF9kaXZlcnNlKHBvb2wsIGxpbWl0PW1pbihsZW4ocG9vbCksIGF0dGVtcHRzKSwgbWF4X2dvdnVrPTIsIG1heF9wZXJfZG9tYWluPTMpCiAgICB0eXBlci5lY2hvKGYiU2VsZWN0ZWQge2xlbihwb29sKX0gY2FuZGlkYXRlcyBmb3IgYW5hbHlzaXM6IHtsZW4ocmVjZW50KX0gcmVjZW50LCB7bGVuKHN0cmF0ZWdpYyl9IHN0cmF0ZWdpYy13YXRjaCBjYW5kaWRhdGVzIikKCiAgICBzdG9yZSA9IFN0b3JlKGRiKQogICAgZm9yIGEgaW4gcG9vbDoKICAgICAgICBzdG9yZS5zYXZlX2FydGljbGUoYSkKCiAgICBpZiBub19sbG06CiAgICAgICAgc3RvcmUuY2xvc2UoKQogICAgICAgIHJldHVybgoKICAgIGFuYWx5c2VkOiBsaXN0W0FuYWx5c2VkQXJ0aWNsZV0gPSBbXQogICAgZm9yIGEgaW4gcG9vbDoKICAgICAgICBpZiBsZW4oYW5hbHlzZWQpID49IGRlc2lyZWQ6CiAgICAgICAgICAgIGJyZWFrCiAgICAgICAgdHJ5OgogICAgICAgICAgICBhbmFseXNpcyA9IGFuYWx5c2VfYXJ0aWNsZShhLCBwcm9maWxlLCBtb2RlPW1vZGUpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBleGM6CiAgICAgICAgICAgIHR5cGVyLmVjaG8oZiJMTE0gc2tpcDoge2EudGl0bGVbOjcyXX0gKHtleGN9KSIpCiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgaWYgbm90IHN1YnN0YW50aXZlKGFuYWx5c2lzKToKICAgICAgICAgICAgdHlwZXIuZWNobyhmIkFuYWx5c2lzIHJlamVjdDoge2EudGl0bGVbOjcyXX0iKQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICBpZiAic3RyYXRlZ2ljX3dhdGNobGlzdCIgaW4gYS5tYXRjaGVkX3Rlcm1zOgogICAgICAgICAgICBpZiBub3QgYW5hbHlzaXMuYm90dG9tX2xpbmUuc3RhcnRzd2l0aCgiU3RyYXRlZ2ljIHdhdGNobGlzdCDigJQgIik6CiAgICAgICAgICAgICAgICBhbmFseXNpcy5ib3R0b21fbGluZSA9ICJTdHJhdGVnaWMgd2F0Y2hsaXN0IOKAlCAiICsgYW5hbHlzaXMuYm90dG9tX2xpbmUKICAgICAgICAgICAgYW5hbHlzaXMuaGFzaHRhZ3MgPSBsaXN0KGRpY3QuZnJvbWtleXMoWyIjU3RyYXRlZ2ljIiwgIiNNb25pdG9yIl0gKyBhbmFseXNpcy5oYXNodGFncykpCgogICAgICAgIGFuYWx5c2lzLmhhc2h0YWdzID0gbm9ybWFsaXNlX2hhc2h0YWdzKGFuYWx5c2lzLCBhLm1hdGNoZWRfdGVybXMpCiAgICAgICAgcHMgPSBwcmlvcml0eV9zY29yZShhbmFseXNpcywgbW9kZSkKICAgICAgICBmcyA9IGZpbmFsX3Jhbmtfc2NvcmUoaGV1cmlzdGljPWEuaGV1cmlzdGljX3Njb3JlLCByZWxldmFuY2U9YW5hbHlzaXMucmVsZXZhbmNlX3Njb3JlLCBwcmlvcml0eT1wcykKICAgICAgICBpdGVtID0gQW5hbHlzZWRBcnRpY2xlKGFydGljbGU9YSwgYW5hbHlzaXM9YW5hbHlzaXMsIGZpbmFsX3Njb3JlPWZzLCBwcmlvcml0eV9zY29yZT1wcywgbW9kZT1tb2RlKQogICAgICAgIGFuYWx5c2VkLmFwcGVuZChpdGVtKQogICAgICAgIHN0b3JlLnNhdmVfYW5hbHlzaXMoaXRlbSkKCiAgICBhbmFseXNlZC5zb3J0KGtleT1sYW1iZGEgeDogeC5maW5hbF9zY29yZSwgcmV2ZXJzZT1UcnVlKQoKICAgIHN5bnRoZXNpcyA9IE5vbmUKICAgIGlmIGFuYWx5c2VkIGFuZCBub3Qgbm9fc3ludGhlc2lzOgogICAgICAgIHRyeToKICAgICAgICAgICAgc3ludGhlc2lzID0gYW5hbHlzZV9kaWdlc3QoWwogICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICJ0aXRsZSI6IGkuYXJ0aWNsZS50aXRsZSwKICAgICAgICAgICAgICAgICAgICAic291cmNlIjogaS5hcnRpY2xlLnNvdXJjZV9uYW1lLAogICAgICAgICAgICAgICAgICAgICJwcmlvcml0eV9zY29yZSI6IGkucHJpb3JpdHlfc2NvcmUsCiAgICAgICAgICAgICAgICAgICAgImJvdHRvbV9saW5lIjogaS5hbmFseXNpcy5ib3R0b21fbGluZSwKICAgICAgICAgICAgICAgICAgICAid2h5X2l0X21hdHRlcnMiOiBpLmFuYWx5c2lzLmdvdmVybm1lbnRfc21hcnRfZGF0YV9wZXJzcGVjdGl2ZSwKICAgICAgICAgICAgICAgICAgICAiaGFzaHRhZ3MiOiBpLmFuYWx5c2lzLmhhc2h0YWdzLAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZm9yIGkgaW4gYW5hbHlzZWQKICAgICAgICAgICAgXSwgbW9kZT1tb2RlKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOgogICAgICAgICAgICB0eXBlci5lY2hvKGYiU3ludGhlc2lzIHdhcm5pbmc6IHtleGN9IikKCiAgICBzdG9yZS5jbG9zZSgpCiAgICBtZCwganMsIGh0ID0gd3JpdGVfb3V0cHV0cyhhbmFseXNlZCwgb3V0X2Rpciwgc3ludGhlc2lzLCBtb2RlPW1vZGUpCiAgICB0eXBlci5lY2hvKGYiV3JvdGUge21kfSwge2pzfSBhbmQge2h0fSB3aXRoIHtsZW4oYW5hbHlzZWQpfSByYW5rZWQgaXRlbXMiKQoKQGFwcC5jb21tYW5kKCJzaG93LXByb2ZpbGUiKQpkZWYgc2hvd19wcm9maWxlKCkgLT4gTm9uZToKICAgIHByb2ZpbGUsIF8gPSBsb2FkX2RlZmF1bHRfY29uZmlnKCkKICAgIHR5cGVyLmVjaG8ocHJvZmlsZS5nZXQoIm1pc3Npb24iLCAiIikpCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgYXBwKCkK",
-            "config/sources.yml": "c291cmNlX2Jvb3N0czoKICBnb3YudWs6IDUKICBmY2Eub3JnLnVrOiAxMQogIGJhbmtvZmVuZ2xhbmQuY28udWs6IDkKICBjbWEuZ292LnVrOiAxMAogIGljby5vcmcudWs6IDEwCiAgb2ZnZW0uZ292LnVrOiAxMAogIG9mY29tLm9yZy51azogOAogIG9wZW5iYW5raW5nLm9yZy51azogOAogIGNmaXQub3JnLnVrOiA4CiAgcmFpZGlhbS5jb206IDkKICBvcGVuZmluYW5jZS5vcmcudWs6IDcKICBvZWNkLm9yZzogNwoKcGVyc29uX2Jvb3N0czoKICAibWFyaWUgd2Fsa2VyIjogMTUKCmluZGV4X3NvdXJjZXM6CiAgLSBuYW1lOiBVSyBTbWFydCBEYXRhIGNvbGxlY3Rpb24KICAgIHVybDogaHR0cHM6Ly93d3cuZ292LnVrL2dvdmVybm1lbnQvY29sbGVjdGlvbnMvY3JlYXRpbmctYS1zbWFydC1kYXRhLWVjb25vbXkKICAgIGtpbmQ6IG9mZmljaWFsX2NvbGxlY3Rpb24KICAgIGFsbG93ZWRfZG9tYWluczogW2dvdi51a10KICAgIGxpbmtfY29udGFpbnM6CiAgICAgIC0gL2dvdmVybm1lbnQvcHVibGljYXRpb25zLwogICAgICAtIC9nb3Zlcm5tZW50L2NvbnN1bHRhdGlvbnMvCiAgICAgIC0gL2dvdmVybm1lbnQvY2FsbHMtZm9yLWV2aWRlbmNlLwogICAgICAtIC9nb3Zlcm5tZW50L25ld3MvCiAgICAgIC0gL2dvdmVybm1lbnQvc3BlZWNoZXMvCiAgICBleGNsdWRlX2xpbmtfY29udGFpbnM6CiAgICAgIC0gL2dvdmVybm1lbnQvb3JnYW5pc2F0aW9ucy8KICAgICAgLSAvZ292ZXJubWVudC9jb2xsZWN0aW9ucy8KICAgIG1heF9saW5rczogODAKCiAgLSBuYW1lOiBSYWlkaWFtIGluc2lnaHRzCiAgICB1cmw6IGh0dHBzOi8vd3d3LnJhaWRpYW0uY29tL2luc2lnaHRzCiAgICBraW5kOiBzdHJhdGVnaWNfbW9uaXRvcgogICAgYWxsb3dlZF9kb21haW5zOiBbcmFpZGlhbS5jb21dCiAgICBsaW5rX2NvbnRhaW5zOiBbL2luc2lnaHRzL10KICAgIG1heF9saW5rczogMTAwCgogIC0gbmFtZTogUmFpZGlhbSBuZXdzIGFuZCBpbnNpZ2h0cwogICAgdXJsOiBodHRwczovL3d3dy5yYWlkaWFtLmNvbS9yZXNvdXJjZXMvbmV3cy1pbnNpZ2h0cwogICAga2luZDogc3RyYXRlZ2ljX21vbml0b3IKICAgIGFsbG93ZWRfZG9tYWluczogW3JhaWRpYW0uY29tXQogICAgbGlua19jb250YWluczogWy9pbnNpZ2h0cy9dCiAgICBtYXhfbGlua3M6IDEwMAoKcHJpb3JpdHlfZG9tYWluczoKICAtIGZjYS5vcmcudWsKICAtIGNtYS5nb3YudWsKICAtIGljby5vcmcudWsKICAtIG9mZ2VtLmdvdi51awogIC0gb2Zjb20ub3JnLnVrCiAgLSBiYW5rb2ZlbmdsYW5kLmNvLnVrCiAgLSBjZml0Lm9yZy51awogIC0gb3BlbmJhbmtpbmcub3JnLnVrCiAgLSByYWlkaWFtLmNvbQogIC0gZ292LnVrCiAgLSBvZWNkLm9yZwogIC0gZXVyb3BhLmV1CiAgLSBlYy5ldXJvcGEuZXUK",
-          }
-          for name, payload in files.items():
-              p = Path(name)
-              p.parent.mkdir(parents=True, exist_ok=True)
-              p.write_bytes(base64.b64decode(payload))
-          PY
-
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
 
-      - name: Install scanner
+      - name: Install scanner and tests
         run: pip install -e '.[dev]'
 
-      - name: Commit engine upgrade first
-        shell: bash
-        run: |
-          git config user.name 'smart-data-ai-radar[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/smart_data_radar/cli.py src/smart_data_radar/quality.py config/sources.yml
-          git diff --cached --quiet || git commit -m "feat: v5.3 balanced source selection"
-          git push
+      - name: Run automated tests
+        run: pytest -q
 
       - name: Install Ollama
         run: curl -fsSL https://ollama.com/install.sh | sh
 
-      - uses: actions/cache@v4
+      - name: Cache Ollama model
+        uses: actions/cache@v4
         with:
           path: ~/.ollama/models
-          key: ollama-qwen2.5-1.5b-instruct-v1
+          key: ollama-qwen2.5-3b-instruct-v1
 
       - name: Start Ollama
         shell: bash
         env:
-          OLLAMA_MODEL: qwen2.5:1.5b-instruct
+          OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'qwen2.5:3b-instruct' }}
         run: |
           ollama serve > /tmp/ollama.log 2>&1 &
           for i in {1..30}; do
@@ -104,41 +92,60 @@ jobs:
         env:
           SEARCH_BACKEND: google_news
           LLM_BACKEND: ollama
-          OLLAMA_MODEL: qwen2.5:1.5b-instruct
-          RADAR_MIN_WEEKLY_ITEMS: 7
-          RADAR_ANALYSE_LIMIT: 10
-          RADAR_ANALYSIS_ATTEMPTS: 24
-          RADAR_CANDIDATE_LIMIT: 140
-          RADAR_RESULTS_PER_QUERY: 12
-          RADAR_MIN_SCORE: 28
-          RADAR_LLM_ARTICLE_CHARS: 2200
-          OLLAMA_TIMEOUT_SECONDS: 90
-          OLLAMA_NUM_CTX: 3072
-          OLLAMA_NUM_PREDICT: 560
+          OLLAMA_MODEL: ${{ vars.OLLAMA_MODEL || 'qwen2.5:3b-instruct' }}
+          RADAR_ANALYSE_LIMIT: ${{ steps.cadence.outputs.mode == 'weekly' && '8' || '12' }}
+          RADAR_ANALYSIS_ATTEMPTS: '18'
+          RADAR_CANDIDATE_LIMIT: '160'
+          RADAR_RESULTS_PER_QUERY: '10'
+          RADAR_MIN_SCORE: '30'
+          RADAR_CONTENT_QUALITY: '45'
+          RADAR_LLM_ARTICLE_CHARS: '3600'
+          OLLAMA_TIMEOUT_SECONDS: '240'
+          OLLAMA_NUM_CTX: '6144'
+          OLLAMA_NUM_PREDICT: '1500'
+          OLLAMA_NUM_PREDICT_RETRY: '2100'
         run: smart-data-radar run --mode "${{ steps.cadence.outputs.mode }}" --out-dir output
 
       - name: Quality check
-        if: steps.cadence.outputs.mode == 'weekly'
         shell: bash
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          data = json.loads(Path("output/weekly-latest.json").read_text())
+          from urllib.parse import urlsplit
+
+          mode = "${{ steps.cadence.outputs.mode }}"
+          path = Path(f"output/{mode}-latest.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
           items = data.get("articles", [])
-          print("Weekly ranked items:", len(items))
-          if len(items) < 7:
-              raise SystemExit("Fewer than 7 usable items; keeping previous published briefing.")
-          banned = ("/government/organisations/", "/government/collections/")
-          for x in items:
-              u = x.get("article", {}).get("canonical_url", "")
-              if any(b in u for b in banned):
-                  raise SystemExit("Banned navigation page in output: " + u)
+          print(f"{mode.title()} ranked items: {len(items)}")
+
+          if not items:
+              raise SystemExit("No usable intelligence items were produced; previous briefing will be kept.")
+
+          banned = ("/government/organisations/", "/government/collections/", "/about/", "/contact")
+          domains = []
+          for row in items:
+              article = row.get("article", {})
+              url = article.get("canonical_url", "")
+              title = (article.get("title") or "").strip()
+              if not title or not url:
+                  raise SystemExit("Output item is missing a title or source link.")
+              if any(fragment in url for fragment in banned):
+                  raise SystemExit("Navigation/hub page leaked into briefing: " + url)
+              domains.append(urlsplit(url).netloc.lower())
+
+          if len(items) < 4 and mode == "weekly":
+              print("Quality warning: thin week. Publishing the shorter evidence-led briefing; no filler added.")
+          print("Source domains:", sorted(set(domains)))
           PY
 
       - name: Commit successful briefing
         shell: bash
         run: |
-          git add output
-          git diff --cached --quiet || git commit -m "update: ${{ steps.cadence.outputs.mode }} Smart Data AI briefing"
+          MODE="${{ steps.cadence.outputs.mode }}"
+          git config user.name 'smart-data-ai-radar[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "output/${MODE}-latest.md" "output/${MODE}-latest.json" "output/${MODE}-latest.html"
+          git diff --cached --quiet || git commit -m "chore: update ${MODE} Smart Data AI radar"
           git push
