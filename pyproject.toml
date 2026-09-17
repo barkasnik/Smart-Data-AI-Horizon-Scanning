@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "smart-data-ai-radar"
-version = "5.1.0"
+version = "5.4.0"
 description = "A visual, zero-cost-by-default UK Smart Data and AI horizon-scanning dashboard with weekly and monthly policy intelligence."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -33,4 +33,3 @@ packages = ["src/smart_data_radar"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-
