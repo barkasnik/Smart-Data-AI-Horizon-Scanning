@@ -20,5 +20,4 @@ def test_workflow_is_in_github_workflows_directory():
     assert "workflow_dispatch:" in text
     assert "weekly" in text
     assert "monthly" in text
-    assert "qwen2.5:1.5b-instruct" in text
-
+    assert "qwen2.5:3b-instruct" in text
