@@ -1,8 +1,81 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-17T04:33:03.985101+00:00",
+  "generated_at": "2026-09-17T04:39:46.154178+00:00",
   "synthesis": null,
   "articles": [
+    {
+      "article": {
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZsaUlqTHYzQldSWWNwa1ZvMjdZYWtsOWtTakdBUUcyRzNTRWJ2ZnNhSE5kclNRLU5MRnIxTndERjMzU3BzdWUyR0w2UjN6S2hfa18td0QtTDBPQUdFdTJxVi1ULWlqZkR0dWEwRzJmZVRCNURtajF4VjF3bHRJSXlITWhkbS1BcE9JX25fRUpfMFhCckJFRHM1akNGajRpcXh4TzdGTXRTMFB3SWYwNDFjX2VvMl9EOHI4N0NIYTZuRlE?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZsaUlqTHYzQldSWWNwa1ZvMjdZYWtsOWtTakdBUUcyRzNTRWJ2ZnNhSE5kclNRLU5MRnIxTndERjMzU3BzdWUyR0w2UjN6S2hfa18td0QtTDBPQUdFdTJxVi1ULWlqZkR0dWEwRzJmZVRCNURtajF4VjF3bHRJSXlITWhkbS1BcE9JX25fRUpfMFhCckJFRHM1akNGajRpcXh4TzdGTXRTMFB3SWYwNDFjX2VvMl9EOHI4N0NIYTZuRlE?oc=5",
+        "title": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework",
+        "source_name": "The Straits Times",
+        "author": "",
+        "published_at": "2026-09-10T04:40:00Z",
+        "discovered_at": "2026-09-17T04:37:06.340138Z",
+        "discovery_method": "google_news:AI trust framework",
+        "heuristic_score": 49.5,
+        "matched_terms": [
+          "AI",
+          "trust_identity",
+          "recent"
+        ]
+      },
+      "analysis": {
+        "relevance_score": 49,
+        "relevance_tier": "high",
+        "primary_category": "AIxSmartData",
+        "bottom_line": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework is a relevant signal for AI-enabled services, consent, identity or trust, open finance and payments. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "The Straits Times reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, open finance and payments, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust, open finance and payments; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "pestle": {
+          "political": [],
+          "economic": [],
+          "social": [],
+          "technological": [],
+          "legal": [],
+          "environmental": []
+        },
+        "swot": {
+          "strengths": [],
+          "weaknesses": [],
+          "opportunities": [],
+          "threats": []
+        },
+        "priority": {
+          "urgency": 3,
+          "impact": 3,
+          "consequences": 2,
+          "policy_advancement": 2,
+          "opportunity": 2,
+          "monitoring_need": 5,
+          "strategic_significance": 3,
+          "implementation_risk": 2,
+          "novelty": 2,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, open finance and payments, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+        },
+        "policy_or_market_implications": [
+          "Verify the original source before drawing any UK policy or market implication."
+        ],
+        "key_claims": [],
+        "source_perspective": "Monitoring signal from The Straits Times; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "tensions_or_tradeoffs": [],
+        "follow_up_questions": [
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+        ],
+        "hashtags": [
+          "#Monitor",
+          "#TrustFramework"
+        ],
+        "tags": [],
+        "confidence": "low"
+      },
+      "final_score": 39.08,
+      "priority_score": 52.08,
+      "mode": "weekly"
+    },
     {
       "article": {
         "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcnlMeXFDMUtkN1Eyb3RIOEFobXhmd0Y3aHVPYjRmTEJ6amg0aFNnTkVEQ0ZlaUo1NmoxaGoxYUd2RzRsUU9WLTBQUXVoS0xCdU5Oc0NLYWVLZXc4TFJQYnJMVXVHbC11MldxVk0wTEtxUTVxUlNTY2E4V3V1a2xtSDBfelV3M0hGQmpPV0hhd19oal9LWjV3LVpUbW01US1zTFBtZjU0ZHJIdGRGUEV2M1Rwbl82cXN0ODdWSw?oc=5",
@@ -11,7 +84,7 @@
         "source_name": "Amazon Web Services (AWS)",
         "author": "",
         "published_at": "2026-09-14T20:35:45Z",
-        "discovered_at": "2026-09-17T04:29:58.158287Z",
+        "discovered_at": "2026-09-17T04:37:06.335593Z",
         "discovery_method": "google_news:agentic AI consent",
         "heuristic_score": 61.1,
         "matched_terms": [
@@ -51,8 +124,8 @@
           "policy_advancement": 2,
           "opportunity": 1,
           "monitoring_need": 4,
-          "strategic_significance": 2,
-          "implementation_risk": 1,
+          "strategic_significance": 3,
+          "implementation_risk": 2,
           "novelty": 3,
           "evidence_strength": 2,
           "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
@@ -74,81 +147,8 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 36.0,
-      "priority_score": 40.98,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZsaUlqTHYzQldSWWNwa1ZvMjdZYWtsOWtTakdBUUcyRzNTRWJ2ZnNhSE5kclNRLU5MRnIxTndERjMzU3BzdWUyR0w2UjN6S2hfa18td0QtTDBPQUdFdTJxVi1ULWlqZkR0dWEwRzJmZVRCNURtajF4VjF3bHRJSXlITWhkbS1BcE9JX25fRUpfMFhCckJFRHM1akNGajRpcXh4TzdGTXRTMFB3SWYwNDFjX2VvMl9EOHI4N0NIYTZuRlE?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZsaUlqTHYzQldSWWNwa1ZvMjdZYWtsOWtTakdBUUcyRzNTRWJ2ZnNhSE5kclNRLU5MRnIxTndERjMzU3BzdWUyR0w2UjN6S2hfa18td0QtTDBPQUdFdTJxVi1ULWlqZkR0dWEwRzJmZVRCNURtajF4VjF3bHRJSXlITWhkbS1BcE9JX25fRUpfMFhCckJFRHM1akNGajRpcXh4TzdGTXRTMFB3SWYwNDFjX2VvMl9EOHI4N0NIYTZuRlE?oc=5",
-        "title": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework",
-        "source_name": "The Straits Times",
-        "author": "",
-        "published_at": "2026-09-10T04:40:00Z",
-        "discovered_at": "2026-09-17T04:29:58.165389Z",
-        "discovery_method": "google_news:AI trust framework",
-        "heuristic_score": 49.5,
-        "matched_terms": [
-          "AI",
-          "trust_identity",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 49,
-        "relevance_tier": "high",
-        "primary_category": "AIxSmartData",
-        "bottom_line": "Payment firms Visa, Mastercard and Ant International team up on AI agent trust framework is a relevant signal for AI-enabled services, consent, identity or trust, open finance and payments. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "The Straits Times reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, open finance and payments, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust, open finance and payments; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 2,
-          "consequences": 1,
-          "policy_advancement": 2,
-          "opportunity": 1,
-          "monitoring_need": 4,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, open finance and payments, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from The Straits Times; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor",
-          "#TrustFramework"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 33.08,
-      "priority_score": 42.86,
+      "final_score": 37.84,
+      "priority_score": 43.8,
       "mode": "weekly"
     }
   ]
