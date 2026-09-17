@@ -14,6 +14,7 @@ BAD_PATHS = (
     "/careers",
     "/search",
     "/sitemap",
+    "/topics/",
 )
 
 GENERIC_TITLES = {
@@ -23,16 +24,41 @@ GENERIC_TITLES = {
     "creating a smart data economy",
     "gov.uk",
     "raidiam",
+    "open banking",
+    "open finance",
+    "smart data",
 }
+
+GENERIC_TITLE_PREFIXES = (
+    "home - ",
+    "homepage - ",
+    "about us - ",
+    "news and insights - ",
+)
 
 
 def is_hub(article: Article) -> bool:
+    """Reject navigation, organisation and collection pages before analysis.
+
+    Horizon scanning should analyse a concrete development, announcement, research item
+    or argument. A homepage or organisation landing page is not intelligence evidence.
+    """
     url = (article.canonical_url or article.url or "").lower()
     title = (article.title or "").strip().lower()
-    path = urlsplit(url).path.lower()
+    path = urlsplit(url).path.lower().rstrip("/")
+
     if title in GENERIC_TITLES:
         return True
-    return any(part in path for part in BAD_PATHS)
+    if any(title.startswith(prefix) for prefix in GENERIC_TITLE_PREFIXES):
+        return True
+    if any(part in path for part in BAD_PATHS):
+        return True
+
+    # Bare domain/root pages are never briefing items.
+    if path in {"", "/"}:
+        return True
+
+    return False
 
 
 def evidence_level(article: Article) -> str:
@@ -50,9 +76,9 @@ def evidence_level(article: Article) -> str:
 def content_quality(article: Article) -> float:
     """Estimate how much usable evidence an item contains.
 
-    Metadata-only news is allowed as a horizon-scanning signal, but full or partial
-    source text is deliberately scored higher so the briefing prefers evidence-bearing
-    items over headlines when both are available.
+    Metadata-only news is allowed as a monitoring signal, but full or partial source
+    text scores higher. Publication date and article-like URLs help; generic landing
+    pages score zero.
     """
     if is_hub(article):
         return 0.0
@@ -81,12 +107,28 @@ def content_quality(article: Article) -> float:
     elif snippet_len >= 60:
         score += 6
 
+    url = (article.canonical_url or article.url or "").lower()
     if article.discovery_method.startswith("google_news:"):
         score += 3
-    if "/insights/" in (article.canonical_url or article.url or ""):
-        score += 5
+    if any(fragment in url for fragment in ("/news/", "/insights/", "/publications/", "/consultations/", "/speeches/", "/research/", "/blog/")):
+        score += 7
 
     return max(0.0, min(100.0, score))
+
+
+def editorial_score(article: Article) -> float:
+    """Balance policy relevance with evidence quality.
+
+    The old selector sorted almost entirely by evidence length, which could elevate a
+    well-scraped but weakly relevant page above a highly relevant current development.
+    This score keeps relevance dominant while rewarding evidence and publication quality.
+    """
+    level_bonus = {"strong": 14.0, "partial": 9.0, "signal": 2.0, "thin": -8.0}[evidence_level(article)]
+    return (
+        0.62 * float(article.heuristic_score or 0.0)
+        + 0.28 * content_quality(article)
+        + level_bonus
+    )
 
 
 def select_diverse(
@@ -95,36 +137,43 @@ def select_diverse(
     limit: int,
     max_govuk: int = 3,
     max_per_domain: int = 2,
+    max_signal_only: int = 3,
 ) -> list[Article]:
-    """Choose relevant evidence with source diversity and an evidence-first bias."""
-    evidence_rank = {"strong": 3, "partial": 2, "signal": 1, "thin": 0}
+    """Choose the most relevant evidence without allowing one source or thin RSS signals to dominate."""
     ranked = sorted(
         articles,
-        key=lambda a: (
-            evidence_rank[evidence_level(a)],
-            a.heuristic_score,
-            content_quality(a),
-        ),
+        key=lambda a: (editorial_score(a), a.heuristic_score, content_quality(a)),
         reverse=True,
     )
 
     chosen: list[Article] = []
     counts: Counter[str] = Counter()
     gov_count = 0
+    signal_count = 0
 
     for article in ranked:
         if is_hub(article):
             continue
+
+        level = evidence_level(article)
+        if level in {"signal", "thin"} and signal_count >= max_signal_only:
+            continue
+
         domain = domain_of(article.canonical_url or article.url)
         if counts[domain] >= max_per_domain:
             continue
+
         is_gov = domain == "gov.uk" or domain.endswith(".gov.uk")
         if is_gov and gov_count >= max_govuk:
             continue
+
         chosen.append(article)
         counts[domain] += 1
         if is_gov:
             gov_count += 1
+        if level in {"signal", "thin"}:
+            signal_count += 1
+
         if len(chosen) >= limit:
             break
 
