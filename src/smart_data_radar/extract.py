@@ -12,7 +12,7 @@ from trafilatura.metadata import extract_metadata
 from .models import Article, Candidate
 from .utils import canonicalise_url, clean_space, utcnow
 
-USER_AGENT = "SmartDataAIRadar/0.1 (+https://github.com/)"
+USER_AGENT = "SmartDataAIRadar/5.4 (+https://github.com/barkasnik/Smart-Data-AI-Horizon-Scanning)"
 
 
 class RobotsCache:
@@ -46,26 +46,44 @@ def _parse_meta_date(value: str | None):
         return None
 
 
+def _metadata_article(candidate: Candidate) -> Article:
+    return Article(
+        url=candidate.url,
+        canonical_url=canonicalise_url(candidate.url),
+        title=candidate.title,
+        source_name=candidate.source_name,
+        author="",
+        published_at=candidate.published_at,
+        discovered_at=utcnow(),
+        discovery_method=candidate.discovery_method,
+        snippet=clean_space(candidate.snippet),
+        text="",
+    )
+
+
 def extract_candidate(candidate: Candidate, robots: RobotsCache | None = None) -> Article:
+    """Extract article text when permitted, otherwise preserve discovery evidence.
+
+    robots.txt or JavaScript-heavy pages must not erase a valid Google News signal.
+    Metadata-only items can still be analysed at lower evidence strength.
+    """
     robots = robots or RobotsCache()
     if not robots.allowed(candidate.url):
-        raise PermissionError(f"robots.txt disallows extraction: {candidate.url}")
+        return _metadata_article(candidate)
 
     headers = {"User-Agent": USER_AGENT}
-    text = ""
-    title = candidate.title
-    author = ""
-    published_at = candidate.published_at
-    canonical = canonicalise_url(candidate.url)
+    article = _metadata_article(candidate)
 
     try:
         with httpx.Client(timeout=35, headers=headers, follow_redirects=True) as client:
             response = client.get(candidate.url)
             response.raise_for_status()
             final_url = str(response.url)
-            if "news.google.com" not in urlsplit(final_url).netloc:
-                canonical = canonicalise_url(final_url)
             html = response.text
+
+        if "news.google.com" not in urlsplit(final_url).netloc:
+            article.canonical_url = canonicalise_url(final_url)
+
         text = trafilatura.extract(
             html,
             include_comments=False,
@@ -73,28 +91,16 @@ def extract_candidate(candidate: Candidate, robots: RobotsCache | None = None) -
             favor_precision=True,
             deduplicate=True,
         ) or ""
+        article.text = clean_space(text)
+
         meta = extract_metadata(html)
         if meta:
-            title = clean_space(meta.title or title)
-            author = clean_space(meta.author or "")
-            published_at = _parse_meta_date(meta.date) or published_at
-            if getattr(meta, "url", None):
-                canonical = canonicalise_url(meta.url)
+            article.title = clean_space(meta.title or article.title)
+            article.author = clean_space(meta.author or "")
+            article.published_at = _parse_meta_date(meta.date) or article.published_at
+            if getattr(meta, "url", None) and "news.google.com" not in urlsplit(str(meta.url)).netloc:
+                article.canonical_url = canonicalise_url(meta.url)
     except Exception:
-        # Preserve discovery metadata so the radar can still rank a blocked or
-        # JavaScript-heavy page. The LLM is only called when enough text exists.
-        text = ""
+        pass
 
-    return Article(
-        url=candidate.url,
-        canonical_url=canonical,
-        title=title,
-        source_name=candidate.source_name,
-        author=author,
-        published_at=published_at,
-        discovered_at=utcnow(),
-        discovery_method=candidate.discovery_method,
-        snippet=candidate.snippet,
-        text=clean_space(text),
-    )
-
+    return article
