@@ -213,6 +213,9 @@ def _apply_evidence_guardrails(article: Article, analysis: ArticleAnalysis) -> A
     analysis.priority.opportunity = min(analysis.priority.opportunity, 3)
     analysis.priority.implementation_risk = min(analysis.priority.implementation_risk, 2)
     analysis.priority.urgency = min(analysis.priority.urgency, 3)
+    analysis.priority.impact = min(analysis.priority.impact, 3)
+    analysis.priority.consequences = min(analysis.priority.consequences, 3)
+    analysis.priority.strategic_significance = min(analysis.priority.strategic_significance, 3)
     analysis.priority.rationale = (
         f"The headline is relevant to {topic}, but the radar does not have enough source text to support a UK policy conclusion. "
         "Treat this as a monitoring signal pending verification of the original article."
@@ -232,6 +235,12 @@ def _apply_evidence_guardrails(article: Article, analysis: ArticleAnalysis) -> A
     analysis.government_smart_data_perspective = (
         "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone."
     )
+    analysis.smart_data_ai_link = (
+        f"Potential relevance to {topic}; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication."
+    )
+    analysis.source_perspective = (
+        f"Monitoring signal from {article.source_name or 'the named publisher'}; the radar has not inferred the source's motives, position or UK applicability from metadata alone."
+    )
     analysis.pestle = PestleAnalysis()
     analysis.swot = SwotAnalysis()
     analysis.policy_or_market_implications = ["Verify the original source before drawing any UK policy or market implication."]
@@ -239,6 +248,7 @@ def _apply_evidence_guardrails(article: Article, analysis: ArticleAnalysis) -> A
     analysis.tensions_or_tradeoffs = []
     analysis.follow_up_questions = ["Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"]
     analysis.hashtags = ["#Monitor"]
+    analysis.tags = []
     return analysis
 
 
