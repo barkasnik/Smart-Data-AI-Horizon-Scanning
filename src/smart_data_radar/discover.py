@@ -12,7 +12,7 @@ from dateutil import parser as dateparser
 from .models import Candidate
 from .utils import canonicalise_url, clean_space, domain_of
 
-USER_AGENT = "SmartDataAIRadar/0.1 (+https://github.com/)"
+USER_AGENT = "SmartDataAIRadar/5.4 (+https://github.com/barkasnik/Smart-Data-AI-Horizon-Scanning)"
 
 
 def _parse_date(value: str | None) -> datetime | None:
@@ -22,6 +22,12 @@ def _parse_date(value: str | None) -> datetime | None:
         return dateparser.parse(value)
     except (ValueError, TypeError, OverflowError):
         return None
+
+
+def _plain_html(value: str | None) -> str:
+    if not value:
+        return ""
+    return clean_space(BeautifulSoup(value, "html.parser").get_text(" ", strip=True))
 
 
 def search_queries(profile: dict) -> list[str]:
@@ -43,8 +49,7 @@ def discover_serper(queries: list[str], per_query: int = 10) -> list[Candidate]:
                 json={"q": query, "gl": "gb", "hl": "en", "num": per_query},
             )
             response.raise_for_status()
-            payload = response.json()
-            for item in payload.get("organic", [])[:per_query]:
+            for item in response.json().get("organic", [])[:per_query]:
                 link = item.get("link")
                 title = clean_space(item.get("title", ""))
                 if not link or not title:
@@ -87,11 +92,10 @@ def discover_google_cse(queries: list[str], per_query: int = 10) -> list[Candida
 
 
 def discover_google_news(queries: list[str], per_query: int = 10, days: int | None = None) -> list[Candidate]:
-    """Credential-free fallback.
+    """Credential-free discovery using Google News RSS.
 
-    Google News RSS links can resolve through Google News rather than directly to
-    the publisher. They are still useful for discovery; extraction may fall back
-    to the RSS title/snippet when an origin page cannot be recovered.
+    The RSS title, publisher, date and snippet are kept as evidence even if Google News
+    or the publisher blocks server-side extraction later.
     """
     out: list[Candidate] = []
     headers = {"User-Agent": USER_AGENT}
@@ -108,10 +112,15 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
             for item in root.findall("./channel/item")[:per_query]:
                 title = clean_space(item.findtext("title", default=""))
                 link = clean_space(item.findtext("link", default=""))
-                description = clean_space(item.findtext("description", default=""))
+                description = _plain_html(item.findtext("description", default=""))
                 pub = _parse_date(item.findtext("pubDate"))
                 source = item.find("source")
                 source_name = clean_space(source.text if source is not None and source.text else "Google News")
+
+                suffix = f" - {source_name}"
+                if source_name and title.endswith(suffix):
+                    title = title[:-len(suffix)].strip()
+
                 if title and link:
                     out.append(Candidate(
                         url=link,
@@ -125,7 +134,7 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
 
 
 def discover_search(profile: dict, backend: str | None = None, per_query: int = 8, days: int | None = None) -> list[Candidate]:
-    backend = (backend or os.getenv("SEARCH_BACKEND", "serper")).lower()
+    backend = (backend or os.getenv("SEARCH_BACKEND", "google_news")).lower()
     queries = search_queries(profile)
     if backend == "serper":
         return discover_serper(queries, per_query)
@@ -146,22 +155,29 @@ def discover_index_sources(sources: dict) -> list[Candidate]:
                 response.raise_for_status()
             except httpx.HTTPError:
                 continue
+
             soup = BeautifulSoup(response.text, "html.parser")
             allowed = {d.lower() for d in cfg.get("allowed_domains", [])}
-            fragments = cfg.get("link_contains", [])
+            include_fragments = cfg.get("link_contains", [])
+            exclude_fragments = cfg.get("exclude_link_contains", [])
             seen: set[str] = set()
             max_links = int(cfg.get("max_links", 100))
-            for a in soup.find_all("a", href=True):
-                href = canonicalise_url(urljoin(str(response.url), a["href"]))
+
+            for anchor in soup.find_all("a", href=True):
+                href = canonicalise_url(urljoin(str(response.url), anchor["href"]))
                 if href in seen:
                     continue
                 if allowed and domain_of(href) not in allowed:
                     continue
-                if fragments and not any(fragment in href for fragment in fragments):
+                if include_fragments and not any(fragment in href for fragment in include_fragments):
                     continue
-                title = clean_space(a.get_text(" ", strip=True))
+                if exclude_fragments and any(fragment in href for fragment in exclude_fragments):
+                    continue
+
+                title = clean_space(anchor.get_text(" ", strip=True))
                 if len(title) < 8:
                     continue
+
                 seen.add(href)
                 out.append(Candidate(
                     url=href,
@@ -172,4 +188,3 @@ def discover_index_sources(sources: dict) -> list[Candidate]:
                 if len(seen) >= max_links:
                     break
     return out
-
