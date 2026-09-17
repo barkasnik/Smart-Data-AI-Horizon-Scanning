@@ -12,7 +12,7 @@ from dateutil import parser as dateparser
 from .models import Candidate
 from .utils import canonicalise_url, clean_space, domain_of
 
-USER_AGENT = "SmartDataAIRadar/5.4 (+https://github.com/barkasnik/Smart-Data-AI-Horizon-Scanning)"
+USER_AGENT = "SmartDataAIRadar/5.5 (+https://github.com/barkasnik/Smart-Data-AI-Horizon-Scanning)"
 
 
 def _parse_date(value: str | None) -> datetime | None:
@@ -31,12 +31,6 @@ def _plain_html(value: str | None) -> str:
 
 
 def _publisher_link_from_google_description(value: str | None) -> str | None:
-    """Prefer the publisher URL embedded in a Google News RSS description.
-
-    Google News RSS item links are often redirect URLs that are poor inputs for
-    article extraction. The description frequently contains a direct publisher
-    anchor; use it when it is a normal http(s) URL outside news.google.com.
-    """
     if not value:
         return None
     soup = BeautifulSoup(value, "html.parser")
@@ -112,12 +106,6 @@ def discover_google_cse(queries: list[str], per_query: int = 10) -> list[Candida
 
 
 def discover_google_news(queries: list[str], per_query: int = 10, days: int | None = None) -> list[Candidate]:
-    """Credential-free discovery using Google News RSS.
-
-    Prefer a publisher URL embedded in the RSS description. Keep the RSS title,
-    publisher, date and snippet as evidence even if the publisher later blocks
-    server-side extraction.
-    """
     out: list[Candidate] = []
     headers = {"User-Agent": USER_AGENT}
     with httpx.Client(timeout=30, headers=headers, follow_redirects=True) as client:
@@ -140,11 +128,9 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
                 pub = _parse_date(item.findtext("pubDate"))
                 source = item.find("source")
                 source_name = clean_space(source.text if source is not None and source.text else "Google News")
-
                 suffix = f" - {source_name}"
                 if source_name and title.endswith(suffix):
                     title = title[:-len(suffix)].strip()
-
                 if title and link:
                     out.append(Candidate(
                         url=canonicalise_url(link),
@@ -157,8 +143,51 @@ def discover_google_news(queries: list[str], per_query: int = 10, days: int | No
     return out
 
 
+def discover_gdelt(queries: list[str], per_query: int = 10, days: int | None = None) -> list[Candidate]:
+    """Free secondary discovery source returning direct publisher URLs.
+
+    GDELT is deliberately used as a discovery index only. All items still pass the
+    same date, relevance, hub-page, content-quality and diversity filters later.
+    """
+    out: list[Candidate] = []
+    headers = {"User-Agent": USER_AGENT}
+    timespan = f"{max(1, int(days or 7))}d"
+    with httpx.Client(timeout=35, headers=headers, follow_redirects=True) as client:
+        for query in queries[:16]:
+            try:
+                response = client.get(
+                    "https://api.gdeltproject.org/api/v2/doc/doc",
+                    params={
+                        "query": query,
+                        "mode": "artlist",
+                        "format": "json",
+                        "maxrecords": min(25, max(5, per_query)),
+                        "sort": "datedesc",
+                        "timespan": timespan,
+                    },
+                )
+                response.raise_for_status()
+                payload = response.json()
+            except Exception:
+                continue
+            for item in payload.get("articles", [])[:per_query]:
+                link = clean_space(item.get("url", ""))
+                title = clean_space(item.get("title", ""))
+                if not link or not title or not link.startswith(("http://", "https://")):
+                    continue
+                out.append(Candidate(
+                    url=canonicalise_url(link),
+                    title=title,
+                    snippet="",
+                    source_name=clean_space(item.get("domain", "")) or domain_of(link),
+                    discovery_method=f"gdelt:{query}",
+                    published_at=_parse_date(item.get("seendate")),
+                ))
+    return out
+
+
 def discover_search(profile: dict, backend: str | None = None, per_query: int = 8, days: int | None = None) -> list[Candidate]:
-    backend = (backend or os.getenv("SEARCH_BACKEND", "google_news")).lower()
+    backend = (backend or os.getenv("SEARCH_BACKEND", "multi")).lower()
     queries = search_queries(profile)
     if backend == "serper":
         return discover_serper(queries, per_query)
@@ -166,6 +195,19 @@ def discover_search(profile: dict, backend: str | None = None, per_query: int = 
         return discover_google_cse(queries, per_query)
     if backend == "google_news":
         return discover_google_news(queries, per_query, days=days)
+    if backend == "gdelt":
+        return discover_gdelt(queries, per_query, days=days)
+    if backend == "multi":
+        out: list[Candidate] = []
+        try:
+            out.extend(discover_gdelt(queries, per_query=per_query, days=days))
+        except Exception:
+            pass
+        try:
+            out.extend(discover_google_news(queries, per_query=per_query, days=days))
+        except Exception:
+            pass
+        return out
     raise ValueError(f"Unsupported SEARCH_BACKEND={backend!r}")
 
 
@@ -179,14 +221,12 @@ def discover_index_sources(sources: dict) -> list[Candidate]:
                 response.raise_for_status()
             except httpx.HTTPError:
                 continue
-
             soup = BeautifulSoup(response.text, "html.parser")
             allowed = {d.lower() for d in cfg.get("allowed_domains", [])}
             include_fragments = cfg.get("link_contains", [])
             exclude_fragments = cfg.get("exclude_link_contains", [])
             seen: set[str] = set()
             max_links = int(cfg.get("max_links", 100))
-
             for anchor in soup.find_all("a", href=True):
                 href = canonicalise_url(urljoin(str(response.url), anchor["href"]))
                 if href in seen:
@@ -197,11 +237,9 @@ def discover_index_sources(sources: dict) -> list[Candidate]:
                     continue
                 if exclude_fragments and any(fragment in href for fragment in exclude_fragments):
                     continue
-
                 title = clean_space(anchor.get_text(" ", strip=True))
                 if len(title) < 8:
                     continue
-
                 seen.add(href)
                 out.append(Candidate(
                     url=href,
