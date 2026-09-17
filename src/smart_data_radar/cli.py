@@ -14,7 +14,7 @@ from .extract import RobotsCache, extract_candidate
 from .llm import analyse_article, analyse_digest
 from .models import AnalysedArticle
 from .prioritise import final_rank_score, normalise_hashtags, priority_score
-from .quality import content_quality, is_hub, select_diverse
+from .quality import content_quality, evidence_level, is_hub, select_diverse
 from .score import heuristic_score
 from .storage import Store
 from .utils import utcnow
@@ -23,7 +23,15 @@ app = typer.Typer(add_completion=False, help="Smart Data & AI news intelligence 
 
 
 def substantive(analysis) -> bool:
-    """Reject vague or under-evidenced prose before it reaches the public briefing."""
+    """Keep evidence-backed analysis strict while allowing honest monitoring signals."""
+    if analysis.confidence == "low" and analysis.priority.evidence_strength <= 2:
+        return (
+            analysis.relevance_score >= 35
+            and len((analysis.bottom_line or "").strip()) >= 45
+            and len((analysis.summary or "").strip()) >= 55
+            and "#Monitor" in analysis.hashtags
+        )
+
     swot_n = sum(
         len(getattr(analysis.swot, key))
         for key in ("strengths", "weaknesses", "opportunities", "threats")
@@ -89,9 +97,6 @@ def run(
         published = article.published_at
         if published and published.tzinfo is None:
             published = published.replace(tzinfo=timezone.utc)
-
-        # Horizon scanning should be time-bounded. Undated pages are excluded rather
-        # than treated as fresh simply because they were rediscovered this week.
         if not published or published < cutoff:
             continue
 
@@ -114,7 +119,10 @@ def run(
         max_govuk=3,
         max_per_domain=2,
     )
-    typer.echo(f"Selected {len(pool)} recent, evidence-bearing candidates for analysis")
+    levels = {"strong": 0, "partial": 0, "signal": 0, "thin": 0}
+    for article in pool:
+        levels[evidence_level(article)] += 1
+    typer.echo(f"Selected {len(pool)} candidates for analysis · evidence mix: {levels}")
 
     store = Store(db)
     for article in pool:
@@ -128,11 +136,7 @@ def run(
     for article in pool:
         if len(analysed) >= desired:
             break
-        try:
-            analysis = analyse_article(article, profile, mode=mode)
-        except Exception as exc:
-            typer.echo(f"LLM skip after retry: {article.title[:72]} ({exc})")
-            continue
+        analysis = analyse_article(article, profile, mode=mode)
 
         if not substantive(analysis):
             typer.echo(f"Analysis reject as too weak/generic: {article.title[:72]}")
@@ -145,6 +149,11 @@ def run(
             relevance=analysis.relevance_score,
             priority=pscore,
         )
+
+        # Headline-only monitoring signals should never outrank evidence-backed analysis.
+        if evidence_level(article) in {"signal", "thin"}:
+            final = max(0.0, round(final - 12.0, 2))
+
         item = AnalysedArticle(
             article=article,
             analysis=analysis,
@@ -164,7 +173,8 @@ def run(
         )
 
     synthesis = None
-    if len(analysed) >= 2 and not no_synthesis:
+    evidence_backed = [x for x in analysed if evidence_level(x.article) in {"strong", "partial"}]
+    if len(evidence_backed) >= 2 and not no_synthesis:
         try:
             synthesis = analyse_digest([
                 {
@@ -175,7 +185,7 @@ def run(
                     "why_it_matters": item.analysis.government_smart_data_perspective,
                     "hashtags": item.analysis.hashtags,
                 }
-                for item in analysed
+                for item in evidence_backed
             ], mode=mode)
         except Exception as exc:
             typer.echo(f"Synthesis warning: {exc}")
