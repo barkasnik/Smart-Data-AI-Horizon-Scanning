@@ -1,187 +1,134 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-17T07:11:25.238220+00:00",
+  "generated_at": "2026-09-21T14:12:45.937916+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://www.ofgem.gov.uk/consultation/smart-data-repository-policy-rationale-and-proposed-governance-framework",
-        "canonical_url": "https://www.ofgem.gov.uk/consultation/smart-data-repository-policy-rationale-and-proposed-governance-framework",
-        "title": "Smart Data Repository: policy rationale and proposed governance framework",
-        "source_name": "Ofgem consultations",
+        "url": "https://www.raidiam.com/insights/raidiam-delivers-operational-trust-registry-eudi-wallet-we-build-pilot",
+        "canonical_url": "https://www.raidiam.com/insights/raidiam-delivers-operational-trust-registry-eudi-wallet-we-build-pilot",
+        "title": "Raidiam Delivers an Operational EUDI Wallet Trust Registry",
+        "source_name": "Raidiam news and insights",
         "author": "",
-        "published_at": "2026-09-14T00:00:00Z",
-        "discovered_at": "2026-09-17T07:06:22.879887Z",
-        "discovery_method": "index:regulator",
-        "heuristic_score": 77.75,
+        "published_at": "2026-09-16T00:00:00Z",
+        "discovered_at": "2026-09-21T14:03:58.763211Z",
+        "discovery_method": "index:strategic_monitor",
+        "heuristic_score": 70.96,
         "matched_terms": [
-          "smart data",
+          "adjacent smart/open data",
           "trust_identity",
+          "interoperability",
           "governance",
           "sectors",
-          "source:gov.uk",
+          "source:raidiam.com",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 77,
+        "relevance_score": 70,
         "relevance_tier": "high",
         "primary_category": "Smart Data",
-        "bottom_line": "Ofgem is consulting on a governance framework for a Smart Data Repository to support the MHHS programme.",
-        "summary": "Ofgem is consulting on a governance framework for a Smart Data Repository to support the Market-wide Half-Hourly Settlement (MHHS) programme, which will allow third-party access to electricity data under consumer consent.",
-        "why_it_matters": "This consultation is part of Ofgem's efforts to enhance the digital infrastructure for energy markets, aligning with the Energy Digitalisation Framework.",
-        "government_smart_data_perspective": "The consultation aims to ensure the governance of the Smart Data Repository is legally robust and proportionate, aligning with the Energy Digitalisation Framework.",
-        "smart_data_ai_link": "The consultation is related to the intersection of Smart Data and AI, as it involves the creation and management of a repository for electricity data.",
+        "bottom_line": "Raidiam's operational Trust Registry for the EUDI Wallet demonstrates the importance of trust infrastructure in a digital identity ecosystem.",
+        "summary": "Raidiam has delivered the first operational Trust Registry for the EUDI Wallet, a key component of the European Digital Identity framework. This demonstrates the need for trust infrastructure in a growing digital identity ecosystem, where national ecosystems must manage and verify a large and constantly changing participant base.",
+        "why_it_matters": "The operational Trust Registry is crucial for ensuring trust and interoperability in the EUDI Wallet ecosystem, which is designed to support a broad range of digital credentials and cross-border transactions.",
+        "government_smart_data_perspective": "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems, aligning with the EU's design principles for the EUDI Wallet.",
+        "smart_data_ai_link": "The Trust Registry is part of the broader Smart Data and AI landscape, as it involves digital identity and interoperability, which are key areas of focus for the UK Smart Data programme.",
         "pestle": {
           "political": [],
           "economic": [],
           "social": [],
-          "technological": [],
+          "technological": [
+            "APIs",
+            "standards",
+            "digital identity",
+            "interoperability",
+            "security"
+          ],
           "legal": [],
           "environmental": []
         },
         "swot": {
           "strengths": [
-            "Alignment with the Energy Digitalisation Framework"
+            "Demonstrates the need for trust infrastructure in digital identity ecosystems.",
+            "Aligns with EU design principles for the EUDI Wallet."
           ],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
+          "weaknesses": [
+            "Operational complexity increases as the ecosystem scales.",
+            "Requires ongoing management and verification of a large and constantly changing participant base."
+          ],
+          "opportunities": [
+            "Potential for cross-sector collaboration and standardization.",
+            "Growing importance of digital identity in various sectors."
+          ],
+          "threats": [
+            "Potential for fragmentation if not all national ecosystems adopt the same standards.",
+            "Increased complexity in managing and verifying a large participant base."
+          ]
         },
         "priority": {
           "urgency": 3,
-          "impact": 2,
-          "consequences": 1,
-          "policy_advancement": 2,
-          "opportunity": 1,
-          "monitoring_need": 3,
-          "strategic_significance": 2,
-          "implementation_risk": 1,
-          "novelty": 1,
-          "evidence_strength": 3,
-          "rationale": "sync with MHHS and Energy Digitalisation Framework"
-        },
-        "policy_or_market_implications": [
-          "Enhanced digital infrastructure for energy markets",
-          "Increased transparency and accountability in electricity data sharing"
-        ],
-        "key_claims": [
-          {
-            "claim": "Proposed governance framework for the Smart Data Repository",
-            "claim_type": "reported_fact",
-            "evidence_note": ""
-          },
-          {
-            "claim": "Interoperability with RECCo’s Consumer Consent Solution",
-            "claim_type": "reported_fact",
-            "evidence_note": ""
-          },
-          {
-            "claim": "Legal robustness and proportionate governance",
-            "claim_type": "analysis",
-            "evidence_note": ""
-          }
-        ],
-        "source_perspective": "Ofgem is consulting on the governance framework to ensure the Smart Data Repository is legally robust and proportionate, aligning with the Energy Digitalisation Framework.",
-        "tensions_or_tradeoffs": [
-          "Balancing legal robustness with consumer consent",
-          "Ensuring interoperability with existing systems"
-        ],
-        "follow_up_questions": [
-          "What are the specific legal changes proposed for the BSC and Supply Licence Condition 47?",
-          "How will the Smart Data Repository be integrated with existing digital infrastructure?",
-          "What are the potential challenges in ensuring consumer consent for data sharing?"
-        ],
-        "hashtags": [],
-        "tags": [
-          "#SmartData",
-          "#AIxSmartData",
-          "#PolicyGap",
-          "#Monitor",
-          "#Urgent",
-          "#Strategic",
-          "#ImplementationRisk",
-          "#RegulatoryChange"
-        ],
-        "confidence": "medium"
-      },
-      "final_score": 51.65,
-      "priority_score": 37.82,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcnlMeXFDMUtkN1Eyb3RIOEFobXhmd0Y3aHVPYjRmTEJ6amg0aFNnTkVEQ0ZlaUo1NmoxaGoxYUd2RzRsUU9WLTBQUXVoS0xCdU5Oc0NLYWVLZXc4TFJQYnJMVXVHbC11MldxVk0wTEtxUTVxUlNTY2E4V3V1a2xtSDBfelV3M0hGQmpPV0hhd19oal9LWjV3LVpUbW01US1zTFBtZjU0ZHJIdGRGUEV2M1Rwbl82cXN0ODdWSw?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcnlMeXFDMUtkN1Eyb3RIOEFobXhmd0Y3aHVPYjRmTEJ6amg0aFNnTkVEQ0ZlaUo1NmoxaGoxYUd2RzRsUU9WLTBQUXVoS0xCdU5Oc0NLYWVLZXc4TFJQYnJMVXVHbC11MldxVk0wTEtxUTVxUlNTY2E4V3V1a2xtSDBfelV3M0hGQmpPV0hhd19oal9LWjV3LVpUbW01US1zTFBtZjU0ZHJIdGRGUEV2M1Rwbl82cXN0ODdWSw?oc=5",
-        "title": "Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore | Artificial Intelligence",
-        "source_name": "Amazon Web Services (AWS)",
-        "author": "",
-        "published_at": "2026-09-14T20:35:45Z",
-        "discovered_at": "2026-09-17T07:06:13.208337Z",
-        "discovery_method": "google_news:agentic AI consent",
-        "heuristic_score": 61.06,
-        "matched_terms": [
-          "AI",
-          "trust_identity",
-          "interoperability",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 61,
-        "relevance_tier": "high",
-        "primary_category": "AI",
-        "bottom_line": "Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore | Artificial Intelligence is a relevant signal for AI-enabled services, consent, identity or trust, interoperability and standards. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Amazon Web Services (AWS) reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 3,
+          "impact": 4,
           "consequences": 3,
           "policy_advancement": 2,
           "opportunity": 3,
           "monitoring_need": 5,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
+          "strategic_significance": 4,
+          "implementation_risk": 3,
           "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+          "evidence_strength": 4,
+          "rationale": "The operational Trust Registry for the EUDI Wallet highlights the importance of trust infrastructure in a digital identity ecosystem, which is a significant development in the Smart Data and AI landscape. Monitoring this development is crucial for understanding the evolving needs of digital identity systems and for aligning with EU design principles."
         },
         "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
+          "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems.",
+          "The UK should explore opportunities for cross-sector collaboration and standardization in digital identity systems."
         ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from Amazon Web Services (AWS); the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
+        "key_claims": [
+          {
+            "claim": "The operational Trust Registry is crucial for ensuring trust and interoperability in the EUDI Wallet ecosystem.",
+            "claim_type": "analysis",
+            "evidence_note": "The Trust Registry is a real, running Trust Registry deployed in the pilot, not a specification or product demonstration."
+          },
+          {
+            "claim": "The UK should explore opportunities for cross-sector collaboration and standardization in digital identity systems.",
+            "claim_type": "analysis",
+            "evidence_note": "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems."
+          }
+        ],
+        "source_perspective": "Raidiam is a monitored commercial source, neither endorsed nor opposed.",
+        "tensions_or_tradeoffs": [
+          "Balancing the need for trust with the operational complexity of managing a large and constantly changing participant base.",
+          "Aligning with EU design principles versus potential fragmentation if not all national ecosystems adopt the same standards."
+        ],
         "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+          "How can the UK Smart Data programme leverage this development to enhance its own digital identity ecosystem?",
+          "What are the potential challenges and opportunities for cross-sector collaboration in digital identity systems?"
         ],
         "hashtags": [
           "#Monitor",
-          "#TrustFramework",
-          "#Interoperability"
+          "#Strategic",
+          "#Threat"
         ],
-        "tags": [],
-        "confidence": "low"
+        "tags": [
+          "#AIxSmartData",
+          "#TrustIdentity",
+          "#Interoperability",
+          "#DigitalIdentity",
+          "#Consent",
+          "#Competition",
+          "#OpenFinance",
+          "#OpenProperty",
+          "#Energy",
+          "#Transport",
+          "#Trade",
+          "#Fraud",
+          "#International",
+          "#DataPortability",
+          "#Monitor"
+        ],
+        "confidence": "high"
       },
-      "final_score": 45.9,
-      "priority_score": 56.21,
+      "final_score": 66.69,
+      "priority_score": 64.68,
       "mode": "weekly"
     },
     {
@@ -192,9 +139,9 @@
         "source_name": "Business Wire",
         "author": "",
         "published_at": "2026-09-15T07:00:00Z",
-        "discovered_at": "2026-09-17T07:06:13.209247Z",
+        "discovered_at": "2026-09-21T14:03:17.706552Z",
         "discovery_method": "google_news:AI delegation identity",
-        "heuristic_score": 49.22,
+        "heuristic_score": 47.73,
         "matched_terms": [
           "AI",
           "governance",
@@ -202,7 +149,7 @@
         ]
       },
       "analysis": {
-        "relevance_score": 49,
+        "relevance_score": 47,
         "relevance_tier": "high",
         "primary_category": "AI",
         "bottom_line": "Traefik Labs Introduces the Sovereign Trust Plane, Bringing Verifiable Evidence to AI Agent Governance is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
@@ -233,7 +180,7 @@
           "monitoring_need": 4,
           "strategic_significance": 3,
           "implementation_risk": 2,
-          "novelty": 3,
+          "novelty": 2,
           "evidence_strength": 2,
           "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
         },
@@ -252,37 +199,107 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 34.02,
-      "priority_score": 44.37,
+      "final_score": 32.79,
+      "priority_score": 43.43,
       "mode": "weekly"
     },
     {
       "article": {
-        "url": "https://www.openbanking.org.uk/news/future-entity-design-steering-group-appoints-ez-britton-mbe-as-independent-chair",
-        "canonical_url": "https://www.openbanking.org.uk/news/future-entity-design-steering-group-appoints-ez-britton-mbe-as-independent-chair",
-        "title": "Future Entity Design Steering Group appoints Ez Britton MBE as Independent Chair - Open Banking",
-        "source_name": "Open Banking news",
-        "author": "Patrick Cannon",
-        "published_at": "2026-09-11T00:00:00Z",
-        "discovered_at": "2026-09-17T07:06:28.275936Z",
-        "discovery_method": "index:ecosystem",
-        "heuristic_score": 38.73,
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd05DQlQ4Q0w3TWl6UVJzWWJFNXVreFA0Y3BNSXdVa2xuS01DUVdvOEJPdktYZEtkZmEycUdBNzU3SUs2T2FTZUYweTFGSHhZdXlGMTRqX0JyaWU2aEhEZVg4WGFTbUprMEVJUHpCUWhJZ3V0c0RGOE9jOWd3Y19vR3RzZnBZWjM5WkFZbXJiQThzS19XZk1NWGZuVndwSDQ3SUM5NnczVEpUYk5WcUdjUzFFVXNnLU95LXc?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd05DQlQ4Q0w3TWl6UVJzWWJFNXVreFA0Y3BNSXdVa2xuS01DUVdvOEJPdktYZEtkZmEycUdBNzU3SUs2T2FTZUYweTFGSHhZdXlGMTRqX0JyaWU2aEhEZVg4WGFTbUprMEVJUHpCUWhJZ3V0c0RGOE9jOWd3Y19vR3RzZnBZWjM5WkFZbXJiQThzS19XZk1NWGZuVndwSDQ3SUM5NnczVEpUYk5WcUdjUzFFVXNnLU95LXc?oc=5",
+        "title": "Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying",
+        "source_name": "Open Banking Expo",
+        "author": "",
+        "published_at": "2026-09-17T14:38:46Z",
+        "discovered_at": "2026-09-21T14:03:17.704915Z",
+        "discovery_method": "google_news:smart data AI",
+        "heuristic_score": 50.51,
         "matched_terms": [
-          "adjacent smart/open data",
+          "smart data",
           "sectors",
-          "source:openbanking.org.uk",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 39,
+        "relevance_score": 50,
+        "relevance_tier": "medium",
+        "primary_category": "Smart Data",
+        "bottom_line": "Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying is a relevant signal for AI-enabled services, open finance and payments, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "Open Banking Expo reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "pestle": {
+          "political": [],
+          "economic": [],
+          "social": [],
+          "technological": [],
+          "legal": [],
+          "environmental": []
+        },
+        "swot": {
+          "strengths": [],
+          "weaknesses": [],
+          "opportunities": [],
+          "threats": []
+        },
+        "priority": {
+          "urgency": 3,
+          "impact": 2,
+          "consequences": 2,
+          "policy_advancement": 1,
+          "opportunity": 2,
+          "monitoring_need": 3,
+          "strategic_significance": 2,
+          "implementation_risk": 2,
+          "novelty": 2,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, open finance and payments, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+        },
+        "policy_or_market_implications": [
+          "Verify the original source before drawing any UK policy or market implication."
+        ],
+        "key_claims": [],
+        "source_perspective": "Monitoring signal from Open Banking Expo; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "tensions_or_tradeoffs": [],
+        "follow_up_questions": [
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+        ],
+        "hashtags": [
+          "#Monitor"
+        ],
+        "tags": [],
+        "confidence": "low"
+      },
+      "final_score": 32.46,
+      "priority_score": 41.36,
+      "mode": "weekly"
+    },
+    {
+      "article": {
+        "url": "https://aninews.in/news/business/kl-deemed-to-be-university-launches-nation8217s-first-agentic-ai-campus-with-hcl-guvi-ai-labs20260921173409",
+        "canonical_url": "https://aninews.in/news/business/kl-deemed-to-be-university-launches-nation8217s-first-agentic-ai-campus-with-hcl-guvi-ai-labs20260921173409",
+        "title": "KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs",
+        "source_name": "aninews.in",
+        "author": "",
+        "published_at": "2026-09-21T13:00:00Z",
+        "discovered_at": "2026-09-21T14:03:17.639878Z",
+        "discovery_method": "gdelt:smart data artificial intelligence",
+        "heuristic_score": 39.98,
+        "matched_terms": [
+          "AI",
+          "recent"
+        ]
+      },
+      "analysis": {
+        "relevance_score": 40,
         "relevance_tier": "medium",
         "primary_category": "monitoring_signal",
-        "bottom_line": "Future Entity Design Steering Group appoints Ez Britton MBE as Independent Chair - Open Banking is a relevant signal for open finance and payments; source evidence is too limited for a firm UK policy conclusion.",
-        "summary": "Open Banking news reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
-        "why_it_matters": "The subject intersects with open finance and payments, but its UK significance remains unverified.",
+        "bottom_line": "KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs is a relevant signal for AI-enabled services; source evidence is too limited for a firm UK policy conclusion.",
+        "summary": "aninews.in reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
+        "why_it_matters": "The subject intersects with AI-enabled services, but its UK significance remains unverified.",
         "government_smart_data_perspective": "Monitor the item and verify the original source before drawing policy implications.",
-        "smart_data_ai_link": "Potential relevance to open finance and payments; no stronger claim is made without source text.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services; no stronger claim is made without source text.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -325,7 +342,7 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 26.61,
+      "final_score": 27.0,
       "priority_score": 38.46,
       "mode": "weekly"
     }
