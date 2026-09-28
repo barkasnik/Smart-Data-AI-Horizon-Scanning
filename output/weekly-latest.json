@@ -1,159 +1,216 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-21T14:12:45.937916+00:00",
+  "generated_at": "2026-09-28T15:30:51.005419+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://www.raidiam.com/insights/raidiam-delivers-operational-trust-registry-eudi-wallet-we-build-pilot",
-        "canonical_url": "https://www.raidiam.com/insights/raidiam-delivers-operational-trust-registry-eudi-wallet-we-build-pilot",
-        "title": "Raidiam Delivers an Operational EUDI Wallet Trust Registry",
-        "source_name": "Raidiam news and insights",
+        "url": "https://www.ofgem.gov.uk/consultation/transforming-connections-data",
+        "canonical_url": "https://www.ofgem.gov.uk/consultation/transforming-connections-data",
+        "title": "Transforming connections data",
+        "source_name": "Ofgem consultations",
         "author": "",
-        "published_at": "2026-09-16T00:00:00Z",
-        "discovered_at": "2026-09-21T14:03:58.763211Z",
-        "discovery_method": "index:strategic_monitor",
-        "heuristic_score": 70.96,
+        "published_at": "2026-09-25T00:00:00Z",
+        "discovered_at": "2026-09-28T15:24:18.106379Z",
+        "discovery_method": "index:regulator",
+        "heuristic_score": 43.63,
         "matched_terms": [
-          "adjacent smart/open data",
-          "trust_identity",
           "interoperability",
           "governance",
           "sectors",
-          "source:raidiam.com",
+          "source:gov.uk",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 70,
+        "relevance_score": 43,
         "relevance_tier": "high",
-        "primary_category": "Smart Data",
-        "bottom_line": "Raidiam's operational Trust Registry for the EUDI Wallet demonstrates the importance of trust infrastructure in a digital identity ecosystem.",
-        "summary": "Raidiam has delivered the first operational Trust Registry for the EUDI Wallet, a key component of the European Digital Identity framework. This demonstrates the need for trust infrastructure in a growing digital identity ecosystem, where national ecosystems must manage and verify a large and constantly changing participant base.",
-        "why_it_matters": "The operational Trust Registry is crucial for ensuring trust and interoperability in the EUDI Wallet ecosystem, which is designed to support a broad range of digital credentials and cross-border transactions.",
-        "government_smart_data_perspective": "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems, aligning with the EU's design principles for the EUDI Wallet.",
-        "smart_data_ai_link": "The Trust Registry is part of the broader Smart Data and AI landscape, as it involves digital identity and interoperability, which are key areas of focus for the UK Smart Data programme.",
+        "primary_category": "Interoperability",
+        "bottom_line": "Ofgem is seeking views on proposals to introduce new datasets and improve existing ones, including in the electricity transmission sector.",
+        "summary": "Ofgem is consulting on new datasets and data improvements for the electricity transmission sector, focusing on interoperability and data governance.",
+        "why_it_matters": "This consultation highlights Ofgem's commitment to improving data interoperability and governance in the electricity transmission sector, which is relevant to Smart Data and AI policy.",
+        "government_smart_data_perspective": "The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.",
+        "smart_data_ai_link": "The consultation touches on AI governance and interoperability, which are key areas of Smart Data and AI policy.",
         "pestle": {
           "political": [],
           "economic": [],
           "social": [],
           "technological": [
-            "APIs",
-            "standards",
-            "digital identity",
-            "interoperability",
-            "security"
+            "Interoperability",
+            "Data standards",
+            "Data governance"
           ],
           "legal": [],
           "environmental": []
         },
         "swot": {
           "strengths": [
-            "Demonstrates the need for trust infrastructure in digital identity ecosystems.",
-            "Aligns with EU design principles for the EUDI Wallet."
+            "Existing UK capability in data governance and interoperability can be leveraged to shape policy changes"
           ],
           "weaknesses": [
-            "Operational complexity increases as the ecosystem scales.",
-            "Requires ongoing management and verification of a large and constantly changing participant base."
+            "Potential gaps in sector-specific data standards and governance need to be addressed"
           ],
           "opportunities": [
-            "Potential for cross-sector collaboration and standardization.",
-            "Growing importance of digital identity in various sectors."
+            "External developments in data standards and governance could be exploited by HMG"
           ],
           "threats": [
-            "Potential for fragmentation if not all national ecosystems adopt the same standards.",
-            "Increased complexity in managing and verifying a large participant base."
+            "External developments that could obstruct or fragment objectives in the sector"
           ]
         },
         "priority": {
           "urgency": 3,
-          "impact": 4,
-          "consequences": 3,
+          "impact": 2,
+          "consequences": 1,
           "policy_advancement": 2,
-          "opportunity": 3,
-          "monitoring_need": 5,
-          "strategic_significance": 4,
-          "implementation_risk": 3,
-          "novelty": 2,
-          "evidence_strength": 4,
-          "rationale": "The operational Trust Registry for the EUDI Wallet highlights the importance of trust infrastructure in a digital identity ecosystem, which is a significant development in the Smart Data and AI landscape. Monitoring this development is crucial for understanding the evolving needs of digital identity systems and for aligning with EU design principles."
+          "opportunity": 1,
+          "monitoring_need": 3,
+          "strategic_significance": 2,
+          "implementation_risk": 1,
+          "novelty": 1,
+          "evidence_strength": 3,
+          "rationale": "The consultation is part of Ofgem's Transforming Connections Data programme and focuses on interoperability and data governance, which are relevant to Smart Data and AI policy."
         },
         "policy_or_market_implications": [
-          "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems.",
-          "The UK should explore opportunities for cross-sector collaboration and standardization in digital identity systems."
+          "The consultation could lead to the development of new datasets and data standards in the electricity transmission sector.",
+          "Improved data governance could enhance the reliability and efficiency of electricity transmission."
         ],
         "key_claims": [
           {
-            "claim": "The operational Trust Registry is crucial for ensuring trust and interoperability in the EUDI Wallet ecosystem.",
-            "claim_type": "analysis",
-            "evidence_note": "The Trust Registry is a real, running Trust Registry deployed in the pilot, not a specification or product demonstration."
+            "claim": "The consultation aims to introduce new datasets and improve existing ones, including a demand capacity register and distribution works report.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
           },
           {
-            "claim": "The UK should explore opportunities for cross-sector collaboration and standardization in digital identity systems.",
-            "claim_type": "analysis",
-            "evidence_note": "The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems."
+            "claim": "The consultation also seeks views on cross-cutting issues, including interoperability, data standards, data quality, and approaches to data publication and governance.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
           }
         ],
-        "source_perspective": "Raidiam is a monitored commercial source, neither endorsed nor opposed.",
+        "source_perspective": "The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.",
         "tensions_or_tradeoffs": [
-          "Balancing the need for trust with the operational complexity of managing a large and constantly changing participant base.",
-          "Aligning with EU design principles versus potential fragmentation if not all national ecosystems adopt the same standards."
+          "Balancing the introduction of new datasets with the need to improve existing ones to ensure data consistency and reliability.",
+          "Addressing sector-specific data standards and governance challenges to ensure effective data use and interoperability."
         ],
         "follow_up_questions": [
-          "How can the UK Smart Data programme leverage this development to enhance its own digital identity ecosystem?",
-          "What are the potential challenges and opportunities for cross-sector collaboration in digital identity systems?"
+          "What are the key data standards and governance challenges in the electricity transmission sector?",
+          "How can Ofgem ensure that the proposed policy changes are effectively implemented and enforced?"
         ],
         "hashtags": [
-          "#Monitor",
-          "#Strategic",
           "#Threat"
         ],
         "tags": [
           "#AIxSmartData",
-          "#TrustIdentity",
           "#Interoperability",
-          "#DigitalIdentity",
-          "#Consent",
-          "#Competition",
-          "#OpenFinance",
-          "#OpenProperty",
-          "#Energy",
-          "#Transport",
-          "#Trade",
-          "#Fraud",
-          "#International",
-          "#DataPortability",
-          "#Monitor"
+          "#DataGovernance",
+          "#PolicyGap",
+          "#Opportunity",
+          "#Threat",
+          "#Monitor",
+          "#Urgent",
+          "#Strategic",
+          "#ImplementationRisk"
         ],
         "confidence": "high"
       },
-      "final_score": 66.69,
-      "priority_score": 64.68,
+      "final_score": 39.73,
+      "priority_score": 37.82,
       "mode": "weekly"
     },
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQbVRyNE9RYXFhWHVqc0pxNnRTcVFXZndhVklkVWk0YUZHNG8zdmRsRF9TaDg0Z0sxZHRkWHowVWdmeTRYWGV0cDhkSVh1ZjlmLWZsSU5WempjWHYyVGFPQmtWY0RQaFcwWFh2X3ByemNzLWhTVmlvWm9MWjZfZkFWZUY3cEtsU3NmNG1iZnRmSC10WVg2U0kwZHRDT0RRZkVWMFE3dEV0OUVwU1NKMXlGNnhyUlRSaFFWcVRKWTV0MkRHaDhhLWViV0Vxd0hXaUxkMVBHczNrQThZUkg1RXhUdWt0QWZoWUtEQnJtaV9TVQ?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQbVRyNE9RYXFhWHVqc0pxNnRTcVFXZndhVklkVWk0YUZHNG8zdmRsRF9TaDg0Z0sxZHRkWHowVWdmeTRYWGV0cDhkSVh1ZjlmLWZsSU5WempjWHYyVGFPQmtWY0RQaFcwWFh2X3ByemNzLWhTVmlvWm9MWjZfZkFWZUY3cEtsU3NmNG1iZnRmSC10WVg2U0kwZHRDT0RRZkVWMFE3dEV0OUVwU1NKMXlGNnhyUlRSaFFWcVRKWTV0MkRHaDhhLWViV0Vxd0hXaUxkMVBHczNrQThZUkg1RXhUdWt0QWZoWUtEQnJtaV9TVQ?oc=5",
-        "title": "Traefik Labs Introduces the Sovereign Trust Plane, Bringing Verifiable Evidence to AI Agent Governance",
-        "source_name": "Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcEp0SzRkWGhFalM0d1JXaDZLNzVfZlFpUFJ3NEdUdk5WUXBERGdfZ0M2NWlEU1prVERId3ZSa0ExQVNzbFg0aWVDQjloTFZvdG9lMk82SWVSV0tjOElSMFVmY2MzVmctbjUwY1B4Wl9VMFlNejZXNFptWGJrakhuYVVoVTRHanNfUTRzUW1RQWhScmpoM2l2M1FENENaNWNmQjAzZQ?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcEp0SzRkWGhFalM0d1JXaDZLNzVfZlFpUFJ3NEdUdk5WUXBERGdfZ0M2NWlEU1prVERId3ZSa0ExQVNzbFg0aWVDQjloTFZvdG9lMk82SWVSV0tjOElSMFVmY2MzVmctbjUwY1B4Wl9VMFlNejZXNFptWGJrakhuYVVoVTRHanNfUTRzUW1RQWhScmpoM2l2M1FENENaNWNmQjAzZQ?oc=5",
+        "title": "NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents",
+        "source_name": "Yahoo Finance",
         "author": "",
-        "published_at": "2026-09-15T07:00:00Z",
-        "discovered_at": "2026-09-21T14:03:17.706552Z",
-        "discovery_method": "google_news:AI delegation identity",
-        "heuristic_score": 47.73,
+        "published_at": "2026-09-22T11:00:00Z",
+        "discovered_at": "2026-09-28T15:24:01.708657Z",
+        "discovery_method": "google_news:smart data AI",
+        "heuristic_score": 49.76,
         "matched_terms": [
-          "AI",
-          "governance",
+          "smart data",
+          "sectors",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 47,
+        "relevance_score": 49,
         "relevance_tier": "high",
+        "primary_category": "Smart Data",
+        "bottom_line": "NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents is a relevant signal for AI-enabled services, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "Yahoo Finance reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "pestle": {
+          "political": [],
+          "economic": [],
+          "social": [],
+          "technological": [],
+          "legal": [],
+          "environmental": []
+        },
+        "swot": {
+          "strengths": [],
+          "weaknesses": [],
+          "opportunities": [],
+          "threats": []
+        },
+        "priority": {
+          "urgency": 3,
+          "impact": 3,
+          "consequences": 2,
+          "policy_advancement": 2,
+          "opportunity": 2,
+          "monitoring_need": 4,
+          "strategic_significance": 3,
+          "implementation_risk": 2,
+          "novelty": 3,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+        },
+        "policy_or_market_implications": [
+          "Verify the original source before drawing any UK policy or market implication."
+        ],
+        "key_claims": [],
+        "source_perspective": "Monitoring signal from Yahoo Finance; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "tensions_or_tradeoffs": [],
+        "follow_up_questions": [
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+        ],
+        "hashtags": [
+          "#Monitor"
+        ],
+        "tags": [],
+        "confidence": "low"
+      },
+      "final_score": 38.38,
+      "priority_score": 50.95,
+      "mode": "weekly"
+    },
+    {
+      "article": {
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBqQVdtTHdpV0lNTGhpOXQ0R01qN0pHMm9mbmlJcFhPZUdETVdtWWptYXE4b1hqRzRjOVZIa2cwUWdmNDJjbkhEMmNQUlhCYTlfZXB0UU9NaGdoLTln?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBqQVdtTHdpV0lNTGhpOXQ0R01qN0pHMm9mbmlJcFhPZUdETVdtWWptYXE4b1hqRzRjOVZIa2cwUWdmNDJjbkhEMmNQUlhCYTlfZXB0UU9NaGdoLTln?oc=5",
+        "title": "A two-way trust framework for AI agents and blockchain",
+        "source_name": "EurekAlert! Science News Releases",
+        "author": "",
+        "published_at": "2026-09-24T08:20:10Z",
+        "discovered_at": "2026-09-28T15:24:01.709550Z",
+        "discovery_method": "google_news:AI delegation identity",
+        "heuristic_score": 50.4,
+        "matched_terms": [
+          "AI",
+          "trust_identity",
+          "recent"
+        ]
+      },
+      "analysis": {
+        "relevance_score": 50,
+        "relevance_tier": "medium",
         "primary_category": "AI",
-        "bottom_line": "Traefik Labs Introduces the Sovereign Trust Plane, Bringing Verifiable Evidence to AI Agent Governance is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Business Wire reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "bottom_line": "A two-way trust framework for AI agents and blockchain is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "EurekAlert! Science News Releases reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
         "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
         "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
         "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
@@ -174,10 +231,10 @@
         "priority": {
           "urgency": 3,
           "impact": 2,
-          "consequences": 2,
-          "policy_advancement": 1,
+          "consequences": 1,
+          "policy_advancement": 2,
           "opportunity": 1,
-          "monitoring_need": 4,
+          "monitoring_need": 5,
           "strategic_significance": 3,
           "implementation_risk": 2,
           "novelty": 2,
@@ -188,118 +245,49 @@
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "Monitoring signal from Business Wire; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "source_perspective": "Monitoring signal from EurekAlert! Science News Releases; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
           "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
         ],
         "hashtags": [
-          "#Monitor"
+          "#Monitor",
+          "#TrustFramework"
         ],
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 32.79,
-      "priority_score": 43.43,
+      "final_score": 34.76,
+      "priority_score": 44.93,
       "mode": "weekly"
     },
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd05DQlQ4Q0w3TWl6UVJzWWJFNXVreFA0Y3BNSXdVa2xuS01DUVdvOEJPdktYZEtkZmEycUdBNzU3SUs2T2FTZUYweTFGSHhZdXlGMTRqX0JyaWU2aEhEZVg4WGFTbUprMEVJUHpCUWhJZ3V0c0RGOE9jOWd3Y19vR3RzZnBZWjM5WkFZbXJiQThzS19XZk1NWGZuVndwSDQ3SUM5NnczVEpUYk5WcUdjUzFFVXNnLU95LXc?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOd05DQlQ4Q0w3TWl6UVJzWWJFNXVreFA0Y3BNSXdVa2xuS01DUVdvOEJPdktYZEtkZmEycUdBNzU3SUs2T2FTZUYweTFGSHhZdXlGMTRqX0JyaWU2aEhEZVg4WGFTbUprMEVJUHpCUWhJZ3V0c0RGOE9jOWd3Y19vR3RzZnBZWjM5WkFZbXJiQThzS19XZk1NWGZuVndwSDQ3SUM5NnczVEpUYk5WcUdjUzFFVXNnLU95LXc?oc=5",
-        "title": "Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying",
-        "source_name": "Open Banking Expo",
-        "author": "",
-        "published_at": "2026-09-17T14:38:46Z",
-        "discovered_at": "2026-09-21T14:03:17.704915Z",
-        "discovery_method": "google_news:smart data AI",
-        "heuristic_score": 50.51,
+        "url": "https://www.openbanking.org.uk/news/obl-at-open-banking-expo-2026",
+        "canonical_url": "https://www.openbanking.org.uk/news/obl-at-open-banking-expo-2026",
+        "title": "OBL at Open Banking Expo 2026 - Open Banking",
+        "source_name": "Open Banking news",
+        "author": "Patrick Cannon",
+        "published_at": "2026-09-24T00:00:00Z",
+        "discovered_at": "2026-09-28T15:24:23.980323Z",
+        "discovery_method": "index:ecosystem",
+        "heuristic_score": 39.28,
         "matched_terms": [
-          "smart data",
+          "adjacent smart/open data",
           "sectors",
+          "source:openbanking.org.uk",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 50,
-        "relevance_tier": "medium",
-        "primary_category": "Smart Data",
-        "bottom_line": "Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying is a relevant signal for AI-enabled services, open finance and payments, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Open Banking Expo reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 2,
-          "consequences": 2,
-          "policy_advancement": 1,
-          "opportunity": 2,
-          "monitoring_need": 3,
-          "strategic_significance": 2,
-          "implementation_risk": 2,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, open finance and payments, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from Open Banking Expo; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 32.46,
-      "priority_score": 41.36,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://aninews.in/news/business/kl-deemed-to-be-university-launches-nation8217s-first-agentic-ai-campus-with-hcl-guvi-ai-labs20260921173409",
-        "canonical_url": "https://aninews.in/news/business/kl-deemed-to-be-university-launches-nation8217s-first-agentic-ai-campus-with-hcl-guvi-ai-labs20260921173409",
-        "title": "KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs",
-        "source_name": "aninews.in",
-        "author": "",
-        "published_at": "2026-09-21T13:00:00Z",
-        "discovered_at": "2026-09-21T14:03:17.639878Z",
-        "discovery_method": "gdelt:smart data artificial intelligence",
-        "heuristic_score": 39.98,
-        "matched_terms": [
-          "AI",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 40,
+        "relevance_score": 39,
         "relevance_tier": "medium",
         "primary_category": "monitoring_signal",
-        "bottom_line": "KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs is a relevant signal for AI-enabled services; source evidence is too limited for a firm UK policy conclusion.",
-        "summary": "aninews.in reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
-        "why_it_matters": "The subject intersects with AI-enabled services, but its UK significance remains unverified.",
+        "bottom_line": "OBL at Open Banking Expo 2026 - Open Banking is a relevant signal for open finance and payments; source evidence is too limited for a firm UK policy conclusion.",
+        "summary": "Open Banking news reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
+        "why_it_matters": "The subject intersects with open finance and payments, but its UK significance remains unverified.",
         "government_smart_data_perspective": "Monitor the item and verify the original source before drawing policy implications.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services; no stronger claim is made without source text.",
+        "smart_data_ai_link": "Potential relevance to open finance and payments; no stronger claim is made without source text.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -342,7 +330,7 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 27.0,
+      "final_score": 26.69,
       "priority_score": 38.46,
       "mode": "weekly"
     }

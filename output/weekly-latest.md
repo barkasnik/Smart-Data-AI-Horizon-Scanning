@@ -1,97 +1,125 @@
 # Smart Data & AI Radar — Weekly Briefing
 
-Generated: **2026-09-21 14:12 UTC**
+Generated: **2026-09-28 15:30 UTC**
 
 > Analytical lens: UK Government / Smart Data programme. Sources are monitored for insight, not endorsement. Facts, source viewpoints and radar analysis are kept distinct.
 
-## 1. [Raidiam Delivers an Operational EUDI Wallet Trust Registry](https://www.raidiam.com/insights/raidiam-delivers-operational-trust-registry-eudi-wallet-we-build-pilot)
+## 1. [Transforming connections data](https://www.ofgem.gov.uk/consultation/transforming-connections-data)
 
-**Overall rank:** 66.7/100 · **Policy priority:** 64.7/100 · **Relevance:** 70/100 · **Tier:** high
+**Overall rank:** 39.7/100 · **Policy priority:** 37.8/100 · **Relevance:** 43/100 · **Tier:** high
 
-**Source:** Raidiam news and insights · **Published:** 2026-09-16
+**Source:** Ofgem consultations · **Published:** 2026-09-25
 
-**Bottom line:** Raidiam's operational Trust Registry for the EUDI Wallet demonstrates the importance of trust infrastructure in a digital identity ecosystem.
+**Bottom line:** Ofgem is seeking views on proposals to introduce new datasets and improve existing ones, including in the electricity transmission sector.
 
-**What happened:** Raidiam has delivered the first operational Trust Registry for the EUDI Wallet, a key component of the European Digital Identity framework. This demonstrates the need for trust infrastructure in a growing digital identity ecosystem, where national ecosystems must manage and verify a large and constantly changing participant base.
+**What happened:** Ofgem is consulting on new datasets and data improvements for the electricity transmission sector, focusing on interoperability and data governance.
 
-**Why it matters for Government Smart Data:** The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems, aligning with the EU's design principles for the EUDI Wallet.
+**Why it matters for Government Smart Data:** The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.
 
-**AI / Smart Data connection:** The Trust Registry is part of the broader Smart Data and AI landscape, as it involves digital identity and interoperability, which are key areas of focus for the UK Smart Data programme.
+**AI / Smart Data connection:** The consultation touches on AI governance and interoperability, which are key areas of Smart Data and AI policy.
 
-**Source perspective:** Raidiam is a monitored commercial source, neither endorsed nor opposed.
+**Source perspective:** The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.
 
-**Priority rationale:** The operational Trust Registry for the EUDI Wallet highlights the importance of trust infrastructure in a digital identity ecosystem, which is a significant development in the Smart Data and AI landscape. Monitoring this development is crucial for understanding the evolving needs of digital identity systems and for aligning with EU design principles.
+**Priority rationale:** The consultation is part of Ofgem's Transforming Connections Data programme and focuses on interoperability and data governance, which are relevant to Smart Data and AI policy.
 
 **Priority signals (1–5):**
 
-Urgency **3** · Impact **4** · Consequences **3** · Policy advancement **2** · Opportunity **3** · Monitoring **5** · Strategic significance **4** · Implementation risk **3** · Novelty **2** · Evidence **4**
+Urgency **3** · Impact **2** · Consequences **1** · Policy advancement **2** · Opportunity **1** · Monitoring **3** · Strategic significance **2** · Implementation risk **1** · Novelty **1** · Evidence **3**
 
 ### PESTLE — Government / Smart Data perspective
 
 **Technological:**
-- APIs
-- standards
-- digital identity
-- interoperability
-- security
+- Interoperability
+- Data standards
+- Data governance
 
 ### SWOT — UK Smart Data programme
 
 **Strengths:**
-- Demonstrates the need for trust infrastructure in digital identity ecosystems.
-- Aligns with EU design principles for the EUDI Wallet.
+- Existing UK capability in data governance and interoperability can be leveraged to shape policy changes
 
 **Weaknesses:**
-- Operational complexity increases as the ecosystem scales.
-- Requires ongoing management and verification of a large and constantly changing participant base.
+- Potential gaps in sector-specific data standards and governance need to be addressed
 
 **Opportunities:**
-- Potential for cross-sector collaboration and standardization.
-- Growing importance of digital identity in various sectors.
+- External developments in data standards and governance could be exploited by HMG
 
 **Threats:**
-- Potential for fragmentation if not all national ecosystems adopt the same standards.
-- Increased complexity in managing and verifying a large participant base.
+- External developments that could obstruct or fragment objectives in the sector
 
 **Policy / market implications:**
-- The UK Smart Data programme should consider the importance of trust infrastructure in digital identity ecosystems.
-- The UK should explore opportunities for cross-sector collaboration and standardization in digital identity systems.
+- The consultation could lead to the development of new datasets and data standards in the electricity transmission sector.
+- Improved data governance could enhance the reliability and efficiency of electricity transmission.
 
 **Tensions / trade-offs:**
-- Balancing the need for trust with the operational complexity of managing a large and constantly changing participant base.
-- Aligning with EU design principles versus potential fragmentation if not all national ecosystems adopt the same standards.
+- Balancing the introduction of new datasets with the need to improve existing ones to ensure data consistency and reliability.
+- Addressing sector-specific data standards and governance challenges to ensure effective data use and interoperability.
 
 **Questions to pursue:**
-- How can the UK Smart Data programme leverage this development to enhance its own digital identity ecosystem?
-- What are the potential challenges and opportunities for cross-sector collaboration in digital identity systems?
+- What are the key data standards and governance challenges in the electricity transmission sector?
+- How can Ofgem ensure that the proposed policy changes are effectively implemented and enforced?
 
-**Hashtags:** #Monitor #Strategic #Threat
+**Hashtags:** #Threat
 
 **Confidence:** high
 
 ---
 
-## 2. [Traefik Labs Introduces the Sovereign Trust Plane, Bringing Verifiable Evidence to AI Agent Governance](https://news.google.com/rss/articles/CBMi7wFBVV95cUxQbVRyNE9RYXFhWHVqc0pxNnRTcVFXZndhVklkVWk0YUZHNG8zdmRsRF9TaDg0Z0sxZHRkWHowVWdmeTRYWGV0cDhkSVh1ZjlmLWZsSU5WempjWHYyVGFPQmtWY0RQaFcwWFh2X3ByemNzLWhTVmlvWm9MWjZfZkFWZUY3cEtsU3NmNG1iZnRmSC10WVg2U0kwZHRDT0RRZkVWMFE3dEV0OUVwU1NKMXlGNnhyUlRSaFFWcVRKWTV0MkRHaDhhLWViV0Vxd0hXaUxkMVBHczNrQThZUkg1RXhUdWt0QWZoWUtEQnJtaV9TVQ?oc=5)
+## 2. [NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents](https://news.google.com/rss/articles/CBMipAFBVV95cUxPcEp0SzRkWGhFalM0d1JXaDZLNzVfZlFpUFJ3NEdUdk5WUXBERGdfZ0M2NWlEU1prVERId3ZSa0ExQVNzbFg0aWVDQjloTFZvdG9lMk82SWVSV0tjOElSMFVmY2MzVmctbjUwY1B4Wl9VMFlNejZXNFptWGJrakhuYVVoVTRHanNfUTRzUW1RQWhScmpoM2l2M1FENENaNWNmQjAzZQ?oc=5)
 
-**Overall rank:** 32.8/100 · **Policy priority:** 43.4/100 · **Relevance:** 47/100 · **Tier:** high
+**Overall rank:** 38.4/100 · **Policy priority:** 51.0/100 · **Relevance:** 49/100 · **Tier:** high
 
-**Source:** Business Wire · **Published:** 2026-09-15
+**Source:** Yahoo Finance · **Published:** 2026-09-22
 
-**Bottom line:** Traefik Labs Introduces the Sovereign Trust Plane, Bringing Verifiable Evidence to AI Agent Governance is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.
+**Bottom line:** NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents is a relevant signal for AI-enabled services, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.
 
-**What happened:** Business Wire reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.
+**What happened:** Yahoo Finance reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.
+
+**Why it matters for Government Smart Data:** Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.
+
+**AI / Smart Data connection:** Potential relevance to AI-enabled services, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.
+
+**Source perspective:** Monitoring signal from Yahoo Finance; the radar has not inferred the source's motives, position or UK applicability from metadata alone.
+
+**Priority rationale:** The headline is relevant to AI-enabled services, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article.
+
+**Priority signals (1–5):**
+
+Urgency **3** · Impact **3** · Consequences **2** · Policy advancement **2** · Opportunity **2** · Monitoring **4** · Strategic significance **3** · Implementation risk **2** · Novelty **3** · Evidence **2**
+
+**Policy / market implications:**
+- Verify the original source before drawing any UK policy or market implication.
+
+**Questions to pursue:**
+- Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?
+
+**Hashtags:** #Monitor
+
+**Confidence:** low
+
+---
+
+## 3. [A two-way trust framework for AI agents and blockchain](https://news.google.com/rss/articles/CBMiXEFVX3lxTFBqQVdtTHdpV0lNTGhpOXQ0R01qN0pHMm9mbmlJcFhPZUdETVdtWWptYXE4b1hqRzRjOVZIa2cwUWdmNDJjbkhEMmNQUlhCYTlfZXB0UU9NaGdoLTln?oc=5)
+
+**Overall rank:** 34.8/100 · **Policy priority:** 44.9/100 · **Relevance:** 50/100 · **Tier:** medium
+
+**Source:** EurekAlert! Science News Releases · **Published:** 2026-09-24
+
+**Bottom line:** A two-way trust framework for AI agents and blockchain is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.
+
+**What happened:** EurekAlert! Science News Releases reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.
 
 **Why it matters for Government Smart Data:** Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.
 
 **AI / Smart Data connection:** Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.
 
-**Source perspective:** Monitoring signal from Business Wire; the radar has not inferred the source's motives, position or UK applicability from metadata alone.
+**Source perspective:** Monitoring signal from EurekAlert! Science News Releases; the radar has not inferred the source's motives, position or UK applicability from metadata alone.
 
 **Priority rationale:** The headline is relevant to AI-enabled services, consent, identity or trust, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article.
 
 **Priority signals (1–5):**
 
-Urgency **3** · Impact **2** · Consequences **2** · Policy advancement **1** · Opportunity **1** · Monitoring **4** · Strategic significance **3** · Implementation risk **2** · Novelty **2** · Evidence **2**
+Urgency **3** · Impact **2** · Consequences **1** · Policy advancement **2** · Opportunity **1** · Monitoring **5** · Strategic significance **3** · Implementation risk **2** · Novelty **2** · Evidence **2**
 
 **Policy / market implications:**
 - Verify the original source before drawing any UK policy or market implication.
@@ -99,59 +127,25 @@ Urgency **3** · Impact **2** · Consequences **2** · Policy advancement **1** 
 **Questions to pursue:**
 - Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?
 
-**Hashtags:** #Monitor
+**Hashtags:** #Monitor #TrustFramework
 
 **Confidence:** low
 
 ---
 
-## 3. [Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying](https://news.google.com/rss/articles/CBMiugFBVV95cUxOd05DQlQ4Q0w3TWl6UVJzWWJFNXVreFA0Y3BNSXdVa2xuS01DUVdvOEJPdktYZEtkZmEycUdBNzU3SUs2T2FTZUYweTFGSHhZdXlGMTRqX0JyaWU2aEhEZVg4WGFTbUprMEVJUHpCUWhJZ3V0c0RGOE9jOWd3Y19vR3RzZnBZWjM5WkFZbXJiQThzS19XZk1NWGZuVndwSDQ3SUM5NnczVEpUYk5WcUdjUzFFVXNnLU95LXc?oc=5)
+## 4. [OBL at Open Banking Expo 2026 - Open Banking](https://www.openbanking.org.uk/news/obl-at-open-banking-expo-2026)
 
-**Overall rank:** 32.5/100 · **Policy priority:** 41.4/100 · **Relevance:** 50/100 · **Tier:** medium
+**Overall rank:** 26.7/100 · **Policy priority:** 38.5/100 · **Relevance:** 39/100 · **Tier:** medium
 
-**Source:** Open Banking Expo · **Published:** 2026-09-17
+**Source:** Open Banking news · **Published:** 2026-09-24
 
-**Bottom line:** Novello Chartered Surveyors joins OPDA to advance AI and Smart Data in surveying is a relevant signal for AI-enabled services, open finance and payments, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.
+**Bottom line:** OBL at Open Banking Expo 2026 - Open Banking is a relevant signal for open finance and payments; source evidence is too limited for a firm UK policy conclusion.
 
-**What happened:** Open Banking Expo reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.
-
-**Why it matters for Government Smart Data:** Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.
-
-**AI / Smart Data connection:** Potential relevance to AI-enabled services, open finance and payments, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.
-
-**Source perspective:** Monitoring signal from Open Banking Expo; the radar has not inferred the source's motives, position or UK applicability from metadata alone.
-
-**Priority rationale:** The headline is relevant to AI-enabled services, open finance and payments, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article.
-
-**Priority signals (1–5):**
-
-Urgency **3** · Impact **2** · Consequences **2** · Policy advancement **1** · Opportunity **2** · Monitoring **3** · Strategic significance **2** · Implementation risk **2** · Novelty **2** · Evidence **2**
-
-**Policy / market implications:**
-- Verify the original source before drawing any UK policy or market implication.
-
-**Questions to pursue:**
-- Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?
-
-**Hashtags:** #Monitor
-
-**Confidence:** low
-
----
-
-## 4. [KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs](https://aninews.in/news/business/kl-deemed-to-be-university-launches-nation8217s-first-agentic-ai-campus-with-hcl-guvi-ai-labs20260921173409)
-
-**Overall rank:** 27.0/100 · **Policy priority:** 38.5/100 · **Relevance:** 40/100 · **Tier:** medium
-
-**Source:** aninews.in · **Published:** 2026-09-21
-
-**Bottom line:** KL Deemed to be University Launches Nation First Agentic AI Campus with HCL GUVI AI Labs is a relevant signal for AI-enabled services; source evidence is too limited for a firm UK policy conclusion.
-
-**What happened:** aninews.in reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.
+**What happened:** Open Banking news reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.
 
 **Why it matters for Government Smart Data:** Monitor the item and verify the original source before drawing policy implications.
 
-**AI / Smart Data connection:** Potential relevance to AI-enabled services; no stronger claim is made without source text.
+**AI / Smart Data connection:** Potential relevance to open finance and payments; no stronger claim is made without source text.
 
 **Source perspective:** Monitoring signal only; the source's position has not been independently assessed.
 
