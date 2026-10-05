@@ -1,293 +1,36 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-09-28T15:30:51.005419+00:00",
+  "generated_at": "2026-10-05T16:02:23.679030+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://www.ofgem.gov.uk/consultation/transforming-connections-data",
-        "canonical_url": "https://www.ofgem.gov.uk/consultation/transforming-connections-data",
-        "title": "Transforming connections data",
-        "source_name": "Ofgem consultations",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSW9EV2g4bktDSjlVNDVNN3lWUF9jbXFTcVpIaFU4aVdmb1NVTTJGQzBwY0hTaUtLenhBN3ZfU1hqd3g4WFdUbmRYaTd0OGZhV2ZFZmk2UDRPMkJtSDd6aVdiYm5YMmpHdW5yRzFGTjc1VWw4dmdvMkhfQzc4N094cGduT2JwUmYxUEJv?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSW9EV2g4bktDSjlVNDVNN3lWUF9jbXFTcVpIaFU4aVdmb1NVTTJGQzBwY0hTaUtLenhBN3ZfU1hqd3g4WFdUbmRYaTd0OGZhV2ZFZmk2UDRPMkJtSDd6aVdiYm5YMmpHdW5yRzFGTjc1VWw4dmdvMkhfQzc4N094cGduT2JwUmYxUEJv?oc=5",
+        "title": "UAE open finance, AI agents and the price of being chosen",
+        "source_name": "FWDStart",
         "author": "",
-        "published_at": "2026-09-25T00:00:00Z",
-        "discovered_at": "2026-09-28T15:24:18.106379Z",
-        "discovery_method": "index:regulator",
-        "heuristic_score": 43.63,
-        "matched_terms": [
-          "interoperability",
-          "governance",
-          "sectors",
-          "source:gov.uk",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 43,
-        "relevance_tier": "high",
-        "primary_category": "Interoperability",
-        "bottom_line": "Ofgem is seeking views on proposals to introduce new datasets and improve existing ones, including in the electricity transmission sector.",
-        "summary": "Ofgem is consulting on new datasets and data improvements for the electricity transmission sector, focusing on interoperability and data governance.",
-        "why_it_matters": "This consultation highlights Ofgem's commitment to improving data interoperability and governance in the electricity transmission sector, which is relevant to Smart Data and AI policy.",
-        "government_smart_data_perspective": "The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.",
-        "smart_data_ai_link": "The consultation touches on AI governance and interoperability, which are key areas of Smart Data and AI policy.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [
-            "Interoperability",
-            "Data standards",
-            "Data governance"
-          ],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [
-            "Existing UK capability in data governance and interoperability can be leveraged to shape policy changes"
-          ],
-          "weaknesses": [
-            "Potential gaps in sector-specific data standards and governance need to be addressed"
-          ],
-          "opportunities": [
-            "External developments in data standards and governance could be exploited by HMG"
-          ],
-          "threats": [
-            "External developments that could obstruct or fragment objectives in the sector"
-          ]
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 2,
-          "consequences": 1,
-          "policy_advancement": 2,
-          "opportunity": 1,
-          "monitoring_need": 3,
-          "strategic_significance": 2,
-          "implementation_risk": 1,
-          "novelty": 1,
-          "evidence_strength": 3,
-          "rationale": "The consultation is part of Ofgem's Transforming Connections Data programme and focuses on interoperability and data governance, which are relevant to Smart Data and AI policy."
-        },
-        "policy_or_market_implications": [
-          "The consultation could lead to the development of new datasets and data standards in the electricity transmission sector.",
-          "Improved data governance could enhance the reliability and efficiency of electricity transmission."
-        ],
-        "key_claims": [
-          {
-            "claim": "The consultation aims to introduce new datasets and improve existing ones, including a demand capacity register and distribution works report.",
-            "claim_type": "reported_fact",
-            "evidence_note": ""
-          },
-          {
-            "claim": "The consultation also seeks views on cross-cutting issues, including interoperability, data standards, data quality, and approaches to data publication and governance.",
-            "claim_type": "reported_fact",
-            "evidence_note": ""
-          }
-        ],
-        "source_perspective": "The consultation is part of Ofgem's Transforming Connections Data programme, which aims to evolve from Theme 1 of the Connections end-to-end review.",
-        "tensions_or_tradeoffs": [
-          "Balancing the introduction of new datasets with the need to improve existing ones to ensure data consistency and reliability.",
-          "Addressing sector-specific data standards and governance challenges to ensure effective data use and interoperability."
-        ],
-        "follow_up_questions": [
-          "What are the key data standards and governance challenges in the electricity transmission sector?",
-          "How can Ofgem ensure that the proposed policy changes are effectively implemented and enforced?"
-        ],
-        "hashtags": [
-          "#Threat"
-        ],
-        "tags": [
-          "#AIxSmartData",
-          "#Interoperability",
-          "#DataGovernance",
-          "#PolicyGap",
-          "#Opportunity",
-          "#Threat",
-          "#Monitor",
-          "#Urgent",
-          "#Strategic",
-          "#ImplementationRisk"
-        ],
-        "confidence": "high"
-      },
-      "final_score": 39.73,
-      "priority_score": 37.82,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcEp0SzRkWGhFalM0d1JXaDZLNzVfZlFpUFJ3NEdUdk5WUXBERGdfZ0M2NWlEU1prVERId3ZSa0ExQVNzbFg0aWVDQjloTFZvdG9lMk82SWVSV0tjOElSMFVmY2MzVmctbjUwY1B4Wl9VMFlNejZXNFptWGJrakhuYVVoVTRHanNfUTRzUW1RQWhScmpoM2l2M1FENENaNWNmQjAzZQ?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcEp0SzRkWGhFalM0d1JXaDZLNzVfZlFpUFJ3NEdUdk5WUXBERGdfZ0M2NWlEU1prVERId3ZSa0ExQVNzbFg0aWVDQjloTFZvdG9lMk82SWVSV0tjOElSMFVmY2MzVmctbjUwY1B4Wl9VMFlNejZXNFptWGJrakhuYVVoVTRHanNfUTRzUW1RQWhScmpoM2l2M1FENENaNWNmQjAzZQ?oc=5",
-        "title": "NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents",
-        "source_name": "Yahoo Finance",
-        "author": "",
-        "published_at": "2026-09-22T11:00:00Z",
-        "discovered_at": "2026-09-28T15:24:01.708657Z",
-        "discovery_method": "google_news:smart data AI",
-        "heuristic_score": 49.76,
-        "matched_terms": [
-          "smart data",
-          "sectors",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 49,
-        "relevance_tier": "high",
-        "primary_category": "Smart Data",
-        "bottom_line": "NETSCOUT Adds MCP Connectivity, Putting AI-Ready Smart Data Directly Into the Hands of AI Assistants and Agents is a relevant signal for AI-enabled services, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Yahoo Finance reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 3,
-          "consequences": 2,
-          "policy_advancement": 2,
-          "opportunity": 2,
-          "monitoring_need": 4,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 3,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from Yahoo Finance; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 38.38,
-      "priority_score": 50.95,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBqQVdtTHdpV0lNTGhpOXQ0R01qN0pHMm9mbmlJcFhPZUdETVdtWWptYXE4b1hqRzRjOVZIa2cwUWdmNDJjbkhEMmNQUlhCYTlfZXB0UU9NaGdoLTln?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBqQVdtTHdpV0lNTGhpOXQ0R01qN0pHMm9mbmlJcFhPZUdETVdtWWptYXE4b1hqRzRjOVZIa2cwUWdmNDJjbkhEMmNQUlhCYTlfZXB0UU9NaGdoLTln?oc=5",
-        "title": "A two-way trust framework for AI agents and blockchain",
-        "source_name": "EurekAlert! Science News Releases",
-        "author": "",
-        "published_at": "2026-09-24T08:20:10Z",
-        "discovered_at": "2026-09-28T15:24:01.709550Z",
-        "discovery_method": "google_news:AI delegation identity",
-        "heuristic_score": 50.4,
-        "matched_terms": [
-          "AI",
-          "trust_identity",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 50,
-        "relevance_tier": "medium",
-        "primary_category": "AI",
-        "bottom_line": "A two-way trust framework for AI agents and blockchain is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "EurekAlert! Science News Releases reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 2,
-          "consequences": 1,
-          "policy_advancement": 2,
-          "opportunity": 1,
-          "monitoring_need": 5,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from EurekAlert! Science News Releases; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor",
-          "#TrustFramework"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 34.76,
-      "priority_score": 44.93,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://www.openbanking.org.uk/news/obl-at-open-banking-expo-2026",
-        "canonical_url": "https://www.openbanking.org.uk/news/obl-at-open-banking-expo-2026",
-        "title": "OBL at Open Banking Expo 2026 - Open Banking",
-        "source_name": "Open Banking news",
-        "author": "Patrick Cannon",
-        "published_at": "2026-09-24T00:00:00Z",
-        "discovered_at": "2026-09-28T15:24:23.980323Z",
-        "discovery_method": "index:ecosystem",
-        "heuristic_score": 39.28,
+        "published_at": "2026-09-30T19:25:45Z",
+        "discovered_at": "2026-10-05T15:59:55.083980Z",
+        "discovery_method": "google_news:AI open finance",
+        "heuristic_score": 86.21,
         "matched_terms": [
           "adjacent smart/open data",
+          "AI",
+          "AI + Smart Data intersection",
           "sectors",
-          "source:openbanking.org.uk",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 39,
-        "relevance_tier": "medium",
+        "relevance_score": 70,
+        "relevance_tier": "high",
         "primary_category": "monitoring_signal",
-        "bottom_line": "OBL at Open Banking Expo 2026 - Open Banking is a relevant signal for open finance and payments; source evidence is too limited for a firm UK policy conclusion.",
-        "summary": "Open Banking news reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
-        "why_it_matters": "The subject intersects with open finance and payments, but its UK significance remains unverified.",
+        "bottom_line": "UAE open finance, AI agents and the price of being chosen is a relevant signal for AI-enabled services, open finance and payments, Smart Data; source evidence is too limited for a firm UK policy conclusion.",
+        "summary": "FWDStart reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
+        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, but its UK significance remains unverified.",
         "government_smart_data_perspective": "Monitor the item and verify the original source before drawing policy implications.",
-        "smart_data_ai_link": "Potential relevance to open finance and payments; no stronger claim is made without source text.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; no stronger claim is made without source text.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -325,13 +68,87 @@
           "Does the full source provide evidence that materially changes the UK Smart Data policy picture?"
         ],
         "hashtags": [
-          "#Monitor"
+          "#Monitor",
+          "#AIxSmartData"
         ],
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 26.69,
+      "final_score": 39.93,
       "priority_score": 38.46,
+      "mode": "weekly"
+    },
+    {
+      "article": {
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd2gxUmRqbE4wVmhGYV9tbU95a25ham5FUlk0Wlh3OEpIVUt0U0FaeENjeVFKaEVYcjd3clNUdlIwXzYzbExmaEZFYXk1eFJDTVNPbFZrTmN2SWFLcHRMTDNwUV9Wc3ZCSER3NjJiTURyZDRhYUwxOVJzMnFNZVh4c3NqUEdOWl9ubGZhQklLZGJzeG1JdGhlSkRqU3ExTTJEZmRuWDZkSVhUbzNfRjVSdHR0bl9fS1NHRXVv?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd2gxUmRqbE4wVmhGYV9tbU95a25ham5FUlk0Wlh3OEpIVUt0U0FaeENjeVFKaEVYcjd3clNUdlIwXzYzbExmaEZFYXk1eFJDTVNPbFZrTmN2SWFLcHRMTDNwUV9Wc3ZCSER3NjJiTURyZDRhYUwxOVJzMnFNZVh4c3NqUEdOWl9ubGZhQklLZGJzeG1JdGhlSkRqU3ExTTJEZmRuWDZkSVhUbzNfRjVSdHR0bl9fS1NHRXVv?oc=5",
+        "title": "Best Auth0 Alternatives for AI Agent Authentication and Authorisation in 2026",
+        "source_name": "Cloud Computing News",
+        "author": "",
+        "published_at": "2026-10-05T12:48:34Z",
+        "discovered_at": "2026-10-05T15:59:55.074991Z",
+        "discovery_method": "google_news:AI delegation identity",
+        "heuristic_score": 51.95,
+        "matched_terms": [
+          "AI",
+          "trust_identity",
+          "recent"
+        ]
+      },
+      "analysis": {
+        "relevance_score": 51,
+        "relevance_tier": "high",
+        "primary_category": "AI",
+        "bottom_line": "Best Auth0 Alternatives for AI Agent Authentication and Authorisation in 2026 is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "Cloud Computing News reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "pestle": {
+          "political": [],
+          "economic": [],
+          "social": [],
+          "technological": [],
+          "legal": [],
+          "environmental": []
+        },
+        "swot": {
+          "strengths": [],
+          "weaknesses": [],
+          "opportunities": [],
+          "threats": []
+        },
+        "priority": {
+          "urgency": 3,
+          "impact": 2,
+          "consequences": 1,
+          "policy_advancement": 2,
+          "opportunity": 1,
+          "monitoring_need": 5,
+          "strategic_significance": 3,
+          "implementation_risk": 2,
+          "novelty": 2,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+        },
+        "policy_or_market_implications": [
+          "Verify the original source before drawing any UK policy or market implication."
+        ],
+        "key_claims": [],
+        "source_perspective": "Monitoring signal from Cloud Computing News; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "tensions_or_tradeoffs": [],
+        "follow_up_questions": [
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+        ],
+        "hashtags": [
+          "#Monitor",
+          "#TrustFramework"
+        ],
+        "tags": [],
+        "confidence": "low"
+      },
+      "final_score": 35.2,
+      "priority_score": 44.93,
       "mode": "weekly"
     }
   ]
