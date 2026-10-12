@@ -1,19 +1,19 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-10-05T16:02:23.679030+00:00",
+  "generated_at": "2026-10-12T16:47:29.207141+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSW9EV2g4bktDSjlVNDVNN3lWUF9jbXFTcVpIaFU4aVdmb1NVTTJGQzBwY0hTaUtLenhBN3ZfU1hqd3g4WFdUbmRYaTd0OGZhV2ZFZmk2UDRPMkJtSDd6aVdiYm5YMmpHdW5yRzFGTjc1VWw4dmdvMkhfQzc4N094cGduT2JwUmYxUEJv?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSW9EV2g4bktDSjlVNDVNN3lWUF9jbXFTcVpIaFU4aVdmb1NVTTJGQzBwY0hTaUtLenhBN3ZfU1hqd3g4WFdUbmRYaTd0OGZhV2ZFZmk2UDRPMkJtSDd6aVdiYm5YMmpHdW5yRzFGTjc1VWw4dmdvMkhfQzc4N094cGduT2JwUmYxUEJv?oc=5",
-        "title": "UAE open finance, AI agents and the price of being chosen",
-        "source_name": "FWDStart",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcmR5TVU5NUdSN2xPTTlGVGM3WTNQUTROZGNTSHh3VzdOZ1AyZlhPd2w5SUF2VVVzYlFRUE95QWxRTW93aV9PWWJBTjNaUkVTa09waE9OQllzbFdCdjhQRnZsM3o3QXVIWmtrTEJkSlVleDRta0ZtUjNfNUdwVG1sOHJhQTZkVGkyaVJYa2ZjUWVPbV9NUjBZTkxiMXpiZ1hvS3haTUQxczg4ZjlteTdEODdhWTZFRzVxR0xuaVhhU1Q2cDBNSHEzTlkyVWZhNm1CRGVFMA?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcmR5TVU5NUdSN2xPTTlGVGM3WTNQUTROZGNTSHh3VzdOZ1AyZlhPd2w5SUF2VVVzYlFRUE95QWxRTW93aV9PWWJBTjNaUkVTa09waE9OQllzbFdCdjhQRnZsM3o3QXVIWmtrTEJkSlVleDRta0ZtUjNfNUdwVG1sOHJhQTZkVGkyaVJYa2ZjUWVPbV9NUjBZTkxiMXpiZ1hvS3haTUQxczg4ZjlteTdEODdhWTZFRzVxR0xuaVhhU1Q2cDBNSHEzTlkyVWZhNm1CRGVFMA?oc=5",
+        "title": "Interview: The FCA's David Geale on crypto rules, agentic AI liability, and open finance",
+        "source_name": "FinTech Futures",
         "author": "",
-        "published_at": "2026-09-30T19:25:45Z",
-        "discovered_at": "2026-10-05T15:59:55.083980Z",
+        "published_at": "2026-10-08T15:14:13Z",
+        "discovered_at": "2026-10-12T16:43:50.553583Z",
         "discovery_method": "google_news:AI open finance",
-        "heuristic_score": 86.21,
+        "heuristic_score": 86.48,
         "matched_terms": [
           "adjacent smart/open data",
           "AI",
@@ -23,14 +23,14 @@
         ]
       },
       "analysis": {
-        "relevance_score": 70,
+        "relevance_score": 86,
         "relevance_tier": "high",
-        "primary_category": "monitoring_signal",
-        "bottom_line": "UAE open finance, AI agents and the price of being chosen is a relevant signal for AI-enabled services, open finance and payments, Smart Data; source evidence is too limited for a firm UK policy conclusion.",
-        "summary": "FWDStart reported the development in the headline. The radar could not obtain enough source text for a fuller verified assessment.",
-        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, but its UK significance remains unverified.",
-        "government_smart_data_perspective": "Monitor the item and verify the original source before drawing policy implications.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; no stronger claim is made without source text.",
+        "primary_category": "AIxSmartData",
+        "bottom_line": "Interview: The FCA's David Geale on crypto rules, agentic AI liability, and open finance is a relevant signal for AI-enabled services, open finance and payments, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "FinTech Futures reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -46,26 +46,26 @@
           "threats": []
         },
         "priority": {
-          "urgency": 2,
+          "urgency": 3,
           "impact": 2,
           "consequences": 2,
           "policy_advancement": 1,
-          "opportunity": 2,
-          "monitoring_need": 4,
-          "strategic_significance": 2,
-          "implementation_risk": 1,
-          "novelty": 3,
-          "evidence_strength": 1,
-          "rationale": "Relevant discovery signal, but evidence is insufficient for policy judgement."
+          "opportunity": 1,
+          "monitoring_need": 5,
+          "strategic_significance": 3,
+          "implementation_risk": 2,
+          "novelty": 2,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, open finance and payments, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
         },
         "policy_or_market_implications": [
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "Monitoring signal only; the source's position has not been independently assessed.",
+        "source_perspective": "Monitoring signal from FinTech Futures; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
-          "Does the full source provide evidence that materially changes the UK Smart Data policy picture?"
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
         ],
         "hashtags": [
           "#Monitor",
@@ -74,33 +74,34 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 39.93,
-      "priority_score": 38.46,
+      "final_score": 47.75,
+      "priority_score": 45.5,
       "mode": "weekly"
     },
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd2gxUmRqbE4wVmhGYV9tbU95a25ham5FUlk0Wlh3OEpIVUt0U0FaeENjeVFKaEVYcjd3clNUdlIwXzYzbExmaEZFYXk1eFJDTVNPbFZrTmN2SWFLcHRMTDNwUV9Wc3ZCSER3NjJiTURyZDRhYUwxOVJzMnFNZVh4c3NqUEdOWl9ubGZhQklLZGJzeG1JdGhlSkRqU3ExTTJEZmRuWDZkSVhUbzNfRjVSdHR0bl9fS1NHRXVv?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd2gxUmRqbE4wVmhGYV9tbU95a25ham5FUlk0Wlh3OEpIVUt0U0FaeENjeVFKaEVYcjd3clNUdlIwXzYzbExmaEZFYXk1eFJDTVNPbFZrTmN2SWFLcHRMTDNwUV9Wc3ZCSER3NjJiTURyZDRhYUwxOVJzMnFNZVh4c3NqUEdOWl9ubGZhQklLZGJzeG1JdGhlSkRqU3ExTTJEZmRuWDZkSVhUbzNfRjVSdHR0bl9fS1NHRXVv?oc=5",
-        "title": "Best Auth0 Alternatives for AI Agent Authentication and Authorisation in 2026",
-        "source_name": "Cloud Computing News",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZEVWY1B5d0YxeGhPaEJiNXVPaTk2ZTF0YWd1WG9oNUVpaWxhaUlfN1BVeGNENEZkLW9hbDZNTUdLdHJ2MXM4LU9WVjZPVGhUVUlLWG9PamxSbXNNVi1faWZEUTlKSmVJYWQyNjg0MzBEOVRTZk5Ua19hOFRTTGZ4eGFoZ0syRTU3R1hIWjFWQ0IwTGstNVNxRVRheGNHcFlJd0ZuUWtnS1REcS1Fd3dv?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZEVWY1B5d0YxeGhPaEJiNXVPaTk2ZTF0YWd1WG9oNUVpaWxhaUlfN1BVeGNENEZkLW9hbDZNTUdLdHJ2MXM4LU9WVjZPVGhUVUlLWG9PamxSbXNNVi1faWZEUTlKSmVJYWQyNjg0MzBEOVRTZk5Ua19hOFRTTGZ4eGFoZ0syRTU3R1hIWjFWQ0IwTGstNVNxRVRheGNHcFlJd0ZuUWtnS1REcS1Fd3dv?oc=5",
+        "title": "UK Finance prepares for AI agents, wants clarity on digital verification",
+        "source_name": "Biometric Update",
         "author": "",
-        "published_at": "2026-10-05T12:48:34Z",
-        "discovered_at": "2026-10-05T15:59:55.074991Z",
+        "published_at": "2026-10-09T16:57:00Z",
+        "discovered_at": "2026-10-12T16:43:50.545204Z",
         "discovery_method": "google_news:AI delegation identity",
-        "heuristic_score": 51.95,
+        "heuristic_score": 58.86,
         "matched_terms": [
           "AI",
           "trust_identity",
+          "sectors",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 51,
+        "relevance_score": 58,
         "relevance_tier": "high",
-        "primary_category": "AI",
-        "bottom_line": "Best Auth0 Alternatives for AI Agent Authentication and Authorisation in 2026 is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Cloud Computing News reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "primary_category": "AIxSmartData",
+        "bottom_line": "UK Finance prepares for AI agents, wants clarity on digital verification is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "Biometric Update reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
         "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
         "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
         "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
@@ -120,8 +121,8 @@
         },
         "priority": {
           "urgency": 3,
-          "impact": 2,
-          "consequences": 1,
+          "impact": 3,
+          "consequences": 2,
           "policy_advancement": 2,
           "opportunity": 1,
           "monitoring_need": 5,
@@ -135,7 +136,7 @@
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "Monitoring signal from Cloud Computing News; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "source_perspective": "Monitoring signal from Biometric Update; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
           "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
@@ -147,8 +148,8 @@
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 35.2,
-      "priority_score": 44.93,
+      "final_score": 41.3,
+      "priority_score": 50.57,
       "mode": "weekly"
     }
   ]
