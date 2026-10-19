@@ -1,98 +1,23 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-10-12T16:47:29.207141+00:00",
+  "generated_at": "2026-10-19T14:45:12.623367+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcmR5TVU5NUdSN2xPTTlGVGM3WTNQUTROZGNTSHh3VzdOZ1AyZlhPd2w5SUF2VVVzYlFRUE95QWxRTW93aV9PWWJBTjNaUkVTa09waE9OQllzbFdCdjhQRnZsM3o3QXVIWmtrTEJkSlVleDRta0ZtUjNfNUdwVG1sOHJhQTZkVGkyaVJYa2ZjUWVPbV9NUjBZTkxiMXpiZ1hvS3haTUQxczg4ZjlteTdEODdhWTZFRzVxR0xuaVhhU1Q2cDBNSHEzTlkyVWZhNm1CRGVFMA?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcmR5TVU5NUdSN2xPTTlGVGM3WTNQUTROZGNTSHh3VzdOZ1AyZlhPd2w5SUF2VVVzYlFRUE95QWxRTW93aV9PWWJBTjNaUkVTa09waE9OQllzbFdCdjhQRnZsM3o3QXVIWmtrTEJkSlVleDRta0ZtUjNfNUdwVG1sOHJhQTZkVGkyaVJYa2ZjUWVPbV9NUjBZTkxiMXpiZ1hvS3haTUQxczg4ZjlteTdEODdhWTZFRzVxR0xuaVhhU1Q2cDBNSHEzTlkyVWZhNm1CRGVFMA?oc=5",
-        "title": "Interview: The FCA's David Geale on crypto rules, agentic AI liability, and open finance",
-        "source_name": "FinTech Futures",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVVZNMnNfMkdJclMtelZIcjVXbXhPNjE4UGllaTJtQlR5dEZBbkYyY3JCUzhEWVktbWlvTUUtdFpoZU9NbzBBajBzU21xbjJTcTYyNFdMUEs0OWNFXzZmd25saUd1Q1ZLbExaZjBESVhHcWJYS1YzTW0yYnJ2T3hNaDY2OUFIakI2SUt5VGFKZ1Y5U3hwdGFBRUM4b2R6TlYtblZOdlVkU1FNbm9xUnp2V0s4ZzRzZmZMYzgyU2Ewcnlkdw?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVVZNMnNfMkdJclMtelZIcjVXbXhPNjE4UGllaTJtQlR5dEZBbkYyY3JCUzhEWVktbWlvTUUtdFpoZU9NbzBBajBzU21xbjJTcTYyNFdMUEs0OWNFXzZmd25saUd1Q1ZLbExaZjBESVhHcWJYS1YzTW0yYnJ2T3hNaDY2OUFIakI2SUt5VGFKZ1Y5U3hwdGFBRUM4b2R6TlYtblZOdlVkU1FNbm9xUnp2V0s4ZzRzZmZMYzgyU2Ewcnlkdw?oc=5",
+        "title": "AI Agents Are Stress-Testing Healthcare Interoperability and Governance",
+        "source_name": "HIT Consultant",
         "author": "",
-        "published_at": "2026-10-08T15:14:13Z",
-        "discovered_at": "2026-10-12T16:43:50.553583Z",
-        "discovery_method": "google_news:AI open finance",
-        "heuristic_score": 86.48,
-        "matched_terms": [
-          "adjacent smart/open data",
-          "AI",
-          "AI + Smart Data intersection",
-          "sectors",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 86,
-        "relevance_tier": "high",
-        "primary_category": "AIxSmartData",
-        "bottom_line": "Interview: The FCA's David Geale on crypto rules, agentic AI liability, and open finance is a relevant signal for AI-enabled services, open finance and payments, Smart Data. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "FinTech Futures reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, open finance and payments, Smart Data, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, open finance and payments, Smart Data; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 2,
-          "consequences": 2,
-          "policy_advancement": 1,
-          "opportunity": 1,
-          "monitoring_need": 5,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, open finance and payments, Smart Data, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from FinTech Futures; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor",
-          "#AIxSmartData"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 47.75,
-      "priority_score": 45.5,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZEVWY1B5d0YxeGhPaEJiNXVPaTk2ZTF0YWd1WG9oNUVpaWxhaUlfN1BVeGNENEZkLW9hbDZNTUdLdHJ2MXM4LU9WVjZPVGhUVUlLWG9PamxSbXNNVi1faWZEUTlKSmVJYWQyNjg0MzBEOVRTZk5Ua19hOFRTTGZ4eGFoZ0syRTU3R1hIWjFWQ0IwTGstNVNxRVRheGNHcFlJd0ZuUWtnS1REcS1Fd3dv?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZEVWY1B5d0YxeGhPaEJiNXVPaTk2ZTF0YWd1WG9oNUVpaWxhaUlfN1BVeGNENEZkLW9hbDZNTUdLdHJ2MXM4LU9WVjZPVGhUVUlLWG9PamxSbXNNVi1faWZEUTlKSmVJYWQyNjg0MzBEOVRTZk5Ua19hOFRTTGZ4eGFoZ0syRTU3R1hIWjFWQ0IwTGstNVNxRVRheGNHcFlJd0ZuUWtnS1REcS1Fd3dv?oc=5",
-        "title": "UK Finance prepares for AI agents, wants clarity on digital verification",
-        "source_name": "Biometric Update",
-        "author": "",
-        "published_at": "2026-10-09T16:57:00Z",
-        "discovered_at": "2026-10-12T16:43:50.545204Z",
-        "discovery_method": "google_news:AI delegation identity",
-        "heuristic_score": 58.86,
+        "published_at": "2026-10-15T22:58:31Z",
+        "discovered_at": "2026-10-19T14:39:45.526158Z",
+        "discovery_method": "google_news:AI interoperability APIs",
+        "heuristic_score": 58.62,
         "matched_terms": [
           "AI",
-          "trust_identity",
-          "sectors",
+          "interoperability",
+          "governance",
           "recent"
         ]
       },
@@ -100,11 +25,11 @@
         "relevance_score": 58,
         "relevance_tier": "high",
         "primary_category": "AIxSmartData",
-        "bottom_line": "UK Finance prepares for AI agents, wants clarity on digital verification is a relevant signal for AI-enabled services, consent, identity or trust. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Biometric Update reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, consent, identity or trust, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "bottom_line": "AI Agents Are Stress-Testing Healthcare Interoperability and Governance is a relevant signal for AI-enabled services, interoperability and standards. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "HIT Consultant reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
         "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, consent, identity or trust; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
         "pestle": {
           "political": [],
           "economic": [],
@@ -122,7 +47,7 @@
         "priority": {
           "urgency": 3,
           "impact": 3,
-          "consequences": 2,
+          "consequences": 3,
           "policy_advancement": 2,
           "opportunity": 1,
           "monitoring_need": 5,
@@ -130,26 +55,101 @@
           "implementation_risk": 2,
           "novelty": 2,
           "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, consent, identity or trust, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+          "rationale": "The headline is relevant to AI-enabled services, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
         },
         "policy_or_market_implications": [
           "Verify the original source before drawing any UK policy or market implication."
         ],
         "key_claims": [],
-        "source_perspective": "Monitoring signal from Biometric Update; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "source_perspective": "Monitoring signal from HIT Consultant; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
         "tensions_or_tradeoffs": [],
         "follow_up_questions": [
           "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
         ],
         "hashtags": [
           "#Monitor",
-          "#TrustFramework"
+          "#Interoperability"
         ],
         "tags": [],
         "confidence": "low"
       },
-      "final_score": 41.3,
-      "priority_score": 50.57,
+      "final_score": 42.97,
+      "priority_score": 53.2,
+      "mode": "weekly"
+    },
+    {
+      "article": {
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN09XeV9pbnZhQmJGdlR1ekwzeFprc1lfblkyYmVXWVNoTkpVNUlrWVRjeTBuVzVrRm55QmttdlVoQVhpOE9VbkhhM1JUbGFmQW9uU19Rc1RzN0paOVJTZ0FULXdHYUE0R05tQ3JFTmFVbXpiTmF6YllrRnNKS0syMUs3cGpiaWcwSV90UnJBYnBzYUFtaVdHSzV6RjlCNUxY?oc=5",
+        "canonical_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN09XeV9pbnZhQmJGdlR1ekwzeFprc1lfblkyYmVXWVNoTkpVNUlrWVRjeTBuVzVrRm55QmttdlVoQVhpOE9VbkhhM1JUbGFmQW9uU19Rc1RzN0paOVJTZ0FULXdHYUE0R05tQ3JFTmFVbXpiTmF6YllrRnNKS0syMUs3cGpiaWcwSV90UnJBYnBzYUFtaVdHSzV6RjlCNUxY?oc=5",
+        "title": "Druid AI Expands Enterprise Agentic AI Platform with Voice Enhancements, Agent Interoperability and Governance Capabilities",
+        "source_name": "Yahoo Finance",
+        "author": "",
+        "published_at": "2026-10-14T22:18:00Z",
+        "discovered_at": "2026-10-19T14:39:45.526366Z",
+        "discovery_method": "google_news:AI interoperability APIs",
+        "heuristic_score": 66.27,
+        "matched_terms": [
+          "AI",
+          "interoperability",
+          "governance",
+          "sectors",
+          "recent"
+        ]
+      },
+      "analysis": {
+        "relevance_score": 66,
+        "relevance_tier": "high",
+        "primary_category": "AI",
+        "bottom_line": "Druid AI Expands Enterprise Agentic AI Platform with Voice Enhancements, Agent Interoperability and Governance Capabilities is a relevant signal for AI-enabled services, interoperability and standards. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
+        "summary": "Yahoo Finance reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
+        "why_it_matters": "The subject intersects with AI-enabled services, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
+        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
+        "smart_data_ai_link": "Potential relevance to AI-enabled services, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "pestle": {
+          "political": [],
+          "economic": [],
+          "social": [],
+          "technological": [],
+          "legal": [],
+          "environmental": []
+        },
+        "swot": {
+          "strengths": [],
+          "weaknesses": [],
+          "opportunities": [],
+          "threats": []
+        },
+        "priority": {
+          "urgency": 3,
+          "impact": 2,
+          "consequences": 1,
+          "policy_advancement": 2,
+          "opportunity": 1,
+          "monitoring_need": 3,
+          "strategic_significance": 2,
+          "implementation_risk": 1,
+          "novelty": 2,
+          "evidence_strength": 2,
+          "rationale": "The headline is relevant to AI-enabled services, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+        },
+        "policy_or_market_implications": [
+          "Verify the original source before drawing any UK policy or market implication."
+        ],
+        "key_claims": [],
+        "source_perspective": "Monitoring signal from Yahoo Finance; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
+        "tensions_or_tradeoffs": [],
+        "follow_up_questions": [
+          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+        ],
+        "hashtags": [
+          "#Monitor",
+          "#Interoperability"
+        ],
+        "tags": [],
+        "confidence": "low"
+      },
+      "final_score": 35.83,
+      "priority_score": 37.98,
       "mode": "weekly"
     }
   ]
