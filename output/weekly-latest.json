@@ -1,123 +1,62 @@
 {
   "mode": "weekly",
-  "generated_at": "2026-10-19T14:45:12.623367+00:00",
+  "generated_at": "2026-10-26T14:22:54.993476+00:00",
   "synthesis": null,
   "articles": [
     {
       "article": {
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVVZNMnNfMkdJclMtelZIcjVXbXhPNjE4UGllaTJtQlR5dEZBbkYyY3JCUzhEWVktbWlvTUUtdFpoZU9NbzBBajBzU21xbjJTcTYyNFdMUEs0OWNFXzZmd25saUd1Q1ZLbExaZjBESVhHcWJYS1YzTW0yYnJ2T3hNaDY2OUFIakI2SUt5VGFKZ1Y5U3hwdGFBRUM4b2R6TlYtblZOdlVkU1FNbm9xUnp2V0s4ZzRzZmZMYzgyU2Ewcnlkdw?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVVZNMnNfMkdJclMtelZIcjVXbXhPNjE4UGllaTJtQlR5dEZBbkYyY3JCUzhEWVktbWlvTUUtdFpoZU9NbzBBajBzU21xbjJTcTYyNFdMUEs0OWNFXzZmd25saUd1Q1ZLbExaZjBESVhHcWJYS1YzTW0yYnJ2T3hNaDY2OUFIakI2SUt5VGFKZ1Y5U3hwdGFBRUM4b2R6TlYtblZOdlVkU1FNbm9xUnp2V0s4ZzRzZmZMYzgyU2Ewcnlkdw?oc=5",
-        "title": "AI Agents Are Stress-Testing Healthcare Interoperability and Governance",
-        "source_name": "HIT Consultant",
+        "url": "https://www.ofgem.gov.uk/consultation/gas-interconnector-import-capability-proposed-modifications-national-gas-transmissions-licence",
+        "canonical_url": "https://www.ofgem.gov.uk/consultation/gas-interconnector-import-capability-proposed-modifications-national-gas-transmissions-licence",
+        "title": "Gas interconnector import capability: proposed modifications to National Gas Transmission's licence",
+        "source_name": "Ofgem consultations",
         "author": "",
-        "published_at": "2026-10-15T22:58:31Z",
-        "discovered_at": "2026-10-19T14:39:45.526158Z",
-        "discovery_method": "google_news:AI interoperability APIs",
-        "heuristic_score": 58.62,
+        "published_at": "2026-10-22T00:00:00Z",
+        "discovered_at": "2026-10-26T14:15:55.974928Z",
+        "discovery_method": "index:regulator",
+        "heuristic_score": 35.3,
         "matched_terms": [
-          "AI",
-          "interoperability",
-          "governance",
-          "recent"
-        ]
-      },
-      "analysis": {
-        "relevance_score": 58,
-        "relevance_tier": "high",
-        "primary_category": "AIxSmartData",
-        "bottom_line": "AI Agents Are Stress-Testing Healthcare Interoperability and Governance is a relevant signal for AI-enabled services, interoperability and standards. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "HIT Consultant reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
-        "pestle": {
-          "political": [],
-          "economic": [],
-          "social": [],
-          "technological": [],
-          "legal": [],
-          "environmental": []
-        },
-        "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
-        },
-        "priority": {
-          "urgency": 3,
-          "impact": 3,
-          "consequences": 3,
-          "policy_advancement": 2,
-          "opportunity": 1,
-          "monitoring_need": 5,
-          "strategic_significance": 3,
-          "implementation_risk": 2,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
-        },
-        "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
-        ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from HIT Consultant; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
-        "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
-        ],
-        "hashtags": [
-          "#Monitor",
-          "#Interoperability"
-        ],
-        "tags": [],
-        "confidence": "low"
-      },
-      "final_score": 42.97,
-      "priority_score": 53.2,
-      "mode": "weekly"
-    },
-    {
-      "article": {
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN09XeV9pbnZhQmJGdlR1ekwzeFprc1lfblkyYmVXWVNoTkpVNUlrWVRjeTBuVzVrRm55QmttdlVoQVhpOE9VbkhhM1JUbGFmQW9uU19Rc1RzN0paOVJTZ0FULXdHYUE0R05tQ3JFTmFVbXpiTmF6YllrRnNKS0syMUs3cGpiaWcwSV90UnJBYnBzYUFtaVdHSzV6RjlCNUxY?oc=5",
-        "canonical_url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN09XeV9pbnZhQmJGdlR1ekwzeFprc1lfblkyYmVXWVNoTkpVNUlrWVRjeTBuVzVrRm55QmttdlVoQVhpOE9VbkhhM1JUbGFmQW9uU19Rc1RzN0paOVJTZ0FULXdHYUE0R05tQ3JFTmFVbXpiTmF6YllrRnNKS0syMUs3cGpiaWcwSV90UnJBYnBzYUFtaVdHSzV6RjlCNUxY?oc=5",
-        "title": "Druid AI Expands Enterprise Agentic AI Platform with Voice Enhancements, Agent Interoperability and Governance Capabilities",
-        "source_name": "Yahoo Finance",
-        "author": "",
-        "published_at": "2026-10-14T22:18:00Z",
-        "discovered_at": "2026-10-19T14:39:45.526366Z",
-        "discovery_method": "google_news:AI interoperability APIs",
-        "heuristic_score": 66.27,
-        "matched_terms": [
-          "AI",
-          "interoperability",
-          "governance",
+          "trust_identity",
           "sectors",
+          "source:gov.uk",
           "recent"
         ]
       },
       "analysis": {
-        "relevance_score": 66,
+        "relevance_score": 35,
         "relevance_tier": "high",
-        "primary_category": "AI",
-        "bottom_line": "Druid AI Expands Enterprise Agentic AI Platform with Voice Enhancements, Agent Interoperability and Governance Capabilities is a relevant signal for AI-enabled services, interoperability and standards. The radar currently has headline/RSS evidence only, so it should be monitored rather than treated as a confirmed UK policy development.",
-        "summary": "Yahoo Finance reported the development described in the headline. The full source text was not available to the radar, so no further factual claims are inferred.",
-        "why_it_matters": "The subject intersects with AI-enabled services, interoperability and standards, which is relevant to the Smart Data programme. Its practical UK significance cannot be assessed reliably from the available metadata alone.",
-        "government_smart_data_perspective": "Monitor and verify the original source. Do not infer a UK policy gap, regulatory weakness, adoption case or implementation requirement from this signal alone.",
-        "smart_data_ai_link": "Potential relevance to AI-enabled services, interoperability and standards; the available metadata is not enough to establish a concrete UK Smart Data or AI policy implication.",
+        "primary_category": "Interoperability",
+        "bottom_line": "UK regulators are seeking public input on modifying National Gas Transmission's licence to recover costs for gas import capability.",
+        "summary": "UK regulators are soliciting public input on modifying National Gas Transmission's licence to allow for cost recovery of gas import capability through continental European gas interconnectors.",
+        "why_it_matters": "This consultation highlights the need for regulatory frameworks to support emerging energy security risks and the integration of international gas interconnectors.",
+        "government_smart_data_perspective": "The UK Smart Data programme should consider how this consultation aligns with broader efforts to strengthen the gas system and ensure cost recovery for interconnector services.",
+        "smart_data_ai_link": "This consultation is relevant to the Smart Data and AI policy framework as it involves the integration of international data and the need for interoperability and cost recovery mechanisms.",
         "pestle": {
           "political": [],
           "economic": [],
           "social": [],
-          "technological": [],
-          "legal": [],
+          "technological": [
+            "Interoperability",
+            "Digital Identity"
+          ],
+          "legal": [
+            "Data Protection",
+            "Consumer Protection"
+          ],
           "environmental": []
         },
         "swot": {
-          "strengths": [],
-          "weaknesses": [],
-          "opportunities": [],
-          "threats": []
+          "strengths": [
+            "Existing regulatory framework for gas interconnectors"
+          ],
+          "weaknesses": [
+            "Potential for fragmented or inconsistent cost recovery mechanisms"
+          ],
+          "opportunities": [
+            "Enhanced regulatory clarity for gas interconnector services"
+          ],
+          "threats": [
+            "Potential for international regulatory divergence"
+          ]
         },
         "priority": {
           "urgency": 3,
@@ -128,28 +67,68 @@
           "monitoring_need": 3,
           "strategic_significance": 2,
           "implementation_risk": 1,
-          "novelty": 2,
-          "evidence_strength": 2,
-          "rationale": "The headline is relevant to AI-enabled services, interoperability and standards, but the radar does not have enough source text to support a UK policy conclusion. Treat this as a monitoring signal pending verification of the original article."
+          "novelty": 1,
+          "evidence_strength": 3,
+          "rationale": "The consultation provides insight into regulatory gaps and opportunities for cost recovery in the gas interconnector sector, which is relevant to the Smart Data and AI policy framework."
         },
         "policy_or_market_implications": [
-          "Verify the original source before drawing any UK policy or market implication."
+          "Potential for enhanced regulatory clarity and cost recovery mechanisms for gas interconnectors",
+          "Need for international regulatory alignment to avoid fragmentation"
         ],
-        "key_claims": [],
-        "source_perspective": "Monitoring signal from Yahoo Finance; the radar has not inferred the source's motives, position or UK applicability from metadata alone.",
-        "tensions_or_tradeoffs": [],
+        "key_claims": [
+          {
+            "claim": "The UK regulators are seeking public input on modifying National Gas Transmission's licence to allow for cost recovery of gas import capability through continental European gas interconnectors.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
+          },
+          {
+            "claim": "The modifications are part of a wider piece of work to strengthen the gas system to cope with emerging security of supply risks.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
+          },
+          {
+            "claim": "National Gas owns and operates Great Britain’s National Transmission System.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
+          },
+          {
+            "claim": "National Gas has separately approved an agreement with Interconnector Limited, which operates the gas interconnector between Great Britain and Belgium.",
+            "claim_type": "reported_fact",
+            "evidence_note": ""
+          }
+        ],
+        "source_perspective": "OFGEM is seeking public input to modify National Gas Transmission's licence to enable cost recovery for gas import capability through continental European gas interconnectors.",
+        "tensions_or_tradeoffs": [
+          "Balancing the need for cost recovery with the potential for regulatory divergence in international settings",
+          "Ensuring consistent and transparent cost recovery mechanisms across different jurisdictions"
+        ],
         "follow_up_questions": [
-          "Does the full source contain evidence with a concrete implication for UK Smart Data policy or implementation?"
+          "What are the potential implications for consumers and businesses in terms of cost and reliability of gas supply?",
+          "How can the UK Smart Data programme support the implementation of these modifications?",
+          "What are the potential challenges in achieving international regulatory alignment for gas interconnectors?"
         ],
         "hashtags": [
-          "#Monitor",
-          "#Interoperability"
+          "#Threat"
         ],
-        "tags": [],
-        "confidence": "low"
+        "tags": [
+          "#AIxSmartData",
+          "#PolicyGap",
+          "#Opportunity",
+          "#Threat",
+          "#Monitor",
+          "#Urgent",
+          "#Strategic",
+          "#ImplementationRisk",
+          "#RegulatoryChange",
+          "#ConsumerProtection",
+          "#Interoperability",
+          "#DigitalIdentity",
+          "#Consent"
+        ],
+        "confidence": "high"
       },
-      "final_score": 35.83,
-      "priority_score": 37.98,
+      "final_score": 36.88,
+      "priority_score": 37.82,
       "mode": "weekly"
     }
   ]
